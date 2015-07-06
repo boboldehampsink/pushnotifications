@@ -1,0 +1,28 @@
+{
+    "name": "boboldehampsink/pushnotifications",
+    "description": "Push Notifications (iOS/Android/WP8) Plugin for Craft CMS",
+    "authors": [
+        {
+            "name": "Bob Olde Hampsink",
+            "email": "b.oldehampsink@itmundi.nl"
+        }
+    ],
+    "type": "craft-plugin",
+    "minimum-stability": "dev",
+    "repositories": [
+        {
+            "type":"vcs",
+            "url": "https://github.com/boboldehampsink/NotificationPusher.git",
+            "reference": "master"
+        },
+        {
+            "type": "vcs",
+            "url": "https://github.com/boboldehampsink/ZendService_Microsoft_Mpns.git",
+            "reference": "master"
+        }
+    ],
+    "require": {
+        "composer/installers": "~1.0",
+        "sly/notification-pusher": "2.2.10"
+    }
+}

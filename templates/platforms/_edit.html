@@ -1,0 +1,44 @@
+{% extends "_layouts/cp" %}
+
+{% import "_includes/forms" as forms %}
+
+{% block content %}
+	<form method="post" accept-charset="UTF-8" data-saveshortcut="1">
+		<input type="hidden" name="action" value="pushNotifications/platforms/savePlatform">
+		<input type="hidden" name="redirect" value="pushnotifications/platforms">
+		{% if platform.id %}<input type="hidden" name="platformId" value="{{ platform.id }}">{% endif %}
+
+		{{ forms.selectField({
+			first: true,
+			label: "Name"|t,
+			instructions: "What this platform will be called in the CP."|t,
+			id: 'name',
+			name: 'name',
+			options: platform.options,
+			value: platform.handle,
+			errors: platform.getErrors('name'),
+			autofocus: true,
+			required: true,
+			translatable: true
+		}) }}
+
+		{{ forms.textField({
+			label: "Setting"|t,
+			instructions: "Certificate location for APNS or Apikey for GCM."|t,
+			id: 'setting',
+			name: 'setting',
+			value: platform.setting,
+			errors: platform.getErrors('setting'),
+		}) }}
+
+		<div class="buttons">
+			<input type="submit" class="btn submit" value="{{ 'Save'|t }}">
+		</div>
+	</form>
+{% endblock %}
+
+
+{% set js %}
+	{% if not platform.handle %}new Craft.HandleGenerator('#name', '#handle');{% endif %}
+{% endset %}
+{% includeJs js %}

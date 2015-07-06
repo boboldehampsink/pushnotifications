@@ -1,0 +1,31 @@
+{% extends "_layouts/elementindex" %}
+{% set title = "Devices"|t %}
+{% set elementType = 'PushNotifications_Device' %}
+
+{% set tabs = {
+	notifications: { label: "Notifications"|t, url: url('pushnotifications') },
+	devices: { label: "Devices"|t, url: url('pushnotifications/devices') }
+} %}
+
+{% set selectedTab = 'devices' %}
+
+{% block sidebar %}
+	{% if platforms|length %}
+		<div class="buttons">
+			{% if platforms|length > 1 %}
+				<div class="btn submit menubtn add icon">{{ "New Device"|t }}</div>
+				<div class="menu">
+					<ul>
+						{% for platform in platforms %}
+							<li><a href="{{ url('pushnotifications/devices/'~platform.handle~'/new') }}">{{ platform.name|t }}</a></li>
+						{% endfor %}
+					</ul>
+				</div>
+			{% else %}
+				<a class="btn submit add icon" href="{{ url('pushnotifications/devices/'~platforms[0].handle~'/new') }}">{{ "New Device"|t }}</a>
+			{% endif %}
+		</div>
+	{% endif %}
+
+	{{ parent() }}
+{% endblock %}
