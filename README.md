@@ -9,6 +9,8 @@ Features:
 
 Todo:
 - Craft part is mostly done, now implement push functionality
+- Finish ZendService Mpns service and submit to Zend(?)
+- Finish NotificationPusher fork which implements Mpns adapter and submit Pull Request
 
 Important:
 The plugin's folder should be named "pushnotifications"
