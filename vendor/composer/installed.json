@@ -1,95 +1,5 @@
 [
     {
-        "name": "zendframework/zendservice-google-gcm",
-        "version": "1.0.1",
-        "version_normalized": "1.0.1.0",
-        "source": {
-            "type": "git",
-            "url": "https://github.com/zendframework/ZendService_Google_Gcm.git",
-            "reference": "c60bc16ddee0e57452a87d7b0b28db679f10409a"
-        },
-        "dist": {
-            "type": "zip",
-            "url": "https://api.github.com/repos/zendframework/ZendService_Google_Gcm/zipball/c60bc16ddee0e57452a87d7b0b28db679f10409a",
-            "reference": "c60bc16ddee0e57452a87d7b0b28db679f10409a",
-            "shasum": ""
-        },
-        "require": {
-            "php": ">=5.3.3",
-            "zendframework/zend-http": ">=2.0.0",
-            "zendframework/zend-json": ">=2.0.0"
-        },
-        "require-dev": {
-            "phpunit/phpunit": "3.7.*"
-        },
-        "time": "2013-10-24 20:12:41",
-        "type": "library",
-        "installation-source": "dist",
-        "autoload": {
-            "psr-0": {
-                "ZendService": "library/"
-            }
-        },
-        "notification-url": "https://packagist.org/downloads/",
-        "license": [
-            "BSD-3-Clause"
-        ],
-        "description": "OOP wrapper for Google Cloud Messaging",
-        "homepage": "http://packages.zendframework.com/",
-        "keywords": [
-            "gcm",
-            "google",
-            "notification",
-            "push",
-            "zf2"
-        ]
-    },
-    {
-        "name": "zendframework/zendservice-apple-apns",
-        "version": "1.0.5",
-        "version_normalized": "1.0.5.0",
-        "source": {
-            "type": "git",
-            "url": "https://github.com/zendframework/ZendService_Apple_Apns.git",
-            "reference": "2a2363d9875e5308e7a8b482bc3362aa807eb7aa"
-        },
-        "dist": {
-            "type": "zip",
-            "url": "https://api.github.com/repos/zendframework/ZendService_Apple_Apns/zipball/2a2363d9875e5308e7a8b482bc3362aa807eb7aa",
-            "reference": "2a2363d9875e5308e7a8b482bc3362aa807eb7aa",
-            "shasum": ""
-        },
-        "require": {
-            "php": ">=5.3.3",
-            "zendframework/zend-json": "~2.0"
-        },
-        "require-dev": {
-            "phpunit/phpunit": "3.7.*"
-        },
-        "time": "2015-01-20 15:33:09",
-        "type": "library",
-        "installation-source": "dist",
-        "autoload": {
-            "psr-0": {
-                "ZendService\\Apple\\Apns\\": "library/",
-                "ZendService\\Apple\\Exception\\": "library/"
-            }
-        },
-        "notification-url": "https://packagist.org/downloads/",
-        "license": [
-            "BSD-3-Clause"
-        ],
-        "description": "OOP Zend Framework 2 wrapper for Apple Push Notification Service",
-        "homepage": "http://packages.zendframework.com/",
-        "keywords": [
-            "apns",
-            "apple",
-            "notification",
-            "push",
-            "zf2"
-        ]
-    },
-    {
         "name": "composer/installers",
         "version": "dev-master",
         "version_normalized": "9999999-dev",
@@ -315,17 +225,17 @@
     },
     {
         "name": "zendframework/zend-json",
-        "version": "dev-master",
-        "version_normalized": "9999999-dev",
+        "version": "dev-develop",
+        "version_normalized": "dev-develop",
         "source": {
             "type": "git",
             "url": "https://github.com/zendframework/zend-json.git",
-            "reference": "a37f84ff05352831dfafb2f0ad91cc9ddb53661b"
+            "reference": "d345c0ee8777dc42cc916995c2aefc50bb4bf1e4"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/zendframework/zend-json/zipball/a37f84ff05352831dfafb2f0ad91cc9ddb53661b",
-            "reference": "a37f84ff05352831dfafb2f0ad91cc9ddb53661b",
+            "url": "https://api.github.com/repos/zendframework/zend-json/zipball/d345c0ee8777dc42cc916995c2aefc50bb4bf1e4",
+            "reference": "d345c0ee8777dc42cc916995c2aefc50bb4bf1e4",
             "shasum": ""
         },
         "require": {
@@ -344,7 +254,7 @@
             "zendframework/zend-server": "Zend\\Server component",
             "zendframework/zendxml": "To support Zend\\Json\\Json::fromXml() usage"
         },
-        "time": "2015-06-05 09:17:39",
+        "time": "2015-06-05 09:18:07",
         "type": "library",
         "extra": {
             "branch-alias": {
@@ -679,6 +589,96 @@
         }
     },
     {
+        "name": "zendframework/zendservice-google-gcm",
+        "version": "1.0.1",
+        "version_normalized": "1.0.1.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/zendframework/ZendService_Google_Gcm.git",
+            "reference": "c60bc16ddee0e57452a87d7b0b28db679f10409a"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/zendframework/ZendService_Google_Gcm/zipball/c60bc16ddee0e57452a87d7b0b28db679f10409a",
+            "reference": "c60bc16ddee0e57452a87d7b0b28db679f10409a",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.3.3",
+            "zendframework/zend-http": ">=2.0.0",
+            "zendframework/zend-json": ">=2.0.0"
+        },
+        "require-dev": {
+            "phpunit/phpunit": "3.7.*"
+        },
+        "time": "2013-10-24 20:12:41",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-0": {
+                "ZendService": "library/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "BSD-3-Clause"
+        ],
+        "description": "OOP wrapper for Google Cloud Messaging",
+        "homepage": "http://packages.zendframework.com/",
+        "keywords": [
+            "gcm",
+            "google",
+            "notification",
+            "push",
+            "zf2"
+        ]
+    },
+    {
+        "name": "zendframework/zendservice-apple-apns",
+        "version": "1.0.5",
+        "version_normalized": "1.0.5.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/zendframework/ZendService_Apple_Apns.git",
+            "reference": "2a2363d9875e5308e7a8b482bc3362aa807eb7aa"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/zendframework/ZendService_Apple_Apns/zipball/2a2363d9875e5308e7a8b482bc3362aa807eb7aa",
+            "reference": "2a2363d9875e5308e7a8b482bc3362aa807eb7aa",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.3.3",
+            "zendframework/zend-json": "~2.0"
+        },
+        "require-dev": {
+            "phpunit/phpunit": "3.7.*"
+        },
+        "time": "2015-01-20 15:33:09",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-0": {
+                "ZendService\\Apple\\Apns\\": "library/",
+                "ZendService\\Apple\\Exception\\": "library/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "BSD-3-Clause"
+        ],
+        "description": "OOP Zend Framework 2 wrapper for Apple Push Notification Service",
+        "homepage": "http://packages.zendframework.com/",
+        "keywords": [
+            "apns",
+            "apple",
+            "notification",
+            "push",
+            "zf2"
+        ]
+    },
+    {
         "name": "symfony/process",
         "version": "2.8.x-dev",
         "version_normalized": "2.8.9999999.9999999-dev",
@@ -877,7 +877,7 @@
             "np"
         ],
         "type": "standalone",
-        "installation-source": "source",
+        "installation-source": "dist",
         "autoload": {
             "psr-0": {
                 "Sly": "src/"
