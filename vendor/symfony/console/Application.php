@@ -1142,7 +1142,7 @@ class Application
             $lines[] = str_pad($line, $width);
             $line = $char;
         }
-        if ('' !== $line) {
+        if (strlen($line)) {
             $lines[] = count($lines) ? str_pad($line, $width) : $line;
         }
 

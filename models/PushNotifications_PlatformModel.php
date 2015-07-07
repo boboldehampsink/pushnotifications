@@ -6,7 +6,6 @@ require_once dirname(__FILE__).'/../vendor/autoload.php';
 
 use Sly\NotificationPusher\Adapter\Apns as ApnsAdapter;
 use Sly\NotificationPusher\Adapter\Gcm as GcmAdapter;
-use Sly\NotificationPusher\Adapter\Mpns as MpnsAdapter;
 
 /**
  * Push Notifications - Platform Model.
@@ -20,6 +19,12 @@ use Sly\NotificationPusher\Adapter\Mpns as MpnsAdapter;
  */
 class PushNotifications_PlatformModel extends BaseElementModel
 {
+    /**
+     * Platform constants.
+     */
+    const PLATFORM_IOS = 'ios';
+    const PLATFORM_ANDROID = 'android';
+
     /**
      * Use the platform name as the string representation.
      *
@@ -52,9 +57,8 @@ class PushNotifications_PlatformModel extends BaseElementModel
     public function getOptions()
     {
         return array(
-            array('label' => 'iOS', 'value' => 'ios'),
-            array('label' => 'Android', 'value' => 'android'),
-            array('label' => 'WP8', 'value' => 'wp8'),
+            array('label' => 'iOS', 'value' => self::PLATFORM_IOS),
+            array('label' => 'Android', 'value' => self::PLATFORM_ANDROID),
         );
     }
 
@@ -76,10 +80,6 @@ class PushNotifications_PlatformModel extends BaseElementModel
                 return new GcmAdapter(array(
                     'apiKey' => $this->setting,
                 ));
-                break;
-
-            case 'wp8':
-                return new MpnsAdapter();
                 break;
         }
     }

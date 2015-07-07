@@ -22,7 +22,7 @@ class PriorityList implements Iterator, Countable
      *
      * @var array[]
      */
-    protected $items = [];
+    protected $items = array();
 
     /**
      * Serial assigned to items to preserve LIFO.
@@ -65,11 +65,11 @@ class PriorityList implements Iterator, Countable
         $this->sorted = false;
         $this->count++;
 
-        $this->items[$name] = [
+        $this->items[$name] = array(
             'data'     => $value,
             'priority' => (int) $priority,
             'serial'   => $this->serial++,
-        ];
+        );
     }
 
     /**
@@ -114,7 +114,7 @@ class PriorityList implements Iterator, Countable
      */
     public function clear()
     {
-        $this->items  = [];
+        $this->items  = array();
         $this->serial = 0;
         $this->count  = 0;
         $this->sorted = false;
@@ -143,7 +143,7 @@ class PriorityList implements Iterator, Countable
     protected function sort()
     {
         if (!$this->sorted) {
-            uasort($this->items, [$this, 'compare']);
+            uasort($this->items, array($this, 'compare'));
             $this->sorted = true;
         }
     }

@@ -144,11 +144,11 @@ class Error
      */
     public function toArray()
     {
-        return [
+        return array(
             'code'    => $this->getCode(),
             'message' => $this->getMessage(),
             'data'    => $this->getData(),
-        ];
+        );
     }
 
     /**

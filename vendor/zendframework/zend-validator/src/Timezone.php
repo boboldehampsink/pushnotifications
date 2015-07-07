@@ -24,43 +24,43 @@ class Timezone extends AbstractValidator
     /**
      * @var array
      */
-    protected $constants = [
+    protected $constants = array(
         self::LOCATION       => 'location',
         self::ABBREVIATION   => 'abbreviation',
-    ];
+    );
 
     /**
      * Default value for types; value = 3
      *
      * @var array
      */
-    protected $defaultType = [
+    protected $defaultType = array(
         self::LOCATION,
         self::ABBREVIATION,
-    ];
+    );
 
     /**
      * @var array
      */
-    protected $messageTemplates = [
+    protected $messageTemplates = array(
         self::INVALID                       => 'Invalid timezone given.',
         self::INVALID_TIMEZONE_LOCATION     => 'Invalid timezone location given.',
         self::INVALID_TIMEZONE_ABBREVIATION => 'Invalid timezone abbreviation given.',
-    ];
+    );
 
     /**
      * Options for this validator
      *
      * @var array
      */
-    protected $options = [];
+    protected $options = array();
 
     /**
      * Constructor
      *
      * @param array|int $options OPTIONAL
      */
-    public function __construct($options = [])
+    public function __construct($options = array())
     {
         $opts['type'] = $this->defaultType;
 

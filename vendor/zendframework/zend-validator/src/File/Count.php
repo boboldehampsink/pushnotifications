@@ -28,19 +28,19 @@ class Count extends AbstractValidator
     /**
      * @var array Error message templates
      */
-    protected $messageTemplates = [
+    protected $messageTemplates = array(
         self::TOO_MANY => "Too many files, maximum '%max%' are allowed but '%count%' are given",
         self::TOO_FEW  => "Too few files, minimum '%min%' are expected but '%count%' are given",
-    ];
+    );
 
     /**
      * @var array Error message template variables
      */
-    protected $messageVariables = [
-        'min'   => ['options' => 'min'],
-        'max'   => ['options' => 'max'],
+    protected $messageVariables = array(
+        'min'   => array('options' => 'min'),
+        'max'   => array('options' => 'max'),
         'count' => 'count'
-    ];
+    );
 
     /**
      * Actual filecount
@@ -60,10 +60,10 @@ class Count extends AbstractValidator
      *
      * @var array
      */
-    protected $options = [
+    protected $options = array(
         'min' => null,  // Minimum file count, if null there is no minimum file count
         'max' => null,  // Maximum file count, if null there is no maximum file count
-    ];
+    );
 
     /**
      * Sets validator options
@@ -81,7 +81,7 @@ class Count extends AbstractValidator
     public function __construct($options = null)
     {
         if (is_string($options) || is_numeric($options)) {
-            $options = ['max' => $options];
+            $options = array('max' => $options);
         }
 
         if (1 < func_num_args()) {
@@ -177,7 +177,7 @@ class Count extends AbstractValidator
     public function addFile($file)
     {
         if (is_string($file)) {
-            $file = [$file];
+            $file = array($file);
         }
 
         if (is_array($file)) {

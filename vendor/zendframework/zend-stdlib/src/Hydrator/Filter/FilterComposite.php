@@ -40,7 +40,7 @@ class FilterComposite implements FilterInterface
      * @param  array $andFilter
      * @throws InvalidArgumentException
      */
-    public function __construct($orFilter = [], $andFilter = [])
+    public function __construct($orFilter = array(), $andFilter = array())
     {
         array_walk(
             $orFilter,

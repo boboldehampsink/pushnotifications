@@ -21,14 +21,14 @@ class Explode extends AbstractValidator implements ValidatorPluginManagerAwareIn
     /**
      * @var array
      */
-    protected $messageTemplates = [
+    protected $messageTemplates = array(
         self::INVALID => "Invalid type given",
-    ];
+    );
 
     /**
      * @var array
      */
-    protected $messageVariables = [];
+    protected $messageVariables = array();
 
     /**
      * @var string
@@ -107,7 +107,7 @@ class Explode extends AbstractValidator implements ValidatorPluginManagerAwareIn
                 );
             }
             $name = $validator['name'];
-            $options = isset($validator['options']) ? $validator['options'] : [];
+            $options = isset($validator['options']) ? $validator['options'] : array();
             $validator = $this->getValidatorPluginManager()->get($name, $options);
         }
 
@@ -181,9 +181,9 @@ class Explode extends AbstractValidator implements ValidatorPluginManagerAwareIn
             // single values (ie. MultiCheckbox form behavior)
             $values = (null !== $delimiter)
                       ? explode($this->valueDelimiter, $value)
-                      : [$value];
+                      : array($value);
         } else {
-            $values = [$value];
+            $values = array($value);
         }
 
         $validator = $this->getValidator();

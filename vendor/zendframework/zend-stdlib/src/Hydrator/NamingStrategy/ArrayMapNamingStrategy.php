@@ -14,12 +14,12 @@ final class ArrayMapNamingStrategy implements NamingStrategyInterface
     /**
      * @var string[]
      */
-    private $extractionMap = [];
+    private $extractionMap = array();
 
     /**
      * @var string[]
      */
-    private $hydrationMap = [];
+    private $hydrationMap = array();
 
     /**
      * Constructor

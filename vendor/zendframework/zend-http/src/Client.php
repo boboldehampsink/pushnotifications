@@ -61,7 +61,7 @@ class Client implements Stdlib\DispatchableInterface
     /**
      * @var array
      */
-    protected $auth = [];
+    protected $auth = array();
 
     /**
      * @var string
@@ -71,7 +71,7 @@ class Client implements Stdlib\DispatchableInterface
     /**
      * @var array of Header\SetCookie
      */
-    protected $cookies = [];
+    protected $cookies = array();
 
     /**
      * @var string
@@ -98,7 +98,7 @@ class Client implements Stdlib\DispatchableInterface
      *
      * @var array
      */
-    protected $config = [
+    protected $config = array(
         'maxredirects'    => 5,
         'strictredirects' => false,
         'useragent'       => 'Zend\Http\Client',
@@ -111,7 +111,7 @@ class Client implements Stdlib\DispatchableInterface
         'encodecookies'   => true,
         'argseparator'    => null,
         'rfc3986strict'   => false
-    ];
+    );
 
     /**
      * Fileinfo magic database resource
@@ -146,7 +146,7 @@ class Client implements Stdlib\DispatchableInterface
      * @return Client
      * @throws Client\Exception\InvalidArgumentException
      */
-    public function setOptions($options = [])
+    public function setOptions($options = array())
     {
         if ($options instanceof Traversable) {
             $options = ArrayUtils::iteratorToArray($options);
@@ -157,7 +157,7 @@ class Client implements Stdlib\DispatchableInterface
 
         /** Config Key Normalization */
         foreach ($options as $k => $v) {
-            $this->config[str_replace(['-', '_', ' ', '.'], '', strtolower($k))] = $v; // replace w/ normalized
+            $this->config[str_replace(array('-', '_', ' ', '.'), '', strtolower($k))] = $v; // replace w/ normalized
         }
 
         // Pass configuration options to the adapter if it exists
@@ -350,13 +350,13 @@ class Client implements Stdlib\DispatchableInterface
         if (empty($this->encType)
             && in_array(
                 $method,
-                [
+                array(
                     Request::METHOD_POST,
                     Request::METHOD_PUT,
                     Request::METHOD_DELETE,
                     Request::METHOD_PATCH,
                     Request::METHOD_OPTIONS,
-                ],
+                ),
                 true
             )
         ) {
@@ -384,7 +384,7 @@ class Client implements Stdlib\DispatchableInterface
      */
     public function setArgSeparator($argSeparator)
     {
-        $this->setOptions(["argseparator" => $argSeparator]);
+        $this->setOptions(array("argseparator" => $argSeparator));
         return $this;
     }
 
@@ -592,7 +592,7 @@ class Client implements Stdlib\DispatchableInterface
      */
     public function clearCookies()
     {
-        $this->cookies = [];
+        $this->cookies = array();
     }
 
     /**
@@ -659,7 +659,7 @@ class Client implements Stdlib\DispatchableInterface
      */
     public function setStream($streamfile = true)
     {
-        $this->setOptions(["outputstream" => $streamfile]);
+        $this->setOptions(array("outputstream" => $streamfile));
         return $this;
     }
 
@@ -727,11 +727,11 @@ class Client implements Stdlib\DispatchableInterface
             throw new Exception\InvalidArgumentException("The username cannot be empty");
         }
 
-        $this->auth = [
+        $this->auth = array(
             'user'     => $user,
             'password' => $password,
             'type'     => $type
-        ];
+        );
 
         return $this;
     }
@@ -741,7 +741,7 @@ class Client implements Stdlib\DispatchableInterface
      */
     public function clearAuth()
     {
-        $this->auth = [];
+        $this->auth = array();
     }
 
     /**
@@ -756,7 +756,7 @@ class Client implements Stdlib\DispatchableInterface
      * @throws Exception\InvalidArgumentException
      * @return string|bool
      */
-    protected function calcAuthDigest($user, $password, $type = self::AUTH_BASIC, $digest = [], $entityBody = null)
+    protected function calcAuthDigest($user, $password, $type = self::AUTH_BASIC, $digest = array(), $entityBody = null)
     {
         if (!defined('self::AUTH_' . strtoupper($type))) {
             throw new Exception\InvalidArgumentException("Invalid or not supported authentication type: '$type'");
@@ -1028,12 +1028,12 @@ class Client implements Stdlib\DispatchableInterface
             }
         }
 
-        $this->getRequest()->getFiles()->set($filename, [
+        $this->getRequest()->getFiles()->set($filename, array(
             'formname' => $formname,
             'filename' => basename($filename),
             'ctype' => $ctype,
             'data' => $data
-        ]);
+        ));
 
         return $this;
     }
@@ -1064,7 +1064,7 @@ class Client implements Stdlib\DispatchableInterface
      */
     protected function prepareCookies($domain, $path, $secure)
     {
-        $validCookies = [];
+        $validCookies = array();
 
         if (!empty($this->cookies)) {
             foreach ($this->cookies as $id => $cookie) {
@@ -1096,7 +1096,7 @@ class Client implements Stdlib\DispatchableInterface
      */
     protected function prepareHeaders($body, $uri)
     {
-        $headers = [];
+        $headers = array();
 
         // Set the host header
         if ($this->config['httpversion'] == Request::VERSION_11) {
@@ -1222,7 +1222,7 @@ class Client implements Stdlib\DispatchableInterface
 
                 // Encode files
                 foreach ($this->getRequest()->getFiles()->toArray() as $file) {
-                    $fhead = ['Content-Type' => $file['ctype']];
+                    $fhead = array('Content-Type' => $file['ctype']);
                     $body .= $this->encodeFormData($boundary, $file['formname'], $file['data'], $file['filename'], $fhead);
                 }
                 $body .= "--{$boundary}--\r\n";
@@ -1289,7 +1289,7 @@ class Client implements Stdlib\DispatchableInterface
      * @param array $headers Associative array of optional headers @example ("Content-Transfer-Encoding" => "binary")
      * @return string
      */
-    public function encodeFormData($boundary, $name, $value, $filename = null, $headers = [])
+    public function encodeFormData($boundary, $name, $value, $filename = null, $headers = array())
     {
         $ret = "--{$boundary}\r\n" .
             'Content-Disposition: form-data; name="' . $name . '"';
@@ -1328,7 +1328,7 @@ class Client implements Stdlib\DispatchableInterface
             return $parray;
         }
 
-        $parameters = [];
+        $parameters = array();
 
         foreach ($parray as $name => $value) {
             // Calculate array key
@@ -1345,7 +1345,7 @@ class Client implements Stdlib\DispatchableInterface
             if (is_array($value)) {
                 $parameters = array_merge($parameters, $this->flattenParametersArray($value, $key));
             } else {
-                $parameters[] = [$key, $value];
+                $parameters[] = array($key, $value);
             }
         }
 
@@ -1364,7 +1364,7 @@ class Client implements Stdlib\DispatchableInterface
      * @return string the raw response
      * @throws Exception\RuntimeException
      */
-    protected function doRequest(Http $uri, $method, $secure = false, $headers = [], $body = '')
+    protected function doRequest(Http $uri, $method, $secure = false, $headers = array(), $body = '')
     {
         // Open the connection, send the request and read the response
         $this->adapter->connect($uri->getHost(), $uri->getPort(), $secure);

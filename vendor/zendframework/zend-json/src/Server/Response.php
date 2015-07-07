@@ -205,15 +205,15 @@ class Response
     public function toJson()
     {
         if ($this->isError()) {
-            $response = [
+            $response = array(
                 'error'  => $this->getError()->toArray(),
                 'id'     => $this->getId(),
-            ];
+            );
         } else {
-            $response = [
+            $response = array(
                 'result' => $this->getResult(),
                 'id'     => $this->getId(),
-            ];
+            );
         }
 
         if (null !== ($version = $this->getVersion())) {

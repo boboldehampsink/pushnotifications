@@ -31,18 +31,18 @@ class MimeType extends AbstractValidator
     /**
      * @var array Error message templates
      */
-    protected $messageTemplates = [
+    protected $messageTemplates = array(
         self::FALSE_TYPE   => "File has an incorrect mimetype of '%type%'",
         self::NOT_DETECTED => "The mimetype could not be detected from the file",
         self::NOT_READABLE => "File is not readable or does not exist",
-    ];
+    );
 
     /**
      * @var array
      */
-    protected $messageVariables = [
+    protected $messageVariables = array(
         'type' => 'type'
-    ];
+    );
 
     /**
      * @var string
@@ -60,7 +60,7 @@ class MimeType extends AbstractValidator
      * If no environment variable 'MAGIC' is set, try and autodiscover it based on common locations
      * @var array
      */
-    protected $magicFiles = [
+    protected $magicFiles = array(
         '/usr/share/misc/magic',
         '/usr/share/misc/magic.mime',
         '/usr/share/misc/magic.mgc',
@@ -70,19 +70,19 @@ class MimeType extends AbstractValidator
         '/usr/share/file/magic',
         '/usr/share/file/magic.mime',
         '/usr/share/file/magic.mgc',
-    ];
+    );
 
     /**
      * Options for this validator
      *
      * @var array
      */
-    protected $options = [
+    protected $options = array(
         'enableHeaderCheck' => false,  // Allow header check
         'disableMagicFile'  => false,  // Disable usage of magicfile
         'magicFile'         => null,   // Magicfile to use
         'mimeType'          => null,   // Mimetype to allow
-    ];
+    );
 
     /**
      * Sets validator options
@@ -100,7 +100,7 @@ class MimeType extends AbstractValidator
             $options = ArrayUtils::iteratorToArray($options);
         } elseif (is_string($options)) {
             $this->setMimeType($options);
-            $options = [];
+            $options = array();
         } elseif (is_array($options)) {
             if (isset($options['magicFile'])) {
                 $this->setMagicFile($options['magicFile']);

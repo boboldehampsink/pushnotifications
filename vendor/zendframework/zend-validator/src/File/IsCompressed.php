@@ -27,21 +27,21 @@ class IsCompressed extends MimeType
     /**
      * @var array Error message templates
      */
-    protected $messageTemplates = [
+    protected $messageTemplates = array(
         self::FALSE_TYPE   => "File is not compressed, '%type%' detected",
         self::NOT_DETECTED => "The mimetype could not be detected from the file",
         self::NOT_READABLE => "File is not readable or does not exist",
-    ];
+    );
 
     /**
      * Sets validator options
      *
      * @param string|array|Traversable $options
      */
-    public function __construct($options = [])
+    public function __construct($options = array())
     {
         // http://hul.harvard.edu/ois/systems/wax/wax-public-help/mimetypes.htm
-        $default = [
+        $default = array(
             'application/arj',
             'application/gnutar',
             'application/lha',
@@ -74,14 +74,14 @@ class IsCompressed extends MimeType
             'application/x-zip',
             'application/zoo',
             'multipart/x-gzip',
-        ];
+        );
 
         if ($options instanceof Traversable) {
             $options = ArrayUtils::iteratorToArray($options);
         }
 
         if ($options === null) {
-            $options = [];
+            $options = array();
         }
 
         parent::__construct($options);

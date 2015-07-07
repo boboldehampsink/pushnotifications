@@ -23,7 +23,7 @@ class SerializableStrategy implements StrategyInterface
     /**
      * @var array
      */
-    protected $serializerOptions = [];
+    protected $serializerOptions = array();
 
     /**
      *

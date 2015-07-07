@@ -495,6 +495,8 @@ class ApplicationTest extends \PHPUnit_Framework_TestCase
      */
     public function testLegacyAsText()
     {
+        $this->iniSet('error_reporting', -1 & ~E_USER_DEPRECATED);
+
         $application = new Application();
         $application->add(new \FooCommand());
         $this->ensureStaticCommandHelp($application);
@@ -507,6 +509,8 @@ class ApplicationTest extends \PHPUnit_Framework_TestCase
      */
     public function testLegacyAsXml()
     {
+        $this->iniSet('error_reporting', -1 & ~E_USER_DEPRECATED);
+
         $application = new Application();
         $application->add(new \FooCommand());
         $this->ensureStaticCommandHelp($application);
@@ -675,7 +679,7 @@ class ApplicationTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Issue #9285.
+     * Issue #9285
      *
      * If the "verbose" option is just before an argument in ArgvInput,
      * an argument value should not be treated as verbosity value.

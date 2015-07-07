@@ -22,13 +22,13 @@ class PluginClassLoader implements PluginClassLocator
      * List of plugin name => class name pairs
      * @var array
      */
-    protected $plugins = [];
+    protected $plugins = array();
 
     /**
      * Static map allow global seeding of plugin loader
      * @var array
      */
-    protected static $staticMap = [];
+    protected static $staticMap = array();
 
     /**
      * Constructor
@@ -60,7 +60,7 @@ class PluginClassLoader implements PluginClassLocator
     public static function addStaticMap($map)
     {
         if (null === $map) {
-            static::$staticMap = [];
+            static::$staticMap = array();
             return;
         }
 

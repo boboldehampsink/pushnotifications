@@ -22,10 +22,10 @@ class Uri extends AbstractValidator
     /**
      * @var array
      */
-    protected $messageTemplates = [
+    protected $messageTemplates = array(
         self::INVALID => "Invalid type given. String expected",
         self::NOT_URI => "The input does not appear to be a valid Uri",
-    ];
+    );
 
     /**
      * @var UriHandler
@@ -47,7 +47,7 @@ class Uri extends AbstractValidator
      *
      * @param array|Traversable $options
      */
-    public function __construct($options = [])
+    public function __construct($options = array())
     {
         if ($options instanceof Traversable) {
             $options = iterator_to_array($options);

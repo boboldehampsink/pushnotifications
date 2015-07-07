@@ -18,14 +18,14 @@ class MapNamingStrategy implements NamingStrategyInterface
      *
      * @var array
      */
-    protected $mapping = [];
+    protected $mapping = array();
 
     /**
      * Reversed map for extract name conversion.
      *
      * @var array
      */
-    protected $reverse = [];
+    protected $reverse = array();
 
     /**
      * Initialize.

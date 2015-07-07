@@ -49,24 +49,17 @@ class PushNotifications_NotificationModel extends BaseElementModel
     public function getOptions($platform)
     {
         switch ($platform) {
-            case 'ios':
+            case PushNotifications_PlatformModel::PLATFORM_IOS:
                 return array(
                     'actionLocKey' => $this->title,
                     'custom' => $this->param,
                 );
                 break;
 
-            case 'android':
+            case PushNotifications_PlatformModel::PLATFORM_ANDROID:
                 return array(
                     'title' => $this->title,
                     'custom' => $this->param,
-                );
-                break;
-
-            case 'wp8':
-                return array(
-                    'title' => $this->title,
-                    'param' => $this->param,
                 );
                 break;
         }

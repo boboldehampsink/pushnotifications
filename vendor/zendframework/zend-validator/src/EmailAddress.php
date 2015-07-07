@@ -24,7 +24,7 @@ class EmailAddress extends AbstractValidator
     /**
      * @var array
      */
-    protected $messageTemplates = [
+    protected $messageTemplates = array(
         self::INVALID            => "Invalid type given. String expected",
         self::INVALID_FORMAT     => "The input is not a valid email address. Use the basic format local-part@hostname",
         self::INVALID_HOSTNAME   => "'%hostname%' is not a valid hostname for the email address",
@@ -34,15 +34,15 @@ class EmailAddress extends AbstractValidator
         self::QUOTED_STRING      => "'%localPart%' can not be matched against quoted-string format",
         self::INVALID_LOCAL_PART => "'%localPart%' is not a valid local part for the email address",
         self::LENGTH_EXCEEDED    => "The input exceeds the allowed length",
-    ];
+    );
 
     /**
      * @var array
      */
-    protected $messageVariables = [
+    protected $messageVariables = array(
         'hostname'  => 'hostname',
         'localPart' => 'localPart'
-    ];
+    );
 
     /**
      * @var string
@@ -64,14 +64,13 @@ class EmailAddress extends AbstractValidator
     /**
      * Internal options array
      */
-    protected $options = [
+    protected $options = array(
         'useMxCheck'        => false,
         'useDeepMxCheck'    => false,
         'useDomainCheck'    => true,
         'allow'             => Hostname::ALLOW_DNS,
-        'strict'            => true,
         'hostnameValidator' => null,
-    ];
+    );
 
     /**
      * Instantiates hostname validator for local use
@@ -79,13 +78,12 @@ class EmailAddress extends AbstractValidator
      * The following additional option keys are supported:
      * 'hostnameValidator' => A hostname validator, see Zend\Validator\Hostname
      * 'allow'             => Options for the hostname validator, see Zend\Validator\Hostname::ALLOW_*
-     * 'strict'            => Whether to adhere to strictest requirements in the spec
      * 'useMxCheck'        => If MX check should be enabled, boolean
      * 'useDeepMxCheck'    => If a deep MX check should be done, boolean
      *
      * @param array|\Traversable $options OPTIONAL
      */
-    public function __construct($options = [])
+    public function __construct($options = array())
     {
         if (!is_array($options)) {
             $options = func_get_args();
@@ -292,7 +290,7 @@ class EmailAddress extends AbstractValidator
         if (!preg_match('/^([0-9]{1,3}\.){3}[0-9]{1,3}$/', $host)) {
             $host = gethostbynamel($host);
         } else {
-            $host = [$host];
+            $host = array($host);
         }
 
         if (empty($host)) {
@@ -373,8 +371,8 @@ class EmailAddress extends AbstractValidator
      */
     protected function validateMXRecords()
     {
-        $mxHosts = [];
-        $weight  = [];
+        $mxHosts = array();
+        $weight  = array();
         $result = getmxrr($this->idnToAscii($this->hostname), $mxHosts, $weight);
         if (!empty($mxHosts) && !empty($weight)) {
             $this->mxRecord = array_combine($mxHosts, $weight);
@@ -501,7 +499,7 @@ class EmailAddress extends AbstractValidator
             return false;
         }
 
-        if ($this->getOption('strict') && (strlen($this->localPart) > 64) || (strlen($this->hostname) > 255)) {
+        if ((strlen($this->localPart) > 64) || (strlen($this->hostname) > 255)) {
             $length = false;
             $this->error(self::LENGTH_EXCEEDED);
         }
@@ -544,13 +542,7 @@ class EmailAddress extends AbstractValidator
     protected function idnToUtf8($email)
     {
         if (extension_loaded('intl')) {
-            // The documentation does not clarify what kind of failure
-            // can happen in idn_to_utf8. One can assume if the source
-            // is not IDN encoded, it would fail, but it usually returns
-            // the source string in those cases.
-            // But not when the source string is long enough.
-            // Thus we default to source string ourselves.
-            return idn_to_utf8($email) ?: $email;
+            return idn_to_utf8($email);
         }
         return $email;
     }

@@ -27,20 +27,20 @@ class WordCount extends AbstractValidator
     /**
      * @var array Error message templates
      */
-    protected $messageTemplates = [
+    protected $messageTemplates = array(
         self::TOO_MUCH => "Too many words, maximum '%max%' are allowed but '%count%' were counted",
         self::TOO_LESS => "Too few words, minimum '%min%' are expected but '%count%' were counted",
         self::NOT_FOUND => "File is not readable or does not exist",
-    ];
+    );
 
     /**
      * @var array Error message template variables
      */
-    protected $messageVariables = [
-        'min'   => ['options' => 'min'],
-        'max'   => ['options' => 'max'],
+    protected $messageVariables = array(
+        'min'   => array('options' => 'min'),
+        'max'   => array('options' => 'max'),
         'count' => 'count'
-    ];
+    );
 
     /**
      * Word count
@@ -54,10 +54,10 @@ class WordCount extends AbstractValidator
      *
      * @var array
      */
-    protected $options = [
+    protected $options = array(
         'min' => null,  // Minimum word count, if null there is no minimum word count
         'max' => null,  // Maximum word count, if null there is no maximum word count
-    ];
+    );
 
     /**
      * Sets validator options
@@ -75,7 +75,7 @@ class WordCount extends AbstractValidator
     public function __construct($options = null)
     {
         if (is_string($options) || is_numeric($options)) {
-            $options = ['max' => $options];
+            $options = array('max' => $options);
         }
 
         if (1 < func_num_args()) {

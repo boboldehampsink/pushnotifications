@@ -54,6 +54,5 @@ $pushManager->push(); // Returns a collection of notified devices
 * [Getting started](https://github.com/Ph3nol/NotificationPusher/blob/master/doc/getting-started.md)
 * [APNS adapter](https://github.com/Ph3nol/NotificationPusher/blob/master/doc/apns-adapter.md)
 * GCM adapter
-* [MPNS adapter](https://github.com/Ph3nol/NotificationPusher/blob/master/doc/mpns-adapter.md)
 * [Create an adapter](https://github.com/Ph3nol/NotificationPusher/blob/master/doc/create-an-adapter.md)
 * [Push from CLI](https://github.com/Ph3nol/NotificationPusher/blob/master/doc/push-from-cli.md)

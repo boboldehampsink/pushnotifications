@@ -24,18 +24,11 @@ Here is a concrete GCM adapter example:
 ./np push gcm <token> "It's an example!" --api-key=XXXXXXXXXX
 ```
 
-Here is a concrete MPNS adapter example:
-
-```
-./np push mpns <token> "It's an example!" --api-key=XXXXXXXXXX
-```
-
 ## Documentation index
 
 * [Installation](https://github.com/Ph3nol/NotificationPusher/blob/master/doc/installation.md)
 * [Getting started](https://github.com/Ph3nol/NotificationPusher/blob/master/doc/getting-started.md)
 * [APNS adapter](https://github.com/Ph3nol/NotificationPusher/blob/master/doc/apns-adapter.md)
 * [GCM adapter](https://github.com/Ph3nol/NotificationPusher/blob/master/doc/gcm-adapter.md)
-* [MPNS adapter](https://github.com/Ph3nol/NotificationPusher/blob/master/doc/mpns-adapter.md)
 * [Create an adapter](https://github.com/Ph3nol/NotificationPusher/blob/master/doc/create-an-adapter.md)
 * Push from CLI

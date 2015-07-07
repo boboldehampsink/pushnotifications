@@ -31,7 +31,7 @@ class NotEmpty extends AbstractValidator
     const INVALID  = 'notEmptyInvalid';
     const IS_EMPTY = 'isEmpty';
 
-    protected $constants = [
+    protected $constants = array(
         self::BOOLEAN       => 'boolean',
         self::INTEGER       => 'integer',
         self::FLOAT         => 'float',
@@ -45,14 +45,14 @@ class NotEmpty extends AbstractValidator
         self::OBJECT_STRING => 'objectstring',
         self::OBJECT_COUNT  => 'objectcount',
         self::ALL           => 'all',
-    ];
+    );
 
     /**
      * Default value for types; value = 493
      *
      * @var array
      */
-    protected $defaultType = [
+    protected $defaultType = array(
         self::OBJECT,
         self::SPACE,
         self::NULL,
@@ -60,22 +60,22 @@ class NotEmpty extends AbstractValidator
         self::STRING,
         self::FLOAT,
         self::BOOLEAN
-    ];
+    );
 
     /**
      * @var array
      */
-    protected $messageTemplates = [
+    protected $messageTemplates = array(
         self::IS_EMPTY => "Value is required and can't be empty",
         self::INVALID  => "Invalid type given. String, integer, float, boolean or array expected",
-    ];
+    );
 
     /**
      * Options for this validator
      *
      * @var array
      */
-    protected $options = [];
+    protected $options = array();
 
     /**
      * Constructor
@@ -92,7 +92,7 @@ class NotEmpty extends AbstractValidator
 
         if (!is_array($options)) {
             $options = func_get_args();
-            $temp    = [];
+            $temp    = array();
             if (!empty($options)) {
                 $temp['type'] = array_shift($options);
             }
@@ -251,7 +251,7 @@ class NotEmpty extends AbstractValidator
 
         // EMPTY_ARRAY (array())
         if ($type & self::EMPTY_ARRAY) {
-            if (is_array($value) && ($value == [])) {
+            if (is_array($value) && ($value == array())) {
                 $this->error(self::IS_EMPTY);
                 return false;
             }

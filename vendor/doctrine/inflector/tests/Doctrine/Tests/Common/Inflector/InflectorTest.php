@@ -59,7 +59,7 @@ class InflectorTest extends DoctrineTestCase
             array('foe', 'foes'),
             array('cookie', 'cookies'),
             array('identity', 'identities'),
-            array('criterion', 'criteria'),
+            array('criteria', 'criterion'),
             array('curve', 'curves'),
             array('', ''),
         );

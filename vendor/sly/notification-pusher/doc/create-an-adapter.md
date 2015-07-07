@@ -18,6 +18,5 @@ Feel free to observe [existent adapters](https://github.com/Ph3nol/NotificationP
 * [Getting started](https://github.com/Ph3nol/NotificationPusher/blob/master/doc/getting-started.md)
 * [APNS adapter](https://github.com/Ph3nol/NotificationPusher/blob/master/doc/apns-adapter.md)
 * [GCM adapter](https://github.com/Ph3nol/NotificationPusher/blob/master/doc/gcm-adapter.md)
-* [MPNS adapter](https://github.com/Ph3nol/NotificationPusher/blob/master/doc/mpns-adapter.md)
 * Create an adapter
 * [Push from CLI](https://github.com/Ph3nol/NotificationPusher/blob/master/doc/push-from-cli.md)

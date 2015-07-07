@@ -30,7 +30,7 @@ class Proxy extends Socket
      *
      * @var array
      */
-    protected $config = [
+    protected $config = array(
         'ssltransport'       => 'ssl',
         'sslcert'            => null,
         'sslpassphrase'      => null,
@@ -44,7 +44,7 @@ class Proxy extends Socket
         'proxy_pass'         => '',
         'proxy_auth'         => Client::AUTH_BASIC,
         'persistent'         => false
-    ];
+    );
 
     /**
      * Whether HTTPS CONNECT was already negotiated with the proxy or not
@@ -58,7 +58,7 @@ class Proxy extends Socket
      *
      * @param array $options
      */
-    public function setOptions($options = [])
+    public function setOptions($options = array())
     {
         //enforcing that the proxy keys are set in the form proxy_*
         foreach ($options as $k => $v) {
@@ -114,7 +114,7 @@ class Proxy extends Socket
      * @throws AdapterException\RuntimeException
      * @return string Request as string
      */
-    public function write($method, $uri, $httpVer = '1.1', $headers = [], $body = '')
+    public function write($method, $uri, $httpVer = '1.1', $headers = array(), $body = '')
     {
         // If no proxy is set, fall back to default Socket adapter
         if (! $this->config['proxy_host']) {
@@ -201,7 +201,7 @@ class Proxy extends Socket
      * @param array   $headers
      * @throws AdapterException\RuntimeException
      */
-    protected function connectHandshake($host, $port = 443, $httpVer = '1.1', array &$headers = [])
+    protected function connectHandshake($host, $port = 443, $httpVer = '1.1', array &$headers = array())
     {
         $request = "CONNECT $host:$port HTTP/$httpVer\r\n" .
                    "Host: " . $host . "\r\n";
@@ -250,12 +250,12 @@ class Proxy extends Socket
 
         // If all is good, switch socket to secure mode. We have to fall back
         // through the different modes
-        $modes = [
+        $modes = array(
             STREAM_CRYPTO_METHOD_TLS_CLIENT,
             STREAM_CRYPTO_METHOD_SSLv3_CLIENT,
             STREAM_CRYPTO_METHOD_SSLv23_CLIENT,
             STREAM_CRYPTO_METHOD_SSLv2_CLIENT
-        ];
+        );
 
         $success = false;
         foreach ($modes as $mode) {

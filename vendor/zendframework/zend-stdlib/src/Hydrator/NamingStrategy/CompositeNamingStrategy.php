@@ -14,7 +14,7 @@ final class CompositeNamingStrategy implements NamingStrategyInterface
     /**
      * @var array
      */
-    private $namingStrategies = [];
+    private $namingStrategies = array();
 
     /**
      * @var NamingStrategyInterface

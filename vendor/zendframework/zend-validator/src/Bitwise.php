@@ -30,20 +30,20 @@ class Bitwise extends AbstractValidator
      *
      * @var array
      */
-    protected $messageTemplates = [
+    protected $messageTemplates = array(
         self::NOT_AND        => "The input has no common bit set with '%control%'",
         self::NOT_AND_STRICT => "The input doesn't have the same bits set as '%control%'",
         self::NOT_XOR        => "The input has common bit set with '%control%'",
-    ];
+    );
 
     /**
      * Additional variables available for validation failure messages
      *
      * @var array
      */
-    protected $messageVariables = [
+    protected $messageVariables = array(
         'control' => 'control',
-    ];
+    );
 
     /**
      * @var integer

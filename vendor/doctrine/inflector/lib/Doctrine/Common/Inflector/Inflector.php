@@ -77,7 +77,7 @@ class Inflector
             'cookie' => 'cookies',
             'corpus' => 'corpuses',
             'cow' => 'cows',
-            'criterion' => 'criteria',
+            'criteria' => 'criterion',
             'ganglion' => 'ganglions',
             'genie' => 'genies',
             'genus' => 'genera',

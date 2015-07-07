@@ -61,7 +61,7 @@ class Cookies extends Headers
     /**
      * @var array
      */
-    protected $cookies = [];
+    protected $cookies = array();
 
     /**
      * @var \Zend\Http\Headers
@@ -105,10 +105,10 @@ class Cookies extends Headers
             $domain = $cookie->getDomain();
             $path   = $cookie->getPath();
             if (!isset($this->cookies[$domain])) {
-                $this->cookies[$domain] = [];
+                $this->cookies[$domain] = array();
             }
             if (!isset($this->cookies[$domain][$path])) {
-                $this->cookies[$domain][$path] = [];
+                $this->cookies[$domain][$path] = array();
             }
             $this->cookies[$domain][$path][$cookie->getName()] = $cookie;
             $this->rawCookies[] = $cookie;
@@ -183,7 +183,7 @@ class Cookies extends Headers
         $cookies = $this->_flattenCookiesArray($cookies, self::COOKIE_OBJECT);
 
         // Next, run Cookie->match on all cookies to check secure, time and session matching
-        $ret = [];
+        $ret = array();
         foreach ($cookies as $cookie) {
             if ($cookie->match($uri, $matchSessionCookies, $now)) {
                 $ret[] = $cookie;
@@ -255,7 +255,7 @@ class Cookies extends Headers
     protected function _flattenCookiesArray($ptr, $retAs = self::COOKIE_OBJECT)
     {
         if (is_array($ptr)) {
-            $ret = ($retAs == self::COOKIE_STRING_CONCAT ? '' : []);
+            $ret = ($retAs == self::COOKIE_STRING_CONCAT ? '' : array());
             foreach ($ptr as $item) {
                 if ($retAs == self::COOKIE_STRING_CONCAT) {
                     $ret .= $this->_flattenCookiesArray($item, $retAs);
@@ -267,14 +267,14 @@ class Cookies extends Headers
         } elseif ($ptr instanceof SetCookie) {
             switch ($retAs) {
                 case self::COOKIE_STRING_ARRAY:
-                    return [$ptr->__toString()];
+                    return array($ptr->__toString());
 
                 case self::COOKIE_STRING_CONCAT:
                     return $ptr->__toString();
 
                 case self::COOKIE_OBJECT:
                 default:
-                    return [$ptr];
+                    return array($ptr);
             }
         }
 
@@ -289,7 +289,7 @@ class Cookies extends Headers
      */
     protected function _matchDomain($domain)
     {
-        $ret = [];
+        $ret = array();
 
         foreach (array_keys($this->cookies) as $cdom) {
             if (SetCookie::matchCookieDomain($cdom, $domain)) {
@@ -309,13 +309,13 @@ class Cookies extends Headers
      */
     protected function _matchPath($domains, $path)
     {
-        $ret = [];
+        $ret = array();
 
         foreach ($domains as $dom => $pathsArray) {
             foreach (array_keys($pathsArray) as $cpath) {
                 if (SetCookie::matchCookiePath($cpath, $path)) {
                     if (! isset($ret[$dom])) {
-                        $ret[$dom] = [];
+                        $ret[$dom] = array();
                     }
 
                     $ret[$dom][$cpath] = $pathsArray[$cpath];
@@ -361,7 +361,7 @@ class Cookies extends Headers
      */
     public function reset()
     {
-        $this->cookies = $this->rawCookies = [];
+        $this->cookies = $this->rawCookies = array();
         return $this;
     }
 }

@@ -50,7 +50,7 @@ class StaticValidator
      * @param  array    $args          OPTIONAL
      * @return bool
      */
-    public static function execute($value, $classBaseName, array $args = [])
+    public static function execute($value, $classBaseName, array $args = array())
     {
         $plugins = static::getPluginManager();
 

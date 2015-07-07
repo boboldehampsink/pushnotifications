@@ -21,25 +21,25 @@ class StringLength extends AbstractValidator
     /**
      * @var array
      */
-    protected $messageTemplates = [
+    protected $messageTemplates = array(
         self::INVALID   => "Invalid type given. String expected",
         self::TOO_SHORT => "The input is less than %min% characters long",
         self::TOO_LONG  => "The input is more than %max% characters long",
-    ];
+    );
 
     /**
      * @var array
      */
-    protected $messageVariables = [
-        'min' => ['options' => 'min'],
-        'max' => ['options' => 'max'],
-    ];
+    protected $messageVariables = array(
+        'min' => array('options' => 'min'),
+        'max' => array('options' => 'max'),
+    );
 
-    protected $options = [
+    protected $options = array(
         'min'      => 0,       // Minimum length
         'max'      => null,    // Maximum length, null if there is no length limitation
         'encoding' => 'UTF-8', // Encoding to use
-    ];
+    );
 
     protected $stringWrapper;
 
@@ -48,7 +48,7 @@ class StringLength extends AbstractValidator
      *
      * @param  int|array|\Traversable $options
      */
-    public function __construct($options = [])
+    public function __construct($options = array())
     {
         if (!is_array($options)) {
             $options     = func_get_args();

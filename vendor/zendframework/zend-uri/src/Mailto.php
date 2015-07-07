@@ -19,7 +19,7 @@ use Zend\Validator\ValidatorInterface;
  */
 class Mailto extends Uri
 {
-    protected static $validSchemes = ['mailto'];
+    protected static $validSchemes = array('mailto');
 
     /**
      * Validator for use when validating email address

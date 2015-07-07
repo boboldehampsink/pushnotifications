@@ -34,10 +34,10 @@ class Service
      * Allowed envelope types
      * @var array
      */
-    protected $envelopeTypes = [
+    protected $envelopeTypes = array(
         Smd::ENV_JSONRPC_1,
         Smd::ENV_JSONRPC_2,
-    ];
+    );
 
     /**
      * Regex for names
@@ -52,24 +52,24 @@ class Service
      * Parameter option types
      * @var array
      */
-    protected $paramOptionTypes = [
+    protected $paramOptionTypes = array(
         'name'        => 'is_string',
         'optional'    => 'is_bool',
         'default'     => null,
         'description' => 'is_string',
-    ];
+    );
 
     /**
      * Service params
      * @var array
      */
-    protected $params = [];
+    protected $params = array();
 
     /**
      * Mapping of parameter types to JSON-RPC types
      * @var array
      */
-    protected $paramMap = [
+    protected $paramMap = array(
         'any'     => 'any',
         'arr'     => 'array',
         'array'   => 'array',
@@ -92,15 +92,15 @@ class Service
         'struct'  => 'object',
         'true'    => 'boolean',
         'void'    => 'null',
-    ];
+    );
 
     /**
      * Allowed transport types
      * @var array
      */
-    protected $transportTypes = [
+    protected $transportTypes = array(
         'POST',
-    ];
+    );
 
     /**
      * Constructor
@@ -261,7 +261,7 @@ class Service
      * @throws InvalidArgumentException
      * @return Service
      */
-    public function addParam($type, array $options = [], $order = null)
+    public function addParam($type, array $options = array(), $order = null)
     {
         if (is_string($type)) {
             $type = $this->_validateParamType($type);
@@ -273,9 +273,9 @@ class Service
             throw new InvalidArgumentException('Invalid param type provided');
         }
 
-        $paramOptions = [
+        $paramOptions = array(
             'type' => $type,
-        ];
+        );
         foreach ($options as $key => $value) {
             if (in_array($key, array_keys($this->paramOptionTypes))) {
                 if (null !== ($callback = $this->paramOptionTypes[$key])) {
@@ -287,10 +287,10 @@ class Service
             }
         }
 
-        $this->params[] = [
+        $this->params[] = array(
             'param' => $paramOptions,
             'order' => $order,
-        ];
+        );
 
         return $this;
     }
@@ -329,7 +329,7 @@ class Service
      */
     public function setParams(array $params)
     {
-        $this->params = [];
+        $this->params = array();
 
         return $this->addParams($params);
     }
@@ -343,7 +343,7 @@ class Service
      */
     public function getParams()
     {
-        $params = [];
+        $params = array();
         $index  = 0;
         foreach ($this->params as $param) {
             if (null === $param['order']) {
@@ -422,7 +422,7 @@ class Service
      */
     public function toJson()
     {
-        $service = [$this->getName() => $this->toArray()];
+        $service = array($this->getName() => $this->toArray());
 
         return \Zend\Json\Json::encode($service);
     }

@@ -42,7 +42,7 @@ class PriorityQueue implements Countable, IteratorAggregate, Serializable
      * with keys "data" and "priority".
      * @var array
      */
-    protected $items      = [];
+    protected $items      = array();
 
     /**
      * Inner queue object
@@ -62,10 +62,10 @@ class PriorityQueue implements Countable, IteratorAggregate, Serializable
     public function insert($data, $priority = 1)
     {
         $priority = (int) $priority;
-        $this->items[] = [
+        $this->items[] = array(
             'data'     => $data,
             'priority' => $priority,
-        ];
+        );
         $this->getQueue()->insert($data, $priority);
         return $this;
     }

@@ -1,4 +1,4 @@
-WIP - Push Notifications (iOS, Android, WP8) plugin for Craft CMS
+WIP - Push Notifications (iOS/Android) plugin for Craft CMS
 =================
 
 Plugin that allows you to register devices and send push notifications to them.
@@ -8,9 +8,9 @@ Features:
 - Keeps a history of sent messages
 
 Todo:
-- Craft part is mostly done, now implement push functionality
-- Finish ZendService Mpns service and submit to Zend(?)
-- Finish NotificationPusher fork which implements Mpns adapter and submit Pull Request
+- Add WP8 support
+	- Finish ZendService Mpns/Wns service and submit to Zend(?)
+	- Finish NotificationPusher fork which implements Mpns/Wns adapter and submit Pull Request
 
 Important:
 The plugin's folder should be named "pushnotifications"

@@ -16,7 +16,7 @@ class GenericMultiHeader extends GenericHeader implements MultipleHeaderInterfac
         list($fieldName, $fieldValue) = GenericHeader::splitHeaderLine($headerLine);
 
         if (strpos($fieldValue, ',')) {
-            $headers = [];
+            $headers = array();
             foreach (explode(',', $fieldValue) as $multiValue) {
                 $headers[] = new static($fieldName, $multiValue);
             }
@@ -30,7 +30,7 @@ class GenericMultiHeader extends GenericHeader implements MultipleHeaderInterfac
     public function toStringMultipleHeaders(array $headers)
     {
         $name  = $this->getFieldName();
-        $values = [$this->getFieldValue()];
+        $values = array($this->getFieldValue());
         foreach ($headers as $header) {
             if (!$header instanceof static) {
                 throw new Exception\InvalidArgumentException('This method toStringMultipleHeaders was expecting an array of headers of the same type');

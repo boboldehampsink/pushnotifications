@@ -206,7 +206,7 @@ EOF;
         } else {
             $this->output->write($this->getPrompt());
             $line = fgets(STDIN, 1024);
-            $line = (false === $line || '' === $line) ? false : rtrim($line);
+            $line = (!$line && strlen($line) == 0) ? false : rtrim($line);
         }
 
         return $line;

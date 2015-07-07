@@ -26,17 +26,17 @@ class Identical extends AbstractValidator
      * Error messages
      * @var array
      */
-    protected $messageTemplates = [
+    protected $messageTemplates = array(
         self::NOT_SAME      => "The two given tokens do not match",
         self::MISSING_TOKEN => 'No token was provided to match against',
-    ];
+    );
 
     /**
      * @var array
      */
-    protected $messageVariables = [
+    protected $messageVariables = array(
         'token' => 'tokenString'
-    ];
+    );
 
     /**
      * Original token against which to validate

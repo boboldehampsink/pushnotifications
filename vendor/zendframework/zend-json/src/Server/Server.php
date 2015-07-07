@@ -328,10 +328,10 @@ class Server extends AbstractServer
      */
     protected function _addMethodServiceMap(Method\Definition $method)
     {
-        $serviceInfo = [
+        $serviceInfo = array(
             'name'   => $method->getName(),
             'return' => $this->_getReturnType($method),
-        ];
+        );
         $params = $this->_getParams($method);
         $serviceInfo['params'] = $params;
         $serviceMap = $this->getServiceMap();
@@ -397,15 +397,15 @@ class Server extends AbstractServer
      */
     protected function _getParams(Method\Definition $method)
     {
-        $params = [];
+        $params = array();
         foreach ($method->getPrototypes() as $prototype) {
             foreach ($prototype->getParameterObjects() as $key => $parameter) {
                 if (!isset($params[$key])) {
-                    $params[$key] = [
+                    $params[$key] = array(
                         'type'     => $parameter->getType(),
                         'name'     => $parameter->getName(),
                         'optional' => $parameter->isOptional(),
-                    ];
+                    );
                     if (null !== ($default = $parameter->getDefaultValue())) {
                         $params[$key]['default'] = $default;
                     }
@@ -459,7 +459,7 @@ class Server extends AbstractServer
      */
     protected function _getReturnType(Method\Definition $method)
     {
-        $return = [];
+        $return = array();
         foreach ($method->getPrototypes() as $prototype) {
             $return[] = $prototype->getReturnType();
         }
@@ -477,7 +477,7 @@ class Server extends AbstractServer
     protected function _getSmdMethods()
     {
         if (null === $this->smdMethods) {
-            $this->smdMethods = [];
+            $this->smdMethods = array();
             $methods = get_class_methods('Zend\\Json\\Server\\Smd');
             foreach ($methods as $method) {
                 if (!preg_match('/^(set|get)/', $method)) {
@@ -540,7 +540,7 @@ class Server extends AbstractServer
                 );
             }
 
-            $orderedParams = [];
+            $orderedParams = array();
             foreach ($reflection->getParameters() as $refParam) {
                 if (array_key_exists($refParam->getName(), $params)) {
                     $orderedParams[$refParam->getName()] = $params[$refParam->getName()];

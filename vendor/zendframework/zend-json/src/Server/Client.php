@@ -120,10 +120,10 @@ class Client implements ServerClient
         }
 
         $headers = $httpRequest->getHeaders();
-        $headers->addHeaders([
+        $headers->addHeaders(array(
             'Content-Type' => 'application/json',
             'Accept'       => 'application/json',
-        ]);
+        ));
 
         if (!$headers->get('User-Agent')) {
             $headers->addHeaderLine('User-Agent', 'Zend_Json_Server_Client');
@@ -158,7 +158,7 @@ class Client implements ServerClient
      * @return mixed Method call results.
      * @throws Exception\ErrorException When remote call fails.
      */
-    public function call($method, $params = [])
+    public function call($method, $params = array())
     {
         $request = $this->createRequest($method, $params);
 

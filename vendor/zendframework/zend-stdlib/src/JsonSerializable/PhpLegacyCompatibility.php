@@ -7,22 +7,22 @@
  * @license   http://framework.zend.com/license/new-bsd New BSD License
  */
 
-namespace Zend\Stdlib;
-
-if (PHP_VERSION_ID < 50400) {
-    class_alias(
-        'Zend\Stdlib\JsonSerializable\PhpLegacyCompatibility',
-        'JsonSerializable'
-    );
-}
+namespace Zend\Stdlib\JsonSerializable;
 
 /**
- * Polyfill for JsonSerializable
+ * Interface compatible with the built-in JsonSerializable interface
  *
  * JsonSerializable was introduced in PHP 5.4.0.
  *
  * @see http://php.net/manual/class.jsonserializable.php
  */
-interface JsonSerializable extends \JsonSerializable
+interface PhpLegacyCompatibility
 {
+    /**
+     * Returns data which can be serialized by json_encode().
+     *
+     * @return mixed
+     * @see    http://php.net/manual/jsonserializable.jsonserialize.php
+     */
+    public function jsonSerialize();
 }

@@ -19,17 +19,17 @@ class ValidatorPluginManager extends AbstractPluginManager
      *
      * @var array
      */
-    protected $aliases = [
+    protected $aliases = array(
         'Zend\I18n\Validator\Float'=> 'Zend\I18n\Validator\IsFloat',
         'Zend\I18n\Validator\Int'  => 'Zend\I18n\Validator\IsInt',
-    ];
+    );
 
     /**
      * Default set of validators
      *
      * @var array
      */
-    protected $invokableClasses = [
+    protected $invokableClasses = array(
         'alnum'                    => 'Zend\I18n\Validator\Alnum',
         'alpha'                    => 'Zend\I18n\Validator\Alpha',
         'barcodecode25interleaved' => 'Zend\Validator\Barcode\Code25interleaved',
@@ -118,7 +118,7 @@ class ValidatorPluginManager extends AbstractPluginManager
         'step'                     => 'Zend\Validator\Step',
         'timezone'                 => 'Zend\Validator\Timezone',
         'uri'                      => 'Zend\Validator\Uri',
-    ];
+    );
 
     /**
      * Whether or not to share by default; default to false
@@ -138,8 +138,8 @@ class ValidatorPluginManager extends AbstractPluginManager
     public function __construct(ConfigInterface $configuration = null)
     {
         parent::__construct($configuration);
-        $this->addInitializer([$this, 'injectTranslator']);
-        $this->addInitializer([$this, 'injectValidatorPluginManager']);
+        $this->addInitializer(array($this, 'injectTranslator'));
+        $this->addInitializer(array($this, 'injectValidatorPluginManager'));
     }
 
     /**
