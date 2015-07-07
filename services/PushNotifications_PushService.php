@@ -49,23 +49,27 @@ class PushNotifications_PushService extends BaseApplicationComponent
             $criteria = craft()->elements->getCriteria('PushNotifications_Device');
             $criteria->platform = $platform->handle;
 
-            // Loop through devices
-            foreach ($criteria->find() as $device) {
+            // Check if we have results
+            if ($criteria->count()) {
 
-                // Grab device instance
-                $devices[] = new Device($device->token, $device->parameters);
+                // Loop through devices
+                foreach ($criteria->find() as $device) {
+
+                    // Grab device instance
+                    $devices[] = new Device($device->token, $device->parameters);
+                }
+
+                // Parse device collection
+                $devices = new DeviceCollection($devices);
+
+                // Set the push message
+                $message = new Message($notification->body);
+
+                // Finally, create and add the push to the manager, and push it!
+                $push = new Push($platform->adapter, $devices, $message);
+                $pushManager->add($push);
+                $pushManager->push(); // Returns a collection of notified devices
             }
-
-            // Parse device collection
-            $devices = new DeviceCollection($devices);
-
-            // Set the push message
-            $message = new Message($notification->body);
-
-            // Finally, create and add the push to the manager, and push it!
-            $push = new Push($platform->adapter, $devices, $message);
-            $pushManager->add($push);
-            $pushManager->push(); // Returns a collection of notified devices
         }
     }
 }
