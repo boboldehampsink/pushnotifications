@@ -56,7 +56,7 @@ class PushNotifications_PushService extends BaseApplicationComponent
                 foreach ($criteria->find() as $device) {
 
                     // Grab device instance
-                    $devices[] = new Device($device->token, $device->parameters);
+                    $devices[] = new Device($device->token);
                 }
 
                 // Parse device collection

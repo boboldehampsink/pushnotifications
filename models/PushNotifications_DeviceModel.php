@@ -23,8 +23,18 @@ class PushNotifications_DeviceModel extends BaseElementModel
     {
         return array_merge(parent::defineAttributes(), array(
             'platformId' => AttributeType::Number,
-            'token'      => AttributeType::DateTime,
+            'token'      => AttributeType::String,
         ));
+    }
+
+    /**
+     * Get model title.
+     *
+     * @return string
+     */
+    public function getTitle()
+    {
+        return $this->token;
     }
 
     /**
@@ -34,7 +44,7 @@ class PushNotifications_DeviceModel extends BaseElementModel
      */
     public function isEditable()
     {
-        return false;
+        return true;
     }
 
     /**
