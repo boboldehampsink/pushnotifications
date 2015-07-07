@@ -81,7 +81,8 @@ class PushNotifications_DeviceElementType extends BaseElementType
     public function defineTableAttributes($source = null)
     {
         return array(
-            'token'     => Craft::t('Token'),
+            'token'       => Craft::t('Token'),
+            'dateCreated' => Craft::t('Added'),
         );
     }
 

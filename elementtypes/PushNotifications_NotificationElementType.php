@@ -81,13 +81,16 @@ class PushNotifications_NotificationElementType extends BaseElementType
     public function defineTableAttributes($source = null)
     {
         return array(
-            'title'     => Craft::t('Title'),
-            'body'      => Craft::t('Body'),
-            'param'     => Craft::t('Param'),
+            'title'         => Craft::t('Title'),
+            'body'          => Craft::t('Body'),
+            'param'         => Craft::t('Param'),
+            'dateCreated'   => Craft::t('Sent'),
         );
     }
 
-    /** Returns the table view HTML for a given attribute.
+    /**
+     * Returns the table view HTML for a given attribute.
+     *
      * @param BaseElementModel $element
      * @param string           $attribute
      *
