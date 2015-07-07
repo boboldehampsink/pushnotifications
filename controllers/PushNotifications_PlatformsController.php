@@ -80,7 +80,7 @@ class PushNotifications_PlatformsController extends BaseController
         // Shared attributes
         $platform->id         = craft()->request->getPost('platformId');
         $platform->handle     = craft()->request->getPost('handle');
-        $platform->setting   = craft()->request->getPost('setting');
+        $platform->setting    = craft()->request->getPost('setting');
 
         // Save it
         if (craft()->pushNotifications_platforms->savePlatform($platform)) {
