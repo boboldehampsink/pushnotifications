@@ -59,7 +59,7 @@ class PushNotifications_NotificationModel extends BaseElementModel
         $app = $this->getApp();
 
         if ($app) {
-            return UrlHelper::getCpUrl('pushnotifications/'.$app->handle.'/'.$this->id);
+            return UrlHelper::getCpUrl('pushnotifications/notifications/'.$app->handle.'/'.$this->id);
         }
     }
 

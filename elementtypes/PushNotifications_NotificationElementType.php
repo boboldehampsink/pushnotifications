@@ -116,7 +116,7 @@ class PushNotifications_NotificationElementType extends BaseElementType
             'title'     => AttributeType::Name,
             'body'      => AttributeType::String,
             'param'     => AttributeType::String,
-            'order'     => array(AttributeType::String, 'default' => 'pushnotifications.id desc'),
+            'order'     => array(AttributeType::String, 'default' => 'pushnotifications_notifications.id desc'),
         );
     }
 
