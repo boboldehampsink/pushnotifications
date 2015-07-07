@@ -91,9 +91,10 @@ class PushNotificationsPlugin extends BasePlugin
             'pushnotifications/devices' => array('action' => 'pushNotifications/devices/deviceIndex'),
             'pushnotifications/devices/(?P<platformHandle>{handle})/new' => array('action' => 'pushNotifications/devices/editDevice'),
             'pushnotifications/devices/(?P<platformHandle>{handle})/(?P<deviceId>\d+)' => array('action' => 'pushNotifications/devices/editDevice'),
+            'pushnotifications/notifications' => array('action' => 'pushNotifications/notification/notificationIndex'),
+            'pushnotifications/notifications/(?P<appHandle>{handle})/new' => array('action' => 'pushNotifications/notification/editNotification'),
+            'pushnotifications/notifications/(?P<appHandle>{handle})/(?P<notificationId>\d+)' => array('action' => 'pushNotifications/notification/editNotification'),
             'pushnotifications' => array('action' => 'pushNotifications/notification/notificationIndex'),
-            'pushnotifications/(?P<appHandle>{handle})/new' => array('action' => 'pushNotifications/notification/editNotification'),
-            'pushnotifications/(?P<appHandle>{handle})/(?P<notificationId>\d+)' => array('action' => 'pushNotifications/notification/editNotification'),
         );
     }
 }
