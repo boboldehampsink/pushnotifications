@@ -1,0 +1,47 @@
+{
+    "name": "sly/notification-pusher",
+    "description": "Standalone PHP library for easy devices notifications push.",
+    "keywords": ["apple", "iphone", "apns", "android", "gcm", "wp8", "microsoft", "mpns", "notification", "message", "push", "pusher"],
+    "homepage": "https://github.com/Ph3nol/NotificationPusher",
+    "type": "standalone",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Cédric Dugat",
+            "email": "cedric@dugat.me"
+        },
+        {
+            "name": "Contributors",
+            "homepage": "https://github.com/Ph3nol/NotificationPusher/contributors"
+        }
+    ],
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "https://github.com/boboldehampsink/ZendService_Microsoft_Mpns.git"
+        }
+    ],
+    "require": {
+        "php": ">=5.3.2",
+
+        "symfony/options-resolver": "~2.3",
+        "symfony/console": "~2.3",
+        "symfony/process": "~2.3",
+        "zendframework/zendservice-apple-apns": "1.*",
+        "zendframework/zendservice-google-gcm": "1.*",
+        "zendframework/zendservice-microsoft-mpns": "dev-master",
+        "doctrine/inflector": "~1.0"
+    },
+    "require-dev": {
+        "atoum/atoum": "dev-master"
+    },
+    "config": {
+        "bin-dir": "bin"
+    },
+    "bin": ["np"],
+    "autoload": {
+        "psr-0": {
+            "Sly": "src/"
+        }
+    }
+}
