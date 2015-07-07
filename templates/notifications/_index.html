@@ -1,13 +1,6 @@
 {% extends "_layouts/elementindex" %}
-{% set title = "Notifications"|t %}
+{% set title = "Push Notifications"|t %}
 {% set elementType = 'PushNotifications_Notification' %}
-
-{% set tabs = {
-	notifications: { label: "Notifications"|t, url: url('pushnotifications') },
-	devices: { label: "Devices"|t, url: url('pushnotifications/devices') }
-} %}
-
-{% set selectedTab = 'notifications' %}
 
 {% block sidebar %}
 	{% if apps|length %}

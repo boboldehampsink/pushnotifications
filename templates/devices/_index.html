@@ -3,7 +3,8 @@
 {% set elementType = 'PushNotifications_Device' %}
 
 {% set tabs = {
-	notifications: { label: "Notifications"|t, url: url('pushnotifications') },
+	apps: { label: "Apps"|t, url: url('pushnotifications/apps') },
+	platforms: { label: "Platforms"|t, url: url('pushnotifications/platforms') },
 	devices: { label: "Devices"|t, url: url('pushnotifications/devices') }
 } %}
 
