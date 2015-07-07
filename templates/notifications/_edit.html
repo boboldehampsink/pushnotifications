@@ -19,7 +19,8 @@
 			errors: notification.getErrors('title'),
 			first: true,
 			autofocus: true,
-			required: true
+			required: true,
+			readonly: notification.id
 		}) }}
 
 		{{ forms.textareaField({
@@ -29,22 +30,26 @@
 			value: notification.body,
 			errors: notification.getErrors('body'),
 			required: true,
-			maxlength: 236
+			maxlength: 236,
+			readonly: notification.id
 		}) }}
 
 		{{ forms.textField({
-			label: "Param"|t,
-			id: 'param',
-			name: 'param',
-			value: notification.param,
-			errors: notification.getErrors('param'),
+			label: "Command"|t,
+			id: 'command',
+			name: 'command',
+			value: notification.command,
+			errors: notification.getErrors('command'),
+			readonly: notification.id
 		}) }}
 
+		{% if not notification.id %}
 		<div class="buttons">
 			<input type="submit" class="btn submit" value="{{ 'Send'|t }}">
 			<input type="button" class="btn formsubmit" value="{{ 'Delete'|t }}" data-action="pushNotifications/deleteNotification"
 				data-confirm="{{ 'Are you sure you want to delete this notification?'|t }}"
 				data-redirect="pushnotifications">
 		</div>
+		{% endif %}
 	</form>
 {% endblock %}

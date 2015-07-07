@@ -72,7 +72,7 @@ class PushNotifications_NotificationModel extends BaseElementModel
      */
     public function isEditable()
     {
-        return true;
+        return !$this->id;
     }
 
     /**
