@@ -30,7 +30,7 @@
                 "dev-master": "1.0-dev"
             }
         },
-        "installation-source": "source",
+        "installation-source": "dist",
         "autoload": {
             "psr-0": {
                 "Composer\\Installers\\": "src/"
@@ -124,7 +124,7 @@
                 "dev-master": "1.0.x-dev"
             }
         },
-        "installation-source": "source",
+        "installation-source": "dist",
         "autoload": {
             "psr-0": {
                 "Doctrine\\Common\\Inflector\\": "lib/"
@@ -207,7 +207,7 @@
                 "dev-develop": "2.6-dev"
             }
         },
-        "installation-source": "source",
+        "installation-source": "dist",
         "autoload": {
             "psr-4": {
                 "Zend\\Stdlib\\": "src/"
@@ -262,7 +262,7 @@
                 "dev-develop": "2.6-dev"
             }
         },
-        "installation-source": "source",
+        "installation-source": "dist",
         "autoload": {
             "psr-4": {
                 "Zend\\Json\\": "src/"
@@ -330,7 +330,7 @@
                 "dev-develop": "2.6-dev"
             }
         },
-        "installation-source": "source",
+        "installation-source": "dist",
         "autoload": {
             "psr-4": {
                 "Zend\\Validator\\": "src/"
@@ -377,7 +377,7 @@
                 "dev-develop": "2.6-dev"
             }
         },
-        "installation-source": "source",
+        "installation-source": "dist",
         "autoload": {
             "psr-4": {
                 "Zend\\Escaper\\": "src/"
@@ -425,7 +425,7 @@
                 "dev-develop": "2.6-dev"
             }
         },
-        "installation-source": "source",
+        "installation-source": "dist",
         "autoload": {
             "psr-4": {
                 "Zend\\Uri\\": "src/"
@@ -472,7 +472,7 @@
                 "dev-develop": "2.6-dev"
             }
         },
-        "installation-source": "source",
+        "installation-source": "dist",
         "autoload": {
             "psr-4": {
                 "Zend\\Loader\\": "src/"
@@ -523,7 +523,7 @@
                 "dev-develop": "2.6-dev"
             }
         },
-        "installation-source": "source",
+        "installation-source": "dist",
         "autoload": {
             "psr-4": {
                 "Zend\\Http\\": "src/"
@@ -565,7 +565,7 @@
         },
         "time": "2015-07-03 13:45:36",
         "type": "library",
-        "installation-source": "source",
+        "installation-source": "dist",
         "autoload": {
             "psr-0": {
                 "ZendService\\Microsoft\\Mpns\\": "library/",
@@ -706,7 +706,7 @@
                 "dev-master": "2.8-dev"
             }
         },
-        "installation-source": "source",
+        "installation-source": "dist",
         "autoload": {
             "psr-4": {
                 "Symfony\\Component\\Process\\": ""
@@ -765,7 +765,7 @@
                 "dev-master": "2.8-dev"
             }
         },
-        "installation-source": "source",
+        "installation-source": "dist",
         "autoload": {
             "psr-4": {
                 "Symfony\\Component\\Console\\": ""
@@ -816,7 +816,7 @@
                 "dev-master": "2.8-dev"
             }
         },
-        "installation-source": "source",
+        "installation-source": "dist",
         "autoload": {
             "psr-4": {
                 "Symfony\\Component\\OptionsResolver\\": ""
