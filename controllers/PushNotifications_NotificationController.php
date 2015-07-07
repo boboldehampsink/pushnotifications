@@ -101,6 +101,10 @@ class PushNotifications_NotificationController extends BaseController
         $notification->body    = craft()->request->getPost('body', $notification->body);
         $notification->param   = craft()->request->getPost('param', $notification->param);
 
+        // Send the notification
+        craft()->pushNotifications_push->sendNotification($notification);
+
+        // Save the notification
         if (craft()->pushNotifications_notifications->saveNotification($notification)) {
             craft()->userSession->setNotice(Craft::t('Notification saved.'));
             $this->redirectToPostedUrl($notification);
