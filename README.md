@@ -6,6 +6,7 @@ Plugin that allows you to register devices and send push notifications to them.
 Features:
 - Able to register platforms and device tokens per platform
 - Keeps a history of sent messages
+- Predefine commands to send with the notification payload
 
 Todo:
 - Add WP8 support
@@ -17,5 +18,8 @@ The plugin's folder should be named "pushnotifications"
 
 Changelog
 =================
+###0.0.2###
+- Replaced param with pre-defined commands in app settings
+
 ###0.0.1###
 - Initial push to GitHub
