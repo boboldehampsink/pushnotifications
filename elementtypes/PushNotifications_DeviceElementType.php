@@ -96,7 +96,7 @@ class PushNotifications_DeviceElementType extends BaseElementType
             'platform'   => AttributeType::Mixed,
             'platformId' => AttributeType::Mixed,
             'token'      => AttributeType::Mixed,
-            'order'      => array(AttributeType::String, 'default' => 'pushnotifications.id desc'),
+            'order'      => array(AttributeType::String, 'default' => 'pushnotifications_devices.id desc'),
         );
     }
 
@@ -119,7 +119,7 @@ class PushNotifications_DeviceElementType extends BaseElementType
         }
 
         if ($criteria->platform) {
-            $query->join('pushnotifications_platforms pushnotifications_platforms', 'pushnotifications_platforms.id = pushnotifications.platformId');
+            $query->join('pushnotifications_platforms pushnotifications_platforms', 'pushnotifications_platforms.id = pushnotifications_devices.platformId');
             $query->andWhere(DbHelper::parseParam('pushnotifications_platforms.handle', $criteria->platform, $query->params));
         }
 
