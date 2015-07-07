@@ -62,8 +62,8 @@ class PushNotifications_PushService extends BaseApplicationComponent
                 // Parse device collection
                 $devices = new DeviceCollection($devices);
 
-                // Set the push message
-                $message = new Message($notification->body);
+                // Set the push message and the options
+                $message = new Message($notification->body, $notification->getOptions($platform->handle));
 
                 // Finally, create and add the push to the manager, and push it!
                 $push = new Push($platform->adapter, $devices, $message);

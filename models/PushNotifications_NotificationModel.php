@@ -40,6 +40,39 @@ class PushNotifications_NotificationModel extends BaseElementModel
     }
 
     /**
+     * Get model options per platform.
+     *
+     * @param string $platform handle
+     *
+     * @return array
+     */
+    public function getOptions($platform)
+    {
+        switch ($platform) {
+            case 'ios':
+                return array(
+                    'actionLocKey' => $this->title,
+                    'custom' => $this->param,
+                );
+                break;
+
+            case 'android':
+                return array(
+                    'title' => $this->title,
+                    'custom' => $this->param,
+                );
+                break;
+
+            case 'wp8':
+                return array(
+                    'title' => $this->title,
+                    'param' => $this->param,
+                );
+                break;
+        }
+    }
+
+    /**
      * Returns whether the current user can edit the element.
      *
      * @return bool
