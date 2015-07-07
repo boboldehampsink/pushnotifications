@@ -81,6 +81,7 @@ class PushNotifications_AppsController extends BaseController
         $app->id         = craft()->request->getPost('appId');
         $app->name       = craft()->request->getPost('name');
         $app->handle     = craft()->request->getPost('handle');
+        $app->commands   = craft()->request->getPost('commands');
 
         // Save it
         if (craft()->pushNotifications_apps->saveApp($app)) {

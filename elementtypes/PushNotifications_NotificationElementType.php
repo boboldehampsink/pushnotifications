@@ -83,7 +83,7 @@ class PushNotifications_NotificationElementType extends BaseElementType
         return array(
             'title'         => Craft::t('Title'),
             'body'          => Craft::t('Body'),
-            'param'         => Craft::t('Param'),
+            'command'       => Craft::t('Command'),
             'dateCreated'   => Craft::t('Sent'),
         );
     }
@@ -118,7 +118,7 @@ class PushNotifications_NotificationElementType extends BaseElementType
             'appId'     => AttributeType::Mixed,
             'title'     => AttributeType::Name,
             'body'      => AttributeType::String,
-            'param'     => AttributeType::String,
+            'command'   => AttributeType::String,
             'order'     => array(AttributeType::String, 'default' => 'pushnotifications_notifications.id desc'),
         );
     }
@@ -134,7 +134,7 @@ class PushNotifications_NotificationElementType extends BaseElementType
     public function modifyElementsQuery(DbCommand $query, ElementCriteriaModel $criteria)
     {
         $query
-            ->addSelect('pushnotifications_notifications.appId, pushnotifications_notifications.title, pushnotifications_notifications.body, pushnotifications_notifications.param')
+            ->addSelect('pushnotifications_notifications.appId, pushnotifications_notifications.title, pushnotifications_notifications.body, pushnotifications_notifications.command')
             ->join('pushnotifications_notifications pushnotifications_notifications', 'pushnotifications_notifications.id = elements.id');
 
         if ($criteria->appId) {
@@ -154,8 +154,8 @@ class PushNotifications_NotificationElementType extends BaseElementType
             $query->andWhere(DbHelper::parseParam('pushnotifications_notifications.body', $criteria->body, $query->params));
         }
 
-        if ($criteria->param) {
-            $query->andWhere(DbHelper::parseParam('pushnotifications_notifications.param', $criteria->param, $query->params));
+        if ($criteria->command) {
+            $query->andWhere(DbHelper::parseParam('pushnotifications_notifications.command', $criteria->command, $query->params));
         }
     }
 

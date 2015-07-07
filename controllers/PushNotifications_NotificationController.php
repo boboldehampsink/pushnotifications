@@ -96,10 +96,10 @@ class PushNotifications_NotificationController extends BaseController
         }
 
         // Set the notification attributes, defaulting to the existing values for whatever is missing from the post data
-        $notification->appId   = craft()->request->getPost('appId', $notification->appId);
-        $notification->title   = craft()->request->getPost('title', $notification->title);
-        $notification->body    = craft()->request->getPost('body', $notification->body);
-        $notification->param   = craft()->request->getPost('param', $notification->param);
+        $notification->appId    = craft()->request->getPost('appId', $notification->appId);
+        $notification->title    = craft()->request->getPost('title', $notification->title);
+        $notification->body     = craft()->request->getPost('body', $notification->body);
+        $notification->command  = craft()->request->getPost('command', $notification->command);
 
         // Send the notification
         craft()->pushNotifications_push->sendNotification($notification);

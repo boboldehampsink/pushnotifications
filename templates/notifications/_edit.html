@@ -34,10 +34,11 @@
 			readonly: notification.id
 		}) }}
 
-		{{ forms.textField({
+		{{ forms.selectField({
 			label: "Command"|t,
 			id: 'command',
 			name: 'command',
+			options: app.options,
 			value: notification.command,
 			errors: notification.getErrors('command'),
 			readonly: notification.id

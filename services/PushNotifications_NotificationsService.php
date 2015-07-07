@@ -53,7 +53,7 @@ class PushNotifications_NotificationsService extends BaseApplicationComponent
         $notificationRecord->appId     = $notification->appId;
         $notificationRecord->title     = $notification->title;
         $notificationRecord->body      = $notification->body;
-        $notificationRecord->param     = $notification->param;
+        $notificationRecord->command   = $notification->command;
 
         $notificationRecord->validate();
         $notification->addErrors($notificationRecord->getErrors());

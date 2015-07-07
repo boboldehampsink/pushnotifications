@@ -30,6 +30,7 @@ class PushNotifications_AppRecord extends BaseRecord
         return array(
             'name'          => array(AttributeType::Name, 'required' => true),
             'handle'        => array(AttributeType::Handle, 'required' => true),
+            'commands'      => AttributeType::Mixed,
         );
     }
 

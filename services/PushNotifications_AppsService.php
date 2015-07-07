@@ -142,6 +142,7 @@ class PushNotifications_AppsService extends BaseApplicationComponent
 
         $appRecord->name       = $app->name;
         $appRecord->handle     = $app->handle;
+        $appRecord->commands   = $app->commands;
 
         $appRecord->validate();
         $app->addErrors($appRecord->getErrors());

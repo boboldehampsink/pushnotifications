@@ -25,6 +25,21 @@ class PushNotifications_AppModel extends BaseElementModel
     }
 
     /**
+     * Get command options.
+     *
+     * @return array
+     */
+    public function getOptions()
+    {
+        $options = array();
+        foreach ($this->commands as $command) {
+            $options[] = array('label' => $command['name'], 'value' => $command['param']);
+        }
+
+        return $options;
+    }
+
+    /**
      * @return array
      */
     protected function defineAttributes()
@@ -33,6 +48,7 @@ class PushNotifications_AppModel extends BaseElementModel
             'id'            => AttributeType::Number,
             'name'          => AttributeType::String,
             'handle'        => AttributeType::String,
+            'commands'      => AttributeType::Mixed,
         );
     }
 }

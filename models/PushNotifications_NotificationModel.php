@@ -25,7 +25,7 @@ class PushNotifications_NotificationModel extends BaseElementModel
             'appId'     => AttributeType::Number,
             'title'     => AttributeType::Name,
             'body'      => AttributeType::String,
-            'param'     => AttributeType::Mixed,
+            'command'   => AttributeType::String,
         ));
     }
 
@@ -49,19 +49,21 @@ class PushNotifications_NotificationModel extends BaseElementModel
     public function getOptions($platform)
     {
         switch ($platform) {
+
             case PushNotifications_PlatformModel::PLATFORM_IOS:
                 return array(
-                    'actionLocKey' => $this->title,
-                    'custom' => $this->param,
+                    'actionLocKey'  => $this->title,
+                    'custom'        => $this->command,
                 );
                 break;
 
             case PushNotifications_PlatformModel::PLATFORM_ANDROID:
                 return array(
-                    'title' => $this->title,
-                    'custom' => $this->param,
+                    'title'     => $this->title,
+                    'custom'    => $this->command,
                 );
                 break;
+
         }
     }
 
