@@ -170,24 +170,4 @@ class PushNotifications_NotificationElementType extends BaseElementType
     {
         return PushNotifications_NotificationModel::populateModel($row);
     }
-
-    /**
-     * Returns the HTML for an editor HUD for the given element.
-     *
-     * @param BaseElementModel $element
-     *
-     * @return string
-     */
-    public function getEditorHtml(BaseElementModel $element)
-    {
-        // Title/body/param fields
-        $html = craft()->templates->render('pushnotifications/notifications/_edit', array(
-            'notification' => $element,
-        ));
-
-        // Everything else
-        $html .= parent::getEditorHtml($element);
-
-        return $html;
-    }
 }
