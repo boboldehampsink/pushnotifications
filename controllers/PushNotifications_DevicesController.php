@@ -77,6 +77,35 @@ class PushNotifications_DevicesController extends BaseController
     }
 
     /**
+     * Registers a device.
+     */
+    public function actionRegisterDevice()
+    {
+        $this->requireAjaxRequest();
+
+        // Get platform handle
+        $platformHandle = craft()->request->getParam('platform');
+
+        // Get platform
+        $platform = craft()->pushNotifications_platforms->getPlatformByHandle($platformHandle);
+
+        // Get token
+        $token = craft()->request->getParam('registrationId');
+
+        // Set device
+        $device = new PushNotifications_DeviceModel();
+        $device->platformId = $platform->id;
+        $device->token = $token;
+
+        // Save device
+        if (craft()->pushNotifications_devices->saveDevice($device)) {
+            $this->returnJson(array('success' => true));
+        } else {
+            $this->returnErrorJson($device->getErrors());
+        }
+    }
+
+    /**
      * Saves an device.
      */
     public function actionSaveDevice()
