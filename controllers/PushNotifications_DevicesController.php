@@ -15,6 +15,11 @@ namespace Craft;
 class PushNotifications_DevicesController extends BaseController
 {
     /**
+     * Allow anonymous access to these functions.
+     */
+    public $allowAnonymous = array('actionRegisterDevice');
+
+    /**
      * Device index.
      */
     public function actionDeviceIndex()
@@ -106,7 +111,7 @@ class PushNotifications_DevicesController extends BaseController
     }
 
     /**
-     * Saves an device.
+     * Saves a device from the CP.
      */
     public function actionSaveDevice()
     {
