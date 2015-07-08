@@ -169,7 +169,7 @@ class Apns extends BaseAdapter
         $contentAvailable = $message->getOption('content-available');
 
         $alert = new ServiceAlert(
-            $message->getTitle('title'),
+            $message->getOption('title'),
             $message->getText(),
             $message->getOption('titleLocKey'),
             $message->getOption('titleLocArgs'),

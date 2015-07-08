@@ -174,12 +174,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/boboldehampsink/NotificationPusher.git",
-                "reference": "dd0174211e8a3f966ac1b8b7b0cb6b28ca4bfa54"
+                "reference": "c9eb44ddb85aeac9b47cc964eda5f3673119edbc"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/boboldehampsink/NotificationPusher/zipball/dd0174211e8a3f966ac1b8b7b0cb6b28ca4bfa54",
-                "reference": "dd0174211e8a3f966ac1b8b7b0cb6b28ca4bfa54",
+                "url": "https://api.github.com/repos/boboldehampsink/NotificationPusher/zipball/c9eb44ddb85aeac9b47cc964eda5f3673119edbc",
+                "reference": "c9eb44ddb85aeac9b47cc964eda5f3673119edbc",
                 "shasum": ""
             },
             "require": {
@@ -232,7 +232,7 @@
             "support": {
                 "source": "https://github.com/boboldehampsink/NotificationPusher/tree/master"
             },
-            "time": "2015-07-08 14:17:59"
+            "time": "2015-07-08 14:34:39"
         },
         {
             "name": "symfony/console",

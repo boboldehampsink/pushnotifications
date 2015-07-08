@@ -45,74 +45,6 @@
         ]
     },
     {
-        "name": "sly/notification-pusher",
-        "version": "dev-master",
-        "version_normalized": "9999999-dev",
-        "source": {
-            "type": "git",
-            "url": "https://github.com/boboldehampsink/NotificationPusher.git",
-            "reference": "dd0174211e8a3f966ac1b8b7b0cb6b28ca4bfa54"
-        },
-        "dist": {
-            "type": "zip",
-            "url": "https://api.github.com/repos/boboldehampsink/NotificationPusher/zipball/dd0174211e8a3f966ac1b8b7b0cb6b28ca4bfa54",
-            "reference": "dd0174211e8a3f966ac1b8b7b0cb6b28ca4bfa54",
-            "shasum": ""
-        },
-        "require": {
-            "doctrine/inflector": "~1.0",
-            "php": ">=5.3.2",
-            "symfony/console": "~2.3",
-            "symfony/options-resolver": "~2.3",
-            "symfony/process": "~2.3",
-            "zendframework/zendservice-apple-apns": "1.*",
-            "zendframework/zendservice-google-gcm": "1.*"
-        },
-        "require-dev": {
-            "atoum/atoum": "dev-master"
-        },
-        "time": "2015-07-08 14:17:59",
-        "bin": [
-            "np"
-        ],
-        "type": "standalone",
-        "installation-source": "source",
-        "autoload": {
-            "psr-0": {
-                "Sly": "src/"
-            }
-        },
-        "license": [
-            "MIT"
-        ],
-        "authors": [
-            {
-                "name": "Cédric Dugat",
-                "email": "cedric@dugat.me"
-            },
-            {
-                "name": "Contributors",
-                "homepage": "https://github.com/Ph3nol/NotificationPusher/contributors"
-            }
-        ],
-        "description": "Standalone PHP library for easy devices notifications push.",
-        "homepage": "https://github.com/Ph3nol/NotificationPusher",
-        "keywords": [
-            "android",
-            "apns",
-            "apple",
-            "gcm",
-            "iphone",
-            "message",
-            "notification",
-            "push",
-            "pusher"
-        ],
-        "support": {
-            "source": "https://github.com/boboldehampsink/NotificationPusher/tree/master"
-        }
-    },
-    {
         "name": "composer/installers",
         "version": "dev-master",
         "version_normalized": "9999999-dev",
@@ -864,6 +796,74 @@
         ],
         "support": {
             "source": "https://github.com/boboldehampsink/ZendService_Apple_Apns/tree/master"
+        }
+    },
+    {
+        "name": "sly/notification-pusher",
+        "version": "dev-master",
+        "version_normalized": "9999999-dev",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/boboldehampsink/NotificationPusher.git",
+            "reference": "c9eb44ddb85aeac9b47cc964eda5f3673119edbc"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/boboldehampsink/NotificationPusher/zipball/c9eb44ddb85aeac9b47cc964eda5f3673119edbc",
+            "reference": "c9eb44ddb85aeac9b47cc964eda5f3673119edbc",
+            "shasum": ""
+        },
+        "require": {
+            "doctrine/inflector": "~1.0",
+            "php": ">=5.3.2",
+            "symfony/console": "~2.3",
+            "symfony/options-resolver": "~2.3",
+            "symfony/process": "~2.3",
+            "zendframework/zendservice-apple-apns": "1.*",
+            "zendframework/zendservice-google-gcm": "1.*"
+        },
+        "require-dev": {
+            "atoum/atoum": "dev-master"
+        },
+        "time": "2015-07-08 14:34:39",
+        "bin": [
+            "np"
+        ],
+        "type": "standalone",
+        "installation-source": "source",
+        "autoload": {
+            "psr-0": {
+                "Sly": "src/"
+            }
+        },
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Cédric Dugat",
+                "email": "cedric@dugat.me"
+            },
+            {
+                "name": "Contributors",
+                "homepage": "https://github.com/Ph3nol/NotificationPusher/contributors"
+            }
+        ],
+        "description": "Standalone PHP library for easy devices notifications push.",
+        "homepage": "https://github.com/Ph3nol/NotificationPusher",
+        "keywords": [
+            "android",
+            "apns",
+            "apple",
+            "gcm",
+            "iphone",
+            "message",
+            "notification",
+            "push",
+            "pusher"
+        ],
+        "support": {
+            "source": "https://github.com/boboldehampsink/NotificationPusher/tree/master"
         }
     }
 ]
