@@ -86,8 +86,6 @@ class PushNotifications_DevicesController extends BaseController
      */
     public function actionRegisterDevice()
     {
-        $this->requireAjaxRequest();
-
         // Get platform handle
         $platformHandle = craft()->request->getParam('platform');
 
