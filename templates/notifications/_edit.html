@@ -10,6 +10,7 @@
 		<input type="hidden" name="appId" value="{{ app.id }}">
 		{% if notification.id %}<input type="hidden" name="notificationId" value="{{ notification.id }}">{% endif %}
 		{% if craft.isLocalized() %}<input type="hidden" name="locale" value="{{ notification.locale }}">{% endif %}
+		{{ getCsrfInput() }}
 
 		{{ forms.textField({
 			label: "Title"|t,

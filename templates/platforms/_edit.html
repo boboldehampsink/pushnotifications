@@ -7,6 +7,7 @@
 		<input type="hidden" name="action" value="pushNotifications/platforms/savePlatform">
 		<input type="hidden" name="redirect" value="pushnotifications/platforms">
 		{% if platform.id %}<input type="hidden" name="platformId" value="{{ platform.id }}">{% endif %}
+		{{ getCsrfInput() }}
 
 		{{ forms.selectField({
 			first: true,

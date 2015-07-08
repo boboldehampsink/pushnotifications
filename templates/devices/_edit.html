@@ -10,6 +10,7 @@
 		<input type="hidden" name="platformId" value="{{ platform.id }}">
 		{% if device.id %}<input type="hidden" name="deviceId" value="{{ device.id }}">{% endif %}
 		{% if craft.isLocalized() %}<input type="hidden" name="locale" value="{{ device.locale }}">{% endif %}
+		{{ getCsrfInput() }}
 
 		{{ forms.textField({
 			label: "Token"|t,

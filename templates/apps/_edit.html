@@ -7,6 +7,7 @@
 		<input type="hidden" name="action" value="pushNotifications/apps/saveApp">
 		<input type="hidden" name="redirect" value="pushnotifications/apps">
 		{% if app.id %}<input type="hidden" name="appId" value="{{ app.id }}">{% endif %}
+		{{ getCsrfInput() }}
 
 		{{ forms.textField({
 			first: true,
