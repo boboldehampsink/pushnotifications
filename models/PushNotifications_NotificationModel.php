@@ -52,8 +52,8 @@ class PushNotifications_NotificationModel extends BaseElementModel
 
             case PushNotifications_PlatformModel::PLATFORM_IOS:
                 return array(
-                    'actionLocKey'  => $this->title,
-                    'custom'        => array($this->command),
+                    'title'         => $this->title,
+                    'actionLocKey'  => $this->command,
                 );
                 break;
 

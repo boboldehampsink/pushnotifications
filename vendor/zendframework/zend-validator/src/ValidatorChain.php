@@ -38,7 +38,7 @@ class ValidatorChain implements
      *
      * @var array
      */
-    protected $messages = array();
+    protected $messages = [];
 
     /**
      * Initialize validator chain
@@ -117,10 +117,10 @@ class ValidatorChain implements
         $priority = self::DEFAULT_PRIORITY
     ) {
         $this->validators->insert(
-            array(
+            [
                 'instance'            => $validator,
                 'breakChainOnFailure' => (bool) $breakChainOnFailure,
-            ),
+            ],
             $priority
         );
 
@@ -156,17 +156,16 @@ class ValidatorChain implements
         $priority = self::DEFAULT_PRIORITY;
 
         if (!$this->validators->isEmpty()) {
-            $queue = $this->validators->getIterator();
-            $queue->setExtractFlags(PriorityQueue::EXTR_PRIORITY);
-            $extractedNode = $queue->extract();
-            $priority = $extractedNode[0] + 1;
+            $extractedNodes = $this->validators->toArray(PriorityQueue::EXTR_PRIORITY);
+            rsort($extractedNodes, SORT_NUMERIC);
+            $priority = $extractedNodes[0] + 1;
         }
 
         $this->validators->insert(
-            array(
+            [
                 'instance'            => $validator,
                 'breakChainOnFailure' => (bool) $breakChainOnFailure,
-            ),
+            ],
             $priority
         );
         return $this;
@@ -181,7 +180,7 @@ class ValidatorChain implements
      * @param  int $priority
      * @return ValidatorChain
      */
-    public function attachByName($name, $options = array(), $breakChainOnFailure = false, $priority = self::DEFAULT_PRIORITY)
+    public function attachByName($name, $options = [], $breakChainOnFailure = false, $priority = self::DEFAULT_PRIORITY)
     {
         if (isset($options['break_chain_on_failure'])) {
             $breakChainOnFailure = (bool) $options['break_chain_on_failure'];
@@ -205,7 +204,7 @@ class ValidatorChain implements
      * @param  bool   $breakChainOnFailure
      * @return ValidatorChain
      */
-    public function addByName($name, $options = array(), $breakChainOnFailure = false)
+    public function addByName($name, $options = [], $breakChainOnFailure = false)
     {
         return $this->attachByName($name, $options, $breakChainOnFailure);
     }
@@ -218,7 +217,7 @@ class ValidatorChain implements
      * @param  bool   $breakChainOnFailure
      * @return ValidatorChain
      */
-    public function prependByName($name, $options = array(), $breakChainOnFailure = false)
+    public function prependByName($name, $options = [], $breakChainOnFailure = false)
     {
         $validator = $this->plugin($name, $options);
         $this->prependValidator($validator, $breakChainOnFailure);
@@ -236,7 +235,7 @@ class ValidatorChain implements
      */
     public function isValid($value, $context = null)
     {
-        $this->messages = array();
+        $this->messages = [];
         $result         = true;
         foreach ($this->validators as $element) {
             $validator = $element['instance'];
@@ -319,6 +318,6 @@ class ValidatorChain implements
      */
     public function __sleep()
     {
-        return array('validators', 'messages');
+        return ['validators', 'messages'];
     }
 }

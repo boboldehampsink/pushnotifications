@@ -169,12 +169,24 @@ class Apns extends BaseAdapter
         $contentAvailable = $message->getOption('content-available');
 
         $alert = new ServiceAlert(
+            $message->getTitle('title'),
             $message->getText(),
+            $message->getOption('titleLocKey'),
+            $message->getOption('titleLocArgs'),
             $message->getOption('actionLocKey'),
             $message->getOption('locKey'),
             $message->getOption('locArgs'),
             $message->getOption('launchImage')
         );
+        if ($title = $message->getOption('title')) {
+            $alert->setTitle($title);
+        }
+        if ($titleLocKey = $message->getOption('titleLocKey')) {
+            $alert->setTitleLocKey($titleLocKey);
+        }
+        if ($titleLocArgs = $message->getOption('titleLocArgs')) {
+            $alert->setTitleLocArgs($titleLocArgs);
+        }
         if ($actionLocKey = $message->getOption('actionLocKey')) {
             $alert->setActionLocKey($actionLocKey);
         }
