@@ -95,17 +95,24 @@ class PushNotifications_DevicesController extends BaseController
         // Get token
         $token = craft()->request->getParam('registrationId');
 
-        // Set device
-        $device = new PushNotifications_DeviceModel();
-        $device->platformId = $platform->id;
-        $device->token = $token;
+        // First try and see if we've already got this
+        $criteria = craft()->elements->getCriteria('PushNotifications_Device');
+        $criteria->token = $token;
 
-        // Save device
-        if (craft()->pushNotifications_devices->saveDevice($device)) {
-            $this->returnJson(array('success' => true));
-        } else {
-            $this->returnErrorJson($device->getErrors());
+        if (!$criteria->total()) {
+
+            // Set new device
+            $device = new PushNotifications_DeviceModel();
+            $device->platformId = $platform->id;
+            $device->token = $token;
+
+            // Save device
+            if (!craft()->pushNotifications_devices->saveDevice($device)) {
+                $this->returnErrorJson($device->getErrors());
+            }
         }
+
+        $this->returnJson(array('success' => true));
     }
 
     /**
