@@ -18,6 +18,11 @@ The plugin's folder should be named "pushnotifications"
 
 Changelog
 =================
+###0.0.3###
+- Added the ability to register a device anonymously. This could function as the endpoint for an app.
+- Added CSRF input support
+- Added the ability to use titles in ios push notifications
+
 ###0.0.2###
 - Replaced param with pre-defined commands in app settings
 
