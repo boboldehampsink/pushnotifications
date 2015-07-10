@@ -18,6 +18,10 @@ The plugin's folder should be named "pushnotifications"
 
 Changelog
 =================
+###0.1.2###
+- Get max power when sending notifications
+- Show command in element index as label instead of value
+
 ###0.1.1###
 - Added the ability to unregister a device
 
