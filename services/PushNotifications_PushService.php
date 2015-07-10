@@ -33,6 +33,9 @@ class PushNotifications_PushService extends BaseApplicationComponent
      */
     public function sendNotification(PushNotifications_NotificationModel $notification)
     {
+        // Get max power
+        craft()->config->maxPowerCaptain();
+
         // Determine environment
         $environment = craft()->config->get('devMode') ? PushManager::ENVIRONMENT_DEV : PushManager::ENVIRONMENT_PROD;
 
