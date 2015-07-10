@@ -174,12 +174,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/boboldehampsink/NotificationPusher.git",
-                "reference": "c9eb44ddb85aeac9b47cc964eda5f3673119edbc"
+                "reference": "608744178cd57fdb2eec41293e4a7ea35a2a05fa"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/boboldehampsink/NotificationPusher/zipball/c9eb44ddb85aeac9b47cc964eda5f3673119edbc",
-                "reference": "c9eb44ddb85aeac9b47cc964eda5f3673119edbc",
+                "url": "https://api.github.com/repos/boboldehampsink/NotificationPusher/zipball/608744178cd57fdb2eec41293e4a7ea35a2a05fa",
+                "reference": "608744178cd57fdb2eec41293e4a7ea35a2a05fa",
                 "shasum": ""
             },
             "require": {
@@ -188,7 +188,7 @@
                 "symfony/console": "~2.3",
                 "symfony/options-resolver": "~2.3",
                 "symfony/process": "~2.3",
-                "zendframework/zendservice-apple-apns": "1.*",
+                "zendframework/zendservice-apple-apns": "dev-master as 1.0.6-dev",
                 "zendframework/zendservice-google-gcm": "1.*"
             },
             "require-dev": {
@@ -232,7 +232,7 @@
             "support": {
                 "source": "https://github.com/boboldehampsink/NotificationPusher/tree/master"
             },
-            "time": "2015-07-08 14:34:39"
+            "time": "2015-07-10 08:14:07"
         },
         {
             "name": "symfony/console",
@@ -240,12 +240,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/Console.git",
-                "reference": "333ddb595b2bc54f03bd093cf6b8b0f5c526b2eb"
+                "reference": "ac8bf5eb095525c4de4a52f245c42d468c5c243c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/Console/zipball/333ddb595b2bc54f03bd093cf6b8b0f5c526b2eb",
-                "reference": "333ddb595b2bc54f03bd093cf6b8b0f5c526b2eb",
+                "url": "https://api.github.com/repos/symfony/Console/zipball/ac8bf5eb095525c4de4a52f245c42d468c5c243c",
+                "reference": "ac8bf5eb095525c4de4a52f245c42d468c5c243c",
                 "shasum": ""
             },
             "require": {
@@ -289,7 +289,7 @@
             ],
             "description": "Symfony Console Component",
             "homepage": "https://symfony.com",
-            "time": "2015-07-01 14:16:54"
+            "time": "2015-07-09 16:11:14"
         },
         {
             "name": "symfony/options-resolver",

@@ -198,65 +198,6 @@
         ]
     },
     {
-        "name": "symfony/console",
-        "version": "2.8.x-dev",
-        "version_normalized": "2.8.9999999.9999999-dev",
-        "source": {
-            "type": "git",
-            "url": "https://github.com/symfony/Console.git",
-            "reference": "333ddb595b2bc54f03bd093cf6b8b0f5c526b2eb"
-        },
-        "dist": {
-            "type": "zip",
-            "url": "https://api.github.com/repos/symfony/Console/zipball/333ddb595b2bc54f03bd093cf6b8b0f5c526b2eb",
-            "reference": "333ddb595b2bc54f03bd093cf6b8b0f5c526b2eb",
-            "shasum": ""
-        },
-        "require": {
-            "php": ">=5.3.9"
-        },
-        "require-dev": {
-            "psr/log": "~1.0",
-            "symfony/event-dispatcher": "~2.1|~3.0.0",
-            "symfony/phpunit-bridge": "~2.7|~3.0.0",
-            "symfony/process": "~2.1|~3.0.0"
-        },
-        "suggest": {
-            "psr/log": "For using the console logger",
-            "symfony/event-dispatcher": "",
-            "symfony/process": ""
-        },
-        "time": "2015-07-01 14:16:54",
-        "type": "library",
-        "extra": {
-            "branch-alias": {
-                "dev-master": "2.8-dev"
-            }
-        },
-        "installation-source": "source",
-        "autoload": {
-            "psr-4": {
-                "Symfony\\Component\\Console\\": ""
-            }
-        },
-        "notification-url": "https://packagist.org/downloads/",
-        "license": [
-            "MIT"
-        ],
-        "authors": [
-            {
-                "name": "Fabien Potencier",
-                "email": "fabien@symfony.com"
-            },
-            {
-                "name": "Symfony Community",
-                "homepage": "https://symfony.com/contributors"
-            }
-        ],
-        "description": "Symfony Console Component",
-        "homepage": "https://symfony.com"
-    },
-    {
         "name": "symfony/process",
         "version": "2.8.x-dev",
         "version_normalized": "2.8.9999999.9999999-dev",
@@ -696,6 +637,133 @@
         ]
     },
     {
+        "name": "symfony/console",
+        "version": "2.8.x-dev",
+        "version_normalized": "2.8.9999999.9999999-dev",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/symfony/Console.git",
+            "reference": "ac8bf5eb095525c4de4a52f245c42d468c5c243c"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/symfony/Console/zipball/ac8bf5eb095525c4de4a52f245c42d468c5c243c",
+            "reference": "ac8bf5eb095525c4de4a52f245c42d468c5c243c",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.3.9"
+        },
+        "require-dev": {
+            "psr/log": "~1.0",
+            "symfony/event-dispatcher": "~2.1|~3.0.0",
+            "symfony/phpunit-bridge": "~2.7|~3.0.0",
+            "symfony/process": "~2.1|~3.0.0"
+        },
+        "suggest": {
+            "psr/log": "For using the console logger",
+            "symfony/event-dispatcher": "",
+            "symfony/process": ""
+        },
+        "time": "2015-07-09 16:11:14",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "2.8-dev"
+            }
+        },
+        "installation-source": "source",
+        "autoload": {
+            "psr-4": {
+                "Symfony\\Component\\Console\\": ""
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Fabien Potencier",
+                "email": "fabien@symfony.com"
+            },
+            {
+                "name": "Symfony Community",
+                "homepage": "https://symfony.com/contributors"
+            }
+        ],
+        "description": "Symfony Console Component",
+        "homepage": "https://symfony.com"
+    },
+    {
+        "name": "sly/notification-pusher",
+        "version": "dev-master",
+        "version_normalized": "9999999-dev",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/boboldehampsink/NotificationPusher.git",
+            "reference": "608744178cd57fdb2eec41293e4a7ea35a2a05fa"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/boboldehampsink/NotificationPusher/zipball/608744178cd57fdb2eec41293e4a7ea35a2a05fa",
+            "reference": "608744178cd57fdb2eec41293e4a7ea35a2a05fa",
+            "shasum": ""
+        },
+        "require": {
+            "doctrine/inflector": "~1.0",
+            "php": ">=5.3.2",
+            "symfony/console": "~2.3",
+            "symfony/options-resolver": "~2.3",
+            "symfony/process": "~2.3",
+            "zendframework/zendservice-apple-apns": "dev-master as 1.0.6-dev",
+            "zendframework/zendservice-google-gcm": "1.*"
+        },
+        "require-dev": {
+            "atoum/atoum": "dev-master"
+        },
+        "time": "2015-07-10 08:14:07",
+        "bin": [
+            "np"
+        ],
+        "type": "standalone",
+        "installation-source": "source",
+        "autoload": {
+            "psr-0": {
+                "Sly": "src/"
+            }
+        },
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Cédric Dugat",
+                "email": "cedric@dugat.me"
+            },
+            {
+                "name": "Contributors",
+                "homepage": "https://github.com/Ph3nol/NotificationPusher/contributors"
+            }
+        ],
+        "description": "Standalone PHP library for easy devices notifications push.",
+        "homepage": "https://github.com/Ph3nol/NotificationPusher",
+        "keywords": [
+            "android",
+            "apns",
+            "apple",
+            "gcm",
+            "iphone",
+            "message",
+            "notification",
+            "push",
+            "pusher"
+        ],
+        "support": {
+            "source": "https://github.com/boboldehampsink/NotificationPusher/tree/master"
+        }
+    },
+    {
         "name": "zendframework/zend-json",
         "version": "dev-develop",
         "version_normalized": "dev-develop",
@@ -796,74 +864,6 @@
         ],
         "support": {
             "source": "https://github.com/boboldehampsink/ZendService_Apple_Apns/tree/master"
-        }
-    },
-    {
-        "name": "sly/notification-pusher",
-        "version": "dev-master",
-        "version_normalized": "9999999-dev",
-        "source": {
-            "type": "git",
-            "url": "https://github.com/boboldehampsink/NotificationPusher.git",
-            "reference": "c9eb44ddb85aeac9b47cc964eda5f3673119edbc"
-        },
-        "dist": {
-            "type": "zip",
-            "url": "https://api.github.com/repos/boboldehampsink/NotificationPusher/zipball/c9eb44ddb85aeac9b47cc964eda5f3673119edbc",
-            "reference": "c9eb44ddb85aeac9b47cc964eda5f3673119edbc",
-            "shasum": ""
-        },
-        "require": {
-            "doctrine/inflector": "~1.0",
-            "php": ">=5.3.2",
-            "symfony/console": "~2.3",
-            "symfony/options-resolver": "~2.3",
-            "symfony/process": "~2.3",
-            "zendframework/zendservice-apple-apns": "1.*",
-            "zendframework/zendservice-google-gcm": "1.*"
-        },
-        "require-dev": {
-            "atoum/atoum": "dev-master"
-        },
-        "time": "2015-07-08 14:34:39",
-        "bin": [
-            "np"
-        ],
-        "type": "standalone",
-        "installation-source": "source",
-        "autoload": {
-            "psr-0": {
-                "Sly": "src/"
-            }
-        },
-        "license": [
-            "MIT"
-        ],
-        "authors": [
-            {
-                "name": "Cédric Dugat",
-                "email": "cedric@dugat.me"
-            },
-            {
-                "name": "Contributors",
-                "homepage": "https://github.com/Ph3nol/NotificationPusher/contributors"
-            }
-        ],
-        "description": "Standalone PHP library for easy devices notifications push.",
-        "homepage": "https://github.com/Ph3nol/NotificationPusher",
-        "keywords": [
-            "android",
-            "apns",
-            "apple",
-            "gcm",
-            "iphone",
-            "message",
-            "notification",
-            "push",
-            "pusher"
-        ],
-        "support": {
-            "source": "https://github.com/boboldehampsink/NotificationPusher/tree/master"
         }
     }
 ]
