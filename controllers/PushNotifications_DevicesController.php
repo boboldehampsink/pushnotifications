@@ -122,6 +122,41 @@ class PushNotifications_DevicesController extends BaseController
     }
 
     /**
+     * Unregisters a device.
+     */
+    public function actionUnregisterDevice()
+    {
+        // Get app handle
+        $appHandle = craft()->request->getParam('app');
+
+        // Get app
+        $app = craft()->pushNotifications_apps->getAppByHandle($appHandle);
+
+        // Get platform
+        $platform = craft()->request->getParam('platform');
+
+        // Get token
+        $token = craft()->request->getParam('registrationId');
+
+        // First try and see if we've got this
+        $criteria = craft()->elements->getCriteria('PushNotifications_Device');
+        $criteria->appId = $app->id;
+        $criteria->platform = $platform;
+        $criteria->token = $token;
+
+        // Get device
+        if ($device = $criteria->first()) {
+
+            // Delete device
+            if (craft()->elements->deleteElementById($device->id)) {
+                $this->returnJson(array('success' => true));
+            }
+        }
+
+        $this->returnErrorJson(true);
+    }
+
+    /**
      * Saves a device from the CP.
      */
     public function actionSaveDevice()
