@@ -98,12 +98,26 @@ class PushNotifications_NotificationElementType extends BaseElementType
      */
     public function getTableAttributeHtml(BaseElementModel $element, $attribute)
     {
-        // Don't show full body text in element index table
-        if ($attribute == 'body') {
-            return strlen($element->$attribute) > 50 ? substr($element->$attribute, 0, 50).'...' : $element->$attribute;
-        }
+        switch ($attribute) {
 
-        return parent::getTableAttributeHtml($element, $attribute);
+            case 'body':
+                return strlen($element->$attribute) > 50 ? substr($element->$attribute, 0, 50).'...' : $element->$attribute;
+                break;
+
+            case 'command':
+                $app = $element->getApp();
+                foreach ($app->commands as $command) {
+                    if ($command['param'] == $element->$attribute) {
+                        return $command['name'];
+                    }
+                }
+                break;
+
+            default:
+                return parent::getTableAttributeHtml($element, $attribute);
+                break;
+
+        }
     }
 
     /**
