@@ -21,6 +21,7 @@ Changelog
 ###0.1.2###
 - Get max power when sending notifications
 - Show command in element index as label instead of value
+- Added Dutch translations
 
 ###0.1.1###
 - Added the ability to unregister a device
