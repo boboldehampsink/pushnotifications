@@ -18,6 +18,9 @@ The plugin's folder should be named "pushnotifications"
 
 Changelog
 =================
+###0.1.1###
+- Added the ability to unregister a device
+
 ###0.1.0###
 - First beta, major refactoring
 - Platforms are now per app
