@@ -22,8 +22,9 @@ class PushNotifications_DeviceModel extends BaseElementModel
     protected function defineAttributes()
     {
         return array_merge(parent::defineAttributes(), array(
-            'platformId' => AttributeType::Number,
-            'token'      => AttributeType::String,
+            'appId'     => AttributeType::Number,
+            'platform'  => AttributeType::String,
+            'token'     => AttributeType::String,
         ));
     }
 
@@ -54,22 +55,22 @@ class PushNotifications_DeviceModel extends BaseElementModel
      */
     public function getCpEditUrl()
     {
-        $platform = $this->getPlatform();
+        $app = $this->getApp();
 
-        if ($platform) {
-            return UrlHelper::getCpUrl('pushnotifications/devices/'.$platform->handle.'/'.$this->id);
+        if ($app) {
+            return UrlHelper::getCpUrl('pushnotifications/devices/'.$app->handle.'/'.$this->id);
         }
     }
 
     /**
-     * Returns the device's platform.
+     * Returns the app the device was registered with.
      *
-     * @return PushNotifications_PlatformModel|null
+     * @return PushNotifications_AppModel|null
      */
-    public function getPlatform()
+    public function getApp()
     {
-        if ($this->platformId) {
-            return craft()->pushNotifications_platforms->getPlatformById($this->platformId);
+        if ($this->appId) {
+            return craft()->pushNotifications_apps->getAppById($this->appId);
         }
     }
 }

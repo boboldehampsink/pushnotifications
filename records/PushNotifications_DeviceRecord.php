@@ -28,7 +28,8 @@ class PushNotifications_DeviceRecord extends BaseRecord
     protected function defineAttributes()
     {
         return array(
-            'token' => array(AttributeType::String, 'required' => true),
+            'platform'  => array(AttributeType::String, 'required' => true),
+            'token'     => array(AttributeType::String, 'required' => true),
         );
     }
 
@@ -38,8 +39,8 @@ class PushNotifications_DeviceRecord extends BaseRecord
     public function defineRelations()
     {
         return array(
-            'element'  => array(static::BELONGS_TO, 'ElementRecord', 'id', 'required' => true, 'onDelete' => static::CASCADE),
-            'platform' => array(static::BELONGS_TO, 'PushNotifications_PlatformRecord', 'required' => true, 'onDelete' => static::CASCADE),
+            'element'   => array(static::BELONGS_TO, 'ElementRecord', 'id', 'required' => true, 'onDelete' => static::CASCADE),
+            'app'       => array(static::BELONGS_TO, 'PushNotifications_AppRecord', 'required' => true, 'onDelete' => static::CASCADE),
         );
     }
 }

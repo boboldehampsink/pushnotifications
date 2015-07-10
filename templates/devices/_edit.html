@@ -1,16 +1,30 @@
 {% extends "_layouts/cp" %}
 {% import "_includes/forms" as forms %}
 
-{% set platformHandle = platform.handle %}
+{% set appHandle = app.handle %}
 
 {% block content %}
 	<form id="device-form" method="post" accept-charset="UTF-8" data-saveshortcut="1" data-saveshortcut-redirect="{{ continueEditingUrl }}">
 		<input type="hidden" name="action" value="pushNotifications/devices/saveDevice">
 		<input type="hidden" name="redirect" value="pushnotifications/devices">
-		<input type="hidden" name="platformId" value="{{ platform.id }}">
+		<input type="hidden" name="appId" value="{{ app.id }}">
 		{% if device.id %}<input type="hidden" name="deviceId" value="{{ device.id }}">{% endif %}
 		{% if craft.isLocalized() %}<input type="hidden" name="locale" value="{{ device.locale }}">{% endif %}
 		{{ getCsrfInput() }}
+
+		{{ forms.selectField({
+			'label': "Platform"|t,
+			'id': 'platform',
+			'name': 'platform',
+			'value': device.platform,
+			'errors': device.getErrors('platforms'),
+			'first': true,
+			'required': true,
+			'options': [
+				{'label': 'iOS', 'value': 'ios'},
+				{'label': 'Android', 'value': 'android'}
+			]
+		}) }}
 
 		{{ forms.textField({
 			label: "Token"|t,
@@ -18,8 +32,6 @@
 			name: 'token',
 			value: device.token,
 			errors: device.getErrors('token'),
-			first: true,
-			autofocus: true,
 			required: true,
 		}) }}
 

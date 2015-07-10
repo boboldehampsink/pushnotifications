@@ -31,7 +31,7 @@ class PushNotificationsPlugin extends BasePlugin
      */
     public function getVersion()
     {
-        return '0.0.3';
+        return '0.1.0';
     }
 
     /**
@@ -85,12 +85,9 @@ class PushNotificationsPlugin extends BasePlugin
             'pushnotifications/apps' => array('action' => 'pushNotifications/apps/appIndex'),
             'pushnotifications/apps/new' => array('action' => 'pushNotifications/apps/editApp'),
             'pushnotifications/apps/(?P<appId>\d+)' => array('action' => 'pushNotifications/apps/editApp'),
-            'pushnotifications/platforms' => array('action' => 'pushNotifications/platforms/platformIndex'),
-            'pushnotifications/platforms/new' => array('action' => 'pushNotifications/platforms/editPlatform'),
-            'pushnotifications/platforms/(?P<platformId>\d+)' => array('action' => 'pushNotifications/platforms/editPlatform'),
             'pushnotifications/devices' => array('action' => 'pushNotifications/devices/deviceIndex'),
-            'pushnotifications/devices/(?P<platformHandle>{handle})/new' => array('action' => 'pushNotifications/devices/editDevice'),
-            'pushnotifications/devices/(?P<platformHandle>{handle})/(?P<deviceId>\d+)' => array('action' => 'pushNotifications/devices/editDevice'),
+            'pushnotifications/devices/(?P<appHandle>{handle})/new' => array('action' => 'pushNotifications/devices/editDevice'),
+            'pushnotifications/devices/(?P<appHandle>{handle})/(?P<deviceId>\d+)' => array('action' => 'pushNotifications/devices/editDevice'),
             'pushnotifications/notifications' => array('action' => 'pushNotifications/notification/notificationIndex'),
             'pushnotifications/notifications/(?P<appHandle>{handle})/new' => array('action' => 'pushNotifications/notification/editNotification'),
             'pushnotifications/notifications/(?P<appHandle>{handle})/(?P<notificationId>\d+)' => array('action' => 'pushNotifications/notification/editNotification'),

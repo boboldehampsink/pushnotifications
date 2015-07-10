@@ -40,41 +40,13 @@ class PushNotifications_NotificationModel extends BaseElementModel
     }
 
     /**
-     * Get model options per platform.
-     *
-     * @param string $platform handle
-     *
-     * @return array
-     */
-    public function getOptions($platform)
-    {
-        switch ($platform) {
-
-            case PushNotifications_PlatformModel::PLATFORM_IOS:
-                return array(
-                    'title'         => $this->title,
-                    'actionLocKey'  => $this->command,
-                );
-                break;
-
-            case PushNotifications_PlatformModel::PLATFORM_ANDROID:
-                return array(
-                    'title'     => $this->title,
-                    'custom'    => $this->command,
-                );
-                break;
-
-        }
-    }
-
-    /**
      * Returns whether the current user can edit the element.
      *
      * @return bool
      */
     public function isEditable()
     {
-        return !$this->id;
+        return true;
     }
 
     /**
@@ -92,7 +64,7 @@ class PushNotifications_NotificationModel extends BaseElementModel
     }
 
     /**
-     * Returns the notification's app.
+     * Returns the app the device was registered with.
      *
      * @return PushNotifications_AppModel|null
      */

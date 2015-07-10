@@ -24,7 +24,7 @@ class PushNotifications_DevicesController extends BaseController
      */
     public function actionDeviceIndex()
     {
-        $variables['platforms'] = craft()->pushNotifications_platforms->getAllPlatforms();
+        $variables['apps'] = craft()->pushNotifications_apps->getAllApps();
 
         $this->renderTemplate('pushnotifications/devices/_index', $variables);
     }
@@ -38,13 +38,13 @@ class PushNotifications_DevicesController extends BaseController
      */
     public function actionEditDevice(array $variables = array())
     {
-        if (!empty($variables['platformHandle'])) {
-            $variables['platform'] = craft()->pushNotifications_platforms->getPlatformByHandle($variables['platformHandle']);
-        } elseif (!empty($variables['platformId'])) {
-            $variables['platform'] = craft()->pushNotifications_platforms->getPlatformById($variables['platformId']);
+        if (!empty($variables['appHandle'])) {
+            $variables['app'] = craft()->pushNotifications_apps->getAppByHandle($variables['appHandle']);
+        } elseif (!empty($variables['appId'])) {
+            $variables['app'] = craft()->pushNotifications_apps->getAppById($variables['appId']);
         }
 
-        if (empty($variables['platform'])) {
+        if (empty($variables['app'])) {
             throw new HttpException(404);
         }
 
@@ -58,7 +58,7 @@ class PushNotifications_DevicesController extends BaseController
                 }
             } else {
                 $variables['device'] = new PushNotifications_DeviceModel();
-                $variables['device']->platformId = $variables['platform']->id;
+                $variables['device']->appId = $variables['app']->id;
             }
         }
 
@@ -71,11 +71,11 @@ class PushNotifications_DevicesController extends BaseController
         // Breadcrumbs
         $variables['crumbs'] = array(
             array('label' => Craft::t('Push Notifications'), 'url' => UrlHelper::getUrl('pushnotifications')),
-            array('label' => $variables['platform']->name, 'url' => UrlHelper::getUrl('pushnotifications')),
+            array('label' => $variables['app']->name, 'url' => UrlHelper::getUrl('pushnotifications')),
         );
 
         // Set the "Continue Editing" URL
-        $variables['continueEditingUrl'] = 'pushnotifications/'.$variables['platform']->handle.'/{id}';
+        $variables['continueEditingUrl'] = 'pushnotifications/devices/'.$variables['app']->handle.'/{id}';
 
         // Render the template!
         $this->renderTemplate('pushnotifications/devices/_edit', $variables);
@@ -86,25 +86,31 @@ class PushNotifications_DevicesController extends BaseController
      */
     public function actionRegisterDevice()
     {
-        // Get platform handle
-        $platformHandle = craft()->request->getParam('platform');
+        // Get app handle
+        $appHandle = craft()->request->getParam('app');
+
+        // Get app
+        $app = craft()->pushNotifications_apps->getAppByHandle($appHandle);
 
         // Get platform
-        $platform = craft()->pushNotifications_platforms->getPlatformByHandle($platformHandle);
+        $platform = craft()->request->getParam('platform');
 
         // Get token
         $token = craft()->request->getParam('registrationId');
 
         // First try and see if we've already got this
         $criteria = craft()->elements->getCriteria('PushNotifications_Device');
+        $criteria->appId = $app->id;
+        $criteria->platform = $platform;
         $criteria->token = $token;
 
         if (!$criteria->total()) {
 
             // Set new device
             $device = new PushNotifications_DeviceModel();
-            $device->platformId = $platform->id;
-            $device->token = $token;
+            $device->appId      = $app->id;
+            $device->platform   = $platform;
+            $device->token      = $token;
 
             // Save device
             if (!craft()->pushNotifications_devices->saveDevice($device)) {
@@ -135,8 +141,9 @@ class PushNotifications_DevicesController extends BaseController
         }
 
         // Set the device attributes, defaulting to the existing values for whatever is missing from the post data
-        $device->platformId     = craft()->request->getPost('platformId', $device->platformId);
-        $device->token          = craft()->request->getPost('token', $device->token);
+        $device->appId      = craft()->request->getPost('appId', $device->appId);
+        $device->platform   = craft()->request->getPost('platform', $device->platform);
+        $device->token      = craft()->request->getPost('token', $device->token);
 
         if (craft()->pushNotifications_devices->saveDevice($device)) {
             craft()->userSession->setNotice(Craft::t('Device saved.'));

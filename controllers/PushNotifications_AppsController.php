@@ -19,8 +19,6 @@ class PushNotifications_AppsController extends BaseController
      */
     public function actionAppIndex()
     {
-        $this->requireAdmin();
-
         $variables['apps'] = craft()->pushNotifications_apps->getAllApps();
 
         $this->renderTemplate('pushnotifications/apps', $variables);
@@ -36,8 +34,6 @@ class PushNotifications_AppsController extends BaseController
      */
     public function actionEditApp(array $variables = array())
     {
-        $this->requireAdmin();
-
         $variables['brandNewApp'] = false;
 
         if (!empty($variables['appId'])) {
@@ -72,15 +68,14 @@ class PushNotifications_AppsController extends BaseController
      */
     public function actionSaveApp()
     {
-        $this->requireAdmin();
         $this->requirePostRequest();
 
+        // Create new app model
         $app = new PushNotifications_AppModel();
-
-        // Shared attributes
         $app->id         = craft()->request->getPost('appId');
         $app->name       = craft()->request->getPost('name');
         $app->handle     = craft()->request->getPost('handle');
+        $app->platforms  = craft()->request->getPost('platforms');
         $app->commands   = craft()->request->getPost('commands');
 
         // Save it
@@ -102,7 +97,6 @@ class PushNotifications_AppsController extends BaseController
      */
     public function actionDeleteApp()
     {
-        $this->requireAdmin();
         $this->requirePostRequest();
         $this->requireAjaxRequest();
 

@@ -1,10 +1,10 @@
-WIP - Push Notifications (iOS/Android) plugin for Craft CMS
+Push Notifications (iOS/Android) plugin for Craft CMS
 =================
 
 Plugin that allows you to register devices and send push notifications to them.
 
 Features:
-- Able to register platforms and device tokens per platform
+- Able to register platforms and device tokens per app and platform
 - Keeps a history of sent messages
 - Predefine commands to send with the notification payload
 
@@ -18,6 +18,15 @@ The plugin's folder should be named "pushnotifications"
 
 Changelog
 =================
+###0.1.0###
+- First beta, major refactoring
+- Platforms are now per app
+- Better editing capabilities
+- More uniform way of sending a custom payload
+- PushNotifications_PushService::sendNotification now returns a list with addressed devices
+
+__Warning: you cannot upgrade from 0.0.3, do a fresh install__
+
 ###0.0.3###
 - Added the ability to register a device anonymously. This could function as the endpoint for an app.
 - Added CSRF input support

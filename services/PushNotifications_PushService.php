@@ -9,6 +9,8 @@ use Sly\NotificationPusher\Collection\DeviceCollection;
 use Sly\NotificationPusher\Model\Device;
 use Sly\NotificationPusher\Model\Message;
 use Sly\NotificationPusher\Model\Push;
+use Sly\NotificationPusher\Adapter\Apns as ApnsAdapter;
+use Sly\NotificationPusher\Adapter\Gcm as GcmAdapter;
 
 /**
  * Push Notifications Push Service.
@@ -27,27 +29,32 @@ class PushNotifications_PushService extends BaseApplicationComponent
      *
      * @param PushNotifications_NotificationModel $notification
      *
-     * @throws \Exception
-     *
-     * @return bool
+     * @return DeviceCollection[]
      */
     public function sendNotification(PushNotifications_NotificationModel $notification)
     {
         // Determine environment
         $environment = craft()->config->get('devMode') ? PushManager::ENVIRONMENT_DEV : PushManager::ENVIRONMENT_PROD;
 
+        // Get app
+        $app = $notification->getApp();
+
         // Start pushmanager
         $pushManager = new PushManager($environment);
 
+        // Gather notified devices
+        $notified = array();
+
         // Loop through platforms
-        foreach (craft()->pushNotifications_platforms->getAllPlatforms() as $platform) {
+        foreach ($app->getEnabledPlatforms() as $platform => $setting) {
 
             // Gather devices
             $devices = array();
 
             // Get devices by platform
             $criteria = craft()->elements->getCriteria('PushNotifications_Device');
-            $criteria->platform = $platform->handle;
+            $criteria->app = $app->handle;
+            $criteria->platform = $platform;
 
             // Check if we have results
             if ($criteria->count()) {
@@ -63,13 +70,44 @@ class PushNotifications_PushService extends BaseApplicationComponent
                 $devices = new DeviceCollection($devices);
 
                 // Set the push message and the options
-                $message = new Message($notification->body, $notification->getOptions($platform->handle));
+                $message = new Message($notification->body, array(
+                    'title'   => $notification->title,
+                    'custom'  => array('command' => $notification->command),
+                ));
 
                 // Finally, create and add the push to the manager, and push it!
-                $push = new Push($platform->adapter, $devices, $message);
+                $push = new Push($this->getAdapter($platform, $setting), $devices, $message);
                 $pushManager->add($push);
-                $pushManager->push(); // Returns a collection of notified devices
+                $notified[$platform] = $pushManager->push();
             }
+        }
+
+        // Returns a collection of notified devices per platform
+        return $notified;
+    }
+
+    /**
+     * Get NotificationPusher adapter for platform.
+     *
+     * @param string $platform
+     * @param string $setting
+     *
+     * @return BaseAdapter
+     */
+    public function getAdapter($platform, $setting)
+    {
+        switch ($platform) {
+            case PushNotifications_AppModel::PLATFORM_IOS:
+                return new ApnsAdapter(array(
+                    'certificate' => $setting,
+                ));
+                break;
+
+            case PushNotifications_AppModel::PLATFORM_ANDROID:
+                return new GcmAdapter(array(
+                    'apiKey' => $setting,
+                ));
+                break;
         }
     }
 }

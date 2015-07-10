@@ -55,16 +55,16 @@ class PushNotifications_DeviceElementType extends BaseElementType
     {
         $sources = array(
             '*' => array(
-                'label'    => Craft::t('All devices'),
+                'label'    => Craft::t('All apps'),
             ),
         );
 
-        foreach (craft()->pushNotifications_platforms->getAllPlatforms() as $platform) {
-            $key = 'platform:'.$platform->id;
+        foreach (craft()->pushNotifications_apps->getAllApps() as $app) {
+            $key = 'app:'.$app->id;
 
             $sources[$key] = array(
-                'label'    => $platform->name,
-                'criteria' => array('platformId' => $platform->id),
+                'label'    => $app->name,
+                'criteria' => array('appId' => $app->id),
             );
         }
 
@@ -94,8 +94,9 @@ class PushNotifications_DeviceElementType extends BaseElementType
     public function defineCriteriaAttributes()
     {
         return array(
+            'app'        => AttributeType::Mixed,
+            'appId'      => AttributeType::Mixed,
             'platform'   => AttributeType::Mixed,
-            'platformId' => AttributeType::Mixed,
             'token'      => AttributeType::Mixed,
             'order'      => array(AttributeType::String, 'default' => 'pushnotifications_devices.id desc'),
         );
@@ -112,16 +113,20 @@ class PushNotifications_DeviceElementType extends BaseElementType
     public function modifyElementsQuery(DbCommand $query, ElementCriteriaModel $criteria)
     {
         $query
-            ->addSelect('pushnotifications_devices.platformId, pushnotifications_devices.token')
+            ->addSelect('pushnotifications_devices.appId, pushnotifications_devices.platform, pushnotifications_devices.token')
             ->join('pushnotifications_devices pushnotifications_devices', 'pushnotifications_devices.id = elements.id');
 
-        if ($criteria->platformId) {
-            $query->andWhere(DbHelper::parseParam('pushnotifications_devices.platformId', $criteria->platformId, $query->params));
+        if ($criteria->appId) {
+            $query->andWhere(DbHelper::parseParam('pushnotifications_devices.appId', $criteria->appId, $query->params));
+        }
+
+        if ($criteria->app) {
+            $query->join('pushnotifications_apps pushnotifications_apps', 'pushnotifications_apps.id = pushnotifications_devices.appId');
+            $query->andWhere(DbHelper::parseParam('pushnotifications_apps.handle', $criteria->app, $query->params));
         }
 
         if ($criteria->platform) {
-            $query->join('pushnotifications_platforms pushnotifications_platforms', 'pushnotifications_platforms.id = pushnotifications_devices.platformId');
-            $query->andWhere(DbHelper::parseParam('pushnotifications_platforms.handle', $criteria->platform, $query->params));
+            $query->andWhere(DbHelper::parseParam('pushnotifications_devices.platform', $criteria->platform, $query->params));
         }
 
         if ($criteria->token) {

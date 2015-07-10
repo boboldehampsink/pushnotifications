@@ -33,20 +33,62 @@
 			required: true
 		}) }}
 
-		<hr>
+		<div class="field">
+			<div class="heading">
+				<label>{{ "Platforms"|t }}</label>
+			</div>
+			<div class="instructions" style="margin: -5px 0px 5px 0px">
+				<p>{{ "For which platforms has this app been built?"|t }}</p>
+			</div>
+			<div class="input">
+				<input type="hidden" name="platforms[ios][enabled]" value="0">
+				<input type="hidden" name="platforms[ios][setting]" value="0">
+				<input type="hidden" name="platforms[android][enabled]">
+				<input type="hidden" name="platforms[android][setting]">
+				<table id="platforms" class="shadow-box editable">
+					<thead>
+						<tr>
+							<th scope="col" class="header" width="10%">{{ "Platform"|t }}</th>
+							<th scope="col" class="header" width="5%">{{ "Enable"|t }}</th>
+							<th scope="col" class="header" width="85%">{{ "Setting (i.e. certificate location for APNS or API key for GCM.)"|t }}</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td class="thin action" style="text-align: left;">{{ "iOS"|t }}</td>
+							<td><input type="checkbox" name="platforms[ios][enabled]" value="1"{% if app.platforms.ios.enabled %} checked{% endif %}></td>
+							<td class="textual"><textarea name="platforms[ios][setting]" rows="1">{{ app.platforms.ios.setting }}</textarea></td>
+						</tr>
+						<tr>
+							<td class="thin action" style="text-align: left;">{{ "Android"|t }}</td>
+							<td><input type="checkbox" name="platforms[android][enabled]" value="1"{% if app.platforms.android.enabled %} checked{% endif %}></td>
+							<td class="textual"><textarea name="platforms[android][setting]" rows="1">{{ app.platforms.android.setting }}</textarea></td>
+						</tr>
+					</tbody>
+				</table>
+	        </div>
+	    </div>
 
-		{{ forms.editableTableField({
-            id: 'commands',
-            name: 'commands',
-            cols: {
-                "name": {"heading": "Name"|t, "type": "singleline"},
-                "param": {"heading": "Parameter"|t, "type": "singleline"},
-            },
-            rows: app.commands,
-            addRowLabel: "Add command"|t
-        }) }}
-
-        <hr>
+		<div class="field">
+			<div class="heading">
+				<label>{{ "Commands"|t }}</label>
+			</div>
+			<div class="instructions" style="margin: -5px 0px 5px 0px">
+				<p>{{ "Predefine commands to send with a notification."|t }}</p>
+			</div>
+			<div class="input">
+				{{ forms.editableTableField({
+		            id: 'commands',
+		            name: 'commands',
+		            cols: {
+		                "name": {"heading": "Name"|t, "type": "singleline"},
+		                "param": {"heading": "Parameter"|t, "type": "singleline"},
+		            },
+		            rows: app.commands,
+		            addRowLabel: "Add command"|t
+		        }) }}
+	     	</div>
+	    </div>
 
 		<div class="buttons">
 			<input type="submit" class="btn submit" value="{{ 'Save'|t }}">

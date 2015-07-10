@@ -50,8 +50,9 @@ class PushNotifications_DevicesService extends BaseApplicationComponent
             $deviceRecord = new PushNotifications_DeviceRecord();
         }
 
-        $deviceRecord->platformId = $device->platformId;
-        $deviceRecord->token      = $device->token;
+        $deviceRecord->appId    = $device->appId;
+        $deviceRecord->platform = $device->platform;
+        $deviceRecord->token    = $device->token;
 
         $deviceRecord->validate();
         $device->addErrors($deviceRecord->getErrors());
