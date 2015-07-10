@@ -17,7 +17,7 @@ class PushNotifications_DevicesController extends BaseController
     /**
      * Allow anonymous access to these functions.
      */
-    public $allowAnonymous = array('actionRegisterDevice');
+    public $allowAnonymous = array('actionRegisterDevice', 'actionUnregisterDevice');
 
     /**
      * Device index.
