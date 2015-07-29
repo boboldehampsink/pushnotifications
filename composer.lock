@@ -174,12 +174,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/boboldehampsink/NotificationPusher.git",
-                "reference": "608744178cd57fdb2eec41293e4a7ea35a2a05fa"
+                "reference": "309321688d48492065fce8c52c660e08644332ae"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/boboldehampsink/NotificationPusher/zipball/608744178cd57fdb2eec41293e4a7ea35a2a05fa",
-                "reference": "608744178cd57fdb2eec41293e4a7ea35a2a05fa",
+                "url": "https://api.github.com/repos/boboldehampsink/NotificationPusher/zipball/309321688d48492065fce8c52c660e08644332ae",
+                "reference": "309321688d48492065fce8c52c660e08644332ae",
                 "shasum": ""
             },
             "require": {
@@ -232,7 +232,7 @@
             "support": {
                 "source": "https://github.com/boboldehampsink/NotificationPusher/tree/master"
             },
-            "time": "2015-07-10 08:14:07"
+            "time": "2015-07-29 07:49:41"
         },
         {
             "name": "symfony/console",
@@ -761,12 +761,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/boboldehampsink/ZendService_Apple_Apns.git",
-                "reference": "a46f433217a9255f58f98086a79fb28b977fce78"
+                "reference": "e89538d0095f8f48774d524ca8c81bbd6d456fe0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/boboldehampsink/ZendService_Apple_Apns/zipball/a46f433217a9255f58f98086a79fb28b977fce78",
-                "reference": "a46f433217a9255f58f98086a79fb28b977fce78",
+                "url": "https://api.github.com/repos/boboldehampsink/ZendService_Apple_Apns/zipball/e89538d0095f8f48774d524ca8c81bbd6d456fe0",
+                "reference": "e89538d0095f8f48774d524ca8c81bbd6d456fe0",
                 "shasum": ""
             },
             "require": {
@@ -798,7 +798,7 @@
             "support": {
                 "source": "https://github.com/boboldehampsink/ZendService_Apple_Apns/tree/master"
             },
-            "time": "2015-07-08 14:02:34"
+            "time": "2015-07-29 07:43:27"
         },
         {
             "name": "zendframework/zendservice-google-gcm",

@@ -169,24 +169,15 @@ class Apns extends BaseAdapter
         $contentAvailable = $message->getOption('content-available');
 
         $alert = new ServiceAlert(
-            $message->getOption('title'),
             $message->getText(),
-            $message->getOption('titleLocKey'),
-            $message->getOption('titleLocArgs'),
             $message->getOption('actionLocKey'),
             $message->getOption('locKey'),
             $message->getOption('locArgs'),
-            $message->getOption('launchImage')
+            $message->getOption('launchImage'),
+            $message->getOption('title'),
+            $message->getOption('titleLocKey'),
+            $message->getOption('titleLocArgs')
         );
-        if ($title = $message->getOption('title')) {
-            $alert->setTitle($title);
-        }
-        if ($titleLocKey = $message->getOption('titleLocKey')) {
-            $alert->setTitleLocKey($titleLocKey);
-        }
-        if ($titleLocArgs = $message->getOption('titleLocArgs')) {
-            $alert->setTitleLocArgs($titleLocArgs);
-        }
         if ($actionLocKey = $message->getOption('actionLocKey')) {
             $alert->setActionLocKey($actionLocKey);
         }
@@ -198,6 +189,15 @@ class Apns extends BaseAdapter
         }
         if ($launchImage = $message->getOption('launchImage')) {
             $alert->setLaunchImage($launchImage);
+        }
+        if ($title = $message->getOption('title')) {
+            $alert->setTitle($title);
+        }
+        if ($titleLocKey = $message->getOption('titleLocKey')) {
+            $alert->setTitleLocKey($titleLocKey);
+        }
+        if ($titleLocArgs = $message->getOption('titleLocArgs')) {
+            $alert->setTitleLocArgs($titleLocArgs);
         }
 
         $serviceMessage = new ServiceMessage();
