@@ -754,17 +754,17 @@
     },
     {
         "name": "zendframework/zendservice-apple-apns",
-        "version": "dev-master",
-        "version_normalized": "9999999-dev",
+        "version": "dev-develop",
+        "version_normalized": "dev-develop",
         "source": {
             "type": "git",
-            "url": "https://github.com/boboldehampsink/ZendService_Apple_Apns.git",
-            "reference": "e89538d0095f8f48774d524ca8c81bbd6d456fe0"
+            "url": "https://github.com/zendframework/ZendService_Apple_Apns.git",
+            "reference": "ea4f5609bd2c3352b1af30264dd4eb1d09df1574"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/boboldehampsink/ZendService_Apple_Apns/zipball/e89538d0095f8f48774d524ca8c81bbd6d456fe0",
-            "reference": "e89538d0095f8f48774d524ca8c81bbd6d456fe0",
+            "url": "https://api.github.com/repos/zendframework/ZendService_Apple_Apns/zipball/ea4f5609bd2c3352b1af30264dd4eb1d09df1574",
+            "reference": "ea4f5609bd2c3352b1af30264dd4eb1d09df1574",
             "shasum": ""
         },
         "require": {
@@ -774,7 +774,7 @@
         "require-dev": {
             "phpunit/phpunit": "3.7.*"
         },
-        "time": "2015-07-29 07:43:27",
+        "time": "2015-07-29 13:34:00",
         "type": "library",
         "installation-source": "source",
         "autoload": {
@@ -783,6 +783,7 @@
                 "ZendService\\Apple\\Exception\\": "library/"
             }
         },
+        "notification-url": "https://packagist.org/downloads/",
         "license": [
             "BSD-3-Clause"
         ],
@@ -794,10 +795,7 @@
             "notification",
             "push",
             "zf2"
-        ],
-        "support": {
-            "source": "https://github.com/boboldehampsink/ZendService_Apple_Apns/tree/master"
-        }
+        ]
     },
     {
         "name": "sly/notification-pusher",
@@ -806,12 +804,12 @@
         "source": {
             "type": "git",
             "url": "https://github.com/boboldehampsink/NotificationPusher.git",
-            "reference": "309321688d48492065fce8c52c660e08644332ae"
+            "reference": "7d9f75c349a371eea426f8734dbafb88c7e35326"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/boboldehampsink/NotificationPusher/zipball/309321688d48492065fce8c52c660e08644332ae",
-            "reference": "309321688d48492065fce8c52c660e08644332ae",
+            "url": "https://api.github.com/repos/boboldehampsink/NotificationPusher/zipball/7d9f75c349a371eea426f8734dbafb88c7e35326",
+            "reference": "7d9f75c349a371eea426f8734dbafb88c7e35326",
             "shasum": ""
         },
         "require": {
@@ -820,13 +818,13 @@
             "symfony/console": "~2.3",
             "symfony/options-resolver": "~2.3",
             "symfony/process": "~2.3",
-            "zendframework/zendservice-apple-apns": "dev-master as 1.0.6-dev",
+            "zendframework/zendservice-apple-apns": "dev-develop as 1.1.0",
             "zendframework/zendservice-google-gcm": "1.*"
         },
         "require-dev": {
             "atoum/atoum": "dev-master"
         },
-        "time": "2015-07-29 07:49:41",
+        "time": "2015-07-29 14:40:51",
         "bin": [
             "np"
         ],

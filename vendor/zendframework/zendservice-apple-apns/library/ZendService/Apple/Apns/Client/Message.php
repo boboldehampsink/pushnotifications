@@ -30,15 +30,15 @@ class Message extends AbstractClient
      * @var array
      */
     protected $uris = array(
-        'ssl://gateway.sandbox.push.apple.com:2195',
-        'ssl://gateway.push.apple.com:2195',
+        'tls://gateway.sandbox.push.apple.com:2195',
+        'tls://gateway.push.apple.com:2195',
     );
 
     /**
      * Send Message
      *
-     * @param  ZendService\Apple\Apns\Message          $message
-     * @return ZendService\Apple\Apns\Response\Message
+     * @param  ApnsMessage          $message
+     * @return MessageResponse
      */
     public function send(ApnsMessage $message)
     {

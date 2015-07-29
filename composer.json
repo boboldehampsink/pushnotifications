@@ -14,16 +14,11 @@
             "type": "vcs",
             "url": "https://github.com/boboldehampsink/NotificationPusher.git",
             "reference": "master"
-        },
-        {
-            "type": "vcs",
-            "url": "https://github.com/boboldehampsink/ZendService_Apple_Apns.git",
-            "reference": "master"
         }
     ],
     "require": {
         "composer/installers": "~1.0",
         "sly/notification-pusher": "dev-master as 2.2.10-dev",
-        "zendframework/zendservice-apple-apns": "dev-master as 1.0.6-dev"
+        "zendframework/zendservice-apple-apns": "dev-develop as 1.1.0"
     }
 }
