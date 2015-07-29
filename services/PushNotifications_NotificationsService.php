@@ -82,8 +82,8 @@ class PushNotifications_NotificationsService extends BaseApplicationComponent
                         'isNewNotification' => $isNewNotification,
                     )));
 
-                    // Check if we're using the cronjob plugin
-                    if (craft()->plugins->getPlugin('cronjob')) {
+                    // Check if we're using the cronjob plugin and have a schedule
+                    if (craft()->plugins->getPlugin('cronjob') && $notification->schedule) {
 
                         // Schedule the notification
                         craft()->pushNotifications_push->scheduleNotification($notification);
