@@ -73,6 +73,9 @@ class PushNotifications_NotificationController extends BaseController
         // Set the "Continue Editing" URL
         $variables['continueEditingUrl'] = 'pushnotifications/'.$variables['app']->handle.'/{id}';
 
+        // Do we have the ability to use cronjobs?
+        $variables['cronjob'] = craft()->plugins->getPlugin('cronjob');
+
         // Render the template!
         $this->renderTemplate('pushnotifications/notifications/_edit', $variables);
     }
@@ -101,9 +104,7 @@ class PushNotifications_NotificationController extends BaseController
         $notification->title    = craft()->request->getPost('title', $notification->title);
         $notification->body     = craft()->request->getPost('body', $notification->body);
         $notification->command  = craft()->request->getPost('command', $notification->command);
-
-        // Send the notification
-        craft()->pushNotifications_push->sendNotification($notification);
+        $notification->schedule = craft()->request->getPost('schedule', $notification->schedule);
 
         // Save the notification
         if (craft()->pushNotifications_notifications->saveNotification($notification)) {
@@ -126,8 +127,22 @@ class PushNotifications_NotificationController extends BaseController
     {
         $this->requirePostRequest();
 
+        // Get notification id
         $notificationId = craft()->request->getRequiredPost('notificationId');
 
+        // Check if we're using the cronjob manager
+        if (craft()->plugins->getPlugin('cronjob')) {
+
+            // Remove cronjob
+            $repository = new Cronjob_RepositoryModel(new Cronjob_AdapterModel());
+            $results = $repository->findJobByRegex('/^'.$notificationId.'$/');
+            if (isset($results[0])) {
+                $repository->removeJob($results[0]);
+                $repository->persist();
+            }
+        }
+
+        // Delete the element
         if (craft()->elements->deleteElementById($notificationId)) {
             craft()->userSession->setNotice(Craft::t('Notification deleted.'));
             $this->redirectToPostedUrl();

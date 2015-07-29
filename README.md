@@ -7,6 +7,7 @@ Features:
 - Able to register platforms and device tokens per app and platform
 - Keeps a history of sent messages
 - Predefine commands to send with the notification payload
+- If you install the [Cronjob Manager Plugin](http://github.com/boboldehampsink/cronjob) you can schedule notifications
 
 Todo:
 - Add WP8 support
@@ -18,6 +19,9 @@ The plugin's folder should be named "pushnotifications"
 
 Changelog
 =================
+###0.2.0###
+- If you install the [Cronjob Manager Plugin](http://github.com/boboldehampsink/cronjob) you can now schedule notifications in the future
+
 ###0.1.2###
 - Get max power when sending notifications
 - Show command in element index as label instead of value

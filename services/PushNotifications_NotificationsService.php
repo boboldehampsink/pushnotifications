@@ -54,6 +54,7 @@ class PushNotifications_NotificationsService extends BaseApplicationComponent
         $notificationRecord->title     = $notification->title;
         $notificationRecord->body      = $notification->body;
         $notificationRecord->command   = $notification->command;
+        $notificationRecord->schedule  = $notification->schedule;
 
         $notificationRecord->validate();
         $notification->addErrors($notificationRecord->getErrors());
@@ -81,6 +82,18 @@ class PushNotifications_NotificationsService extends BaseApplicationComponent
                         'isNewNotification' => $isNewNotification,
                     )));
 
+                    // Check if we're using the cronjob plugin
+                    if (craft()->plugins->getPlugin('cronjob')) {
+
+                        // Schedule the notification
+                        craft()->pushNotifications_push->scheduleNotification($notification);
+                    } else {
+
+                        // Send the notification
+                        craft()->pushNotifications_push->sendNotification($notification);
+                    }
+
+                    // Now do the transaction
                     if ($transaction !== null) {
                         $transaction->commit();
                     }

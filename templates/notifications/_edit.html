@@ -42,6 +42,16 @@
 			errors: notification.getErrors('command'),
 		}) }}
 
+		{% if cronjob %}
+			{{ forms.dateTimeField({
+				label: "Schedule"|t,
+				id: 'schedule',
+				name: 'schedule',
+				value: now,
+				errors: notification.getErrors('schedule'),
+			}) }}
+		{% endif %}
+
 		<div class="buttons">
 			<input type="submit" class="btn submit" value="{{ 'Send'|t }}">
 			{% if notification.id %}

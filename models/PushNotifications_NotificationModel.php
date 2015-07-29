@@ -26,6 +26,7 @@ class PushNotifications_NotificationModel extends BaseElementModel
             'title'     => AttributeType::Name,
             'body'      => AttributeType::String,
             'command'   => AttributeType::String,
+            'schedule'  => array(AttributeType::DateTime, 'default' => DateTimeHelper::currentUTCDateTime()),
         ));
     }
 

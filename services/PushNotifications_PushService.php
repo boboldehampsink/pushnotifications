@@ -25,6 +25,40 @@ use Sly\NotificationPusher\Adapter\Gcm as GcmAdapter;
 class PushNotifications_PushService extends BaseApplicationComponent
 {
     /**
+     * Schedule a notification.
+     *
+     * @param PushNotifications_NotificationModel $notification
+     */
+    public function scheduleNotification(PushNotifications_NotificationModel $notification)
+    {
+        // Get schedule
+        $schedule = $notification->schedule;
+
+        // Initialize the cronjob repository
+        $adapter    = new Cronjob_AdapterModel();
+        $repository = new Cronjob_RepositoryModel($adapter);
+
+        // Check if cronjob exists
+        $results = $repository->findJobByRegex('/^'.$notification->id.'$/');
+        $cronjob = isset($results[0]) ? $results[0] : new CronjobModel();
+
+        // Set up cronjob
+        $cronjob->minutes           = $schedule->format('i');
+        $cronjob->hours             = $schedule->format('H');
+        $cronjob->dayOfMonth        = $schedule->format('d');
+        $cronjob->months            = $schedule->format('m');
+        $cronjob->dayOfWeek         = $schedule->format('w');
+        $cronjob->taskCommandLine   = CRAFT_APP_PATH.'etc/console/yiic pushnotifications send '.$notification->id;
+        $cronjob->comments          = $notification->id;
+
+        // Now save the cronjob
+        if (!isset($results[0])) {
+            $repository->addJob($cronjob);
+        }
+        $repository->persist();
+    }
+
+    /**
      * Sends a notification.
      *
      * @param PushNotifications_NotificationModel $notification
