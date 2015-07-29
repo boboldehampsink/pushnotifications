@@ -21,7 +21,6 @@
 			first: true,
 			autofocus: true,
 			required: true,
-			readonly: notification.id
 		}) }}
 
 		{{ forms.textareaField({
@@ -32,7 +31,6 @@
 			errors: notification.getErrors('body'),
 			required: true,
 			maxlength: 236,
-			readonly: notification.id
 		}) }}
 
 		{{ forms.selectField({
@@ -42,7 +40,6 @@
 			options: app.options,
 			value: notification.command,
 			errors: notification.getErrors('command'),
-			readonly: notification.id
 		}) }}
 
 		<div class="buttons">

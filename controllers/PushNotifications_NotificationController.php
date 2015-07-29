@@ -33,12 +33,12 @@ class PushNotifications_NotificationController extends BaseController
      */
     public function actionEditNotification(array $variables = array())
     {
+        // Get app
         if (!empty($variables['appHandle'])) {
             $variables['app'] = craft()->pushNotifications_apps->getAppByHandle($variables['appHandle']);
         } elseif (!empty($variables['appId'])) {
             $variables['app'] = craft()->pushNotifications_apps->getAppById($variables['appId']);
         }
-
         if (empty($variables['app'])) {
             throw new HttpException(404);
         }
@@ -57,6 +57,7 @@ class PushNotifications_NotificationController extends BaseController
             }
         }
 
+        // Title
         if (!$variables['notification']->id) {
             $variables['title'] = Craft::t('Create a new notification');
         } else {
