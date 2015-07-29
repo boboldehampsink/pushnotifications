@@ -3,7 +3,7 @@
  * Zend Framework (http://framework.zend.com/)
  *
  * @link      http://github.com/zendframework/zf2 for the canonical source repository
- * @copyright Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright Copyright (c) 2005-2014 Zend Technologies USA Inc. (http://www.zend.com)
  * @license   http://framework.zend.com/license/new-bsd New BSD License
  * @category  ZendService
  * @package   ZendService_Google\Gcm
@@ -179,7 +179,7 @@ class Message
         if (!is_string($key) || empty($key)) {
             throw new Exception\InvalidArgumentException('$key must be a non-empty string');
         }
-        if (in_array($key, $this->data)) {
+        if (array_key_exists($key, $this->data)) {
             throw new Exception\RuntimeException('$key conflicts with current set data');
         }
         $this->data[$key] = $value;

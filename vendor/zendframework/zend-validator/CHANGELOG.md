@@ -2,7 +2,54 @@
 
 All notable changes to this project will be documented in this file, in reverse chronological order by release.
 
-## 2.5.2 - TBD
+## 2.6.0 - TBD
+
+### Added
+
+- [#18](https://github.com/zendframework/zend-validator/pull/18) adds a `GpsPoint`
+  validator for validating GPS coordinates.
+
+### Deprecated
+
+- Nothing.
+
+### Removed
+
+- Nothing.
+
+### Fixed
+
+- Nothing.
+
+## 2.5.3 - TBD
+
+### Added
+
+- Nothing.
+
+### Deprecated
+
+- Nothing.
+
+### Removed
+
+- Nothing.
+
+### Fixed
+
+- [#17](https://github.com/zendframework/zend-validator/pull/17) and
+  [#29](https://github.com/zendframework/zend-validator/pull/29) provide more
+  test coverage, and fix a number of edge cases, primarily in validator option
+  verifications.
+- [#26](https://github.com/zendframework/zend-validator/pull/26) fixes tests for
+  `StaticValidator` such that they make correct assertions now. In doing so, we
+  determined that it was possible to pass an indexed array of options, which
+  could lead to unexpected results, often leading to false positives when
+  validating. To correct this situation, `StaticValidator::execute()` now raises
+  an `InvalidArgumentException` when an indexed array is detected for the
+  `$options` argument.
+
+## 2.5.2 - 2015-07-16
 
 ### Added
 
@@ -25,3 +72,5 @@ All notable changes to this project will be documented in this file, in reverse 
   address in the case that the function fails.
 - [#11](https://github.com/zendframework/zend-validator/pull/11) fixes
   `ValidatorChain::prependValidator()` so that it works on HHVM.
+- [#12](https://github.com/zendframework/zend-validator/pull/12) adds "6772" to
+  the Maestro range of the `CreditCard` validator.

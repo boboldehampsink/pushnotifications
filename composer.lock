@@ -240,12 +240,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/Console.git",
-                "reference": "ac8bf5eb095525c4de4a52f245c42d468c5c243c"
+                "reference": "eef94b47e4e21ab887ef03192d2fb65cc9929c76"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/Console/zipball/ac8bf5eb095525c4de4a52f245c42d468c5c243c",
-                "reference": "ac8bf5eb095525c4de4a52f245c42d468c5c243c",
+                "url": "https://api.github.com/repos/symfony/Console/zipball/eef94b47e4e21ab887ef03192d2fb65cc9929c76",
+                "reference": "eef94b47e4e21ab887ef03192d2fb65cc9929c76",
                 "shasum": ""
             },
             "require": {
@@ -289,7 +289,7 @@
             ],
             "description": "Symfony Console Component",
             "homepage": "https://symfony.com",
-            "time": "2015-07-09 16:11:14"
+            "time": "2015-07-29 07:12:56"
         },
         {
             "name": "symfony/options-resolver",
@@ -592,12 +592,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/zendframework/zend-stdlib.git",
-                "reference": "378d623b3513bdb4457c4dd0662faae63b524570"
+                "reference": "297c69931ebc0d17a454656fd3b63e3fb0098f1d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/zendframework/zend-stdlib/zipball/378d623b3513bdb4457c4dd0662faae63b524570",
-                "reference": "378d623b3513bdb4457c4dd0662faae63b524570",
+                "url": "https://api.github.com/repos/zendframework/zend-stdlib/zipball/297c69931ebc0d17a454656fd3b63e3fb0098f1d",
+                "reference": "297c69931ebc0d17a454656fd3b63e3fb0098f1d",
                 "shasum": ""
             },
             "require": {
@@ -622,8 +622,8 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "2.5-dev",
-                    "dev-develop": "2.6-dev"
+                    "dev-master": "2.6-dev",
+                    "dev-develop": "2.7-dev"
                 }
             },
             "autoload": {
@@ -640,7 +640,7 @@
                 "stdlib",
                 "zf2"
             ],
-            "time": "2015-06-05 09:18:13"
+            "time": "2015-07-21 17:11:52"
         },
         {
             "name": "zendframework/zend-uri",
@@ -695,12 +695,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/zendframework/zend-validator.git",
-                "reference": "09caebccbf5b92c407e96cae7aa1e97a03bab410"
+                "reference": "03348a26e628d4b4a892f888d54dff069b47e57d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/zendframework/zend-validator/zipball/09caebccbf5b92c407e96cae7aa1e97a03bab410",
-                "reference": "09caebccbf5b92c407e96cae7aa1e97a03bab410",
+                "url": "https://api.github.com/repos/zendframework/zend-validator/zipball/03348a26e628d4b4a892f888d54dff069b47e57d",
+                "reference": "03348a26e628d4b4a892f888d54dff069b47e57d",
                 "shasum": ""
             },
             "require": {
@@ -753,7 +753,7 @@
                 "validator",
                 "zf2"
             ],
-            "time": "2015-06-23 21:06:19"
+            "time": "2015-07-22 22:21:39"
         },
         {
             "name": "zendframework/zendservice-apple-apns",
@@ -802,16 +802,16 @@
         },
         {
             "name": "zendframework/zendservice-google-gcm",
-            "version": "1.0.1",
+            "version": "1.0.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/zendframework/ZendService_Google_Gcm.git",
-                "reference": "c60bc16ddee0e57452a87d7b0b28db679f10409a"
+                "reference": "4a42ecccc9495cd442574a11ce09865da5203d35"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/zendframework/ZendService_Google_Gcm/zipball/c60bc16ddee0e57452a87d7b0b28db679f10409a",
-                "reference": "c60bc16ddee0e57452a87d7b0b28db679f10409a",
+                "url": "https://api.github.com/repos/zendframework/ZendService_Google_Gcm/zipball/4a42ecccc9495cd442574a11ce09865da5203d35",
+                "reference": "4a42ecccc9495cd442574a11ce09865da5203d35",
                 "shasum": ""
             },
             "require": {
@@ -825,7 +825,8 @@
             "type": "library",
             "autoload": {
                 "psr-0": {
-                    "ZendService": "library/"
+                    "ZendService\\Google\\Gcm\\": "library/",
+                    "ZendService\\Google\\Exception\\": "library/"
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -841,7 +842,7 @@
                 "push",
                 "zf2"
             ],
-            "time": "2013-10-24 20:12:41"
+            "time": "2015-03-21 00:57:48"
         }
     ],
     "packages-dev": [],
