@@ -47,8 +47,9 @@
 				label: "Schedule"|t,
 				id: 'schedule',
 				name: 'schedule',
-				value: now,
 				errors: notification.getErrors('schedule'),
+				minuteIncrement: 15,
+				instructions: "Omit if you want to send this notification immediately."|t
 			}) }}
 		{% endif %}
 
