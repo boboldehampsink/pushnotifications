@@ -18,7 +18,6 @@
     ],
     "require": {
         "composer/installers": "~1.0",
-        "sly/notification-pusher": "dev-master as 2.2.10-dev",
-        "zendframework/zendservice-apple-apns": "dev-develop as 1.1.0"
+        "sly/notification-pusher": "dev-master as 2.2.10-dev"
     }
 }

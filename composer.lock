@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "ab90b0f13dee185883b6e42d5f17b41a",
+    "hash": "71317464cb465c1f467ae6d32bed1e0f",
     "packages": [
         {
             "name": "composer/installers",
@@ -174,12 +174,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/boboldehampsink/NotificationPusher.git",
-                "reference": "7d9f75c349a371eea426f8734dbafb88c7e35326"
+                "reference": "6de99d78306a18bc30a86230d54b40e781ad04e3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/boboldehampsink/NotificationPusher/zipball/7d9f75c349a371eea426f8734dbafb88c7e35326",
-                "reference": "7d9f75c349a371eea426f8734dbafb88c7e35326",
+                "url": "https://api.github.com/repos/boboldehampsink/NotificationPusher/zipball/6de99d78306a18bc30a86230d54b40e781ad04e3",
+                "reference": "6de99d78306a18bc30a86230d54b40e781ad04e3",
                 "shasum": ""
             },
             "require": {
@@ -188,7 +188,7 @@
                 "symfony/console": "~2.3",
                 "symfony/options-resolver": "~2.3",
                 "symfony/process": "~2.3",
-                "zendframework/zendservice-apple-apns": "dev-develop as 1.1.0",
+                "zendframework/zendservice-apple-apns": "1.*",
                 "zendframework/zendservice-google-gcm": "1.*"
             },
             "require-dev": {
@@ -232,7 +232,7 @@
             "support": {
                 "source": "https://github.com/boboldehampsink/NotificationPusher/tree/master"
             },
-            "time": "2015-07-29 14:40:51"
+            "time": "2015-07-29 17:32:01"
         },
         {
             "name": "symfony/console",
@@ -757,16 +757,16 @@
         },
         {
             "name": "zendframework/zendservice-apple-apns",
-            "version": "dev-develop",
+            "version": "1.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/zendframework/ZendService_Apple_Apns.git",
-                "reference": "ea4f5609bd2c3352b1af30264dd4eb1d09df1574"
+                "reference": "24811f044847e2bce3a5c9d3ff9a884f13ce59ed"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/zendframework/ZendService_Apple_Apns/zipball/ea4f5609bd2c3352b1af30264dd4eb1d09df1574",
-                "reference": "ea4f5609bd2c3352b1af30264dd4eb1d09df1574",
+                "url": "https://api.github.com/repos/zendframework/ZendService_Apple_Apns/zipball/24811f044847e2bce3a5c9d3ff9a884f13ce59ed",
+                "reference": "24811f044847e2bce3a5c9d3ff9a884f13ce59ed",
                 "shasum": ""
             },
             "require": {
@@ -796,7 +796,7 @@
                 "push",
                 "zf2"
             ],
-            "time": "2015-07-29 13:34:00"
+            "time": "2015-07-29 13:30:57"
         },
         {
             "name": "zendframework/zendservice-google-gcm",
@@ -850,18 +850,11 @@
             "alias_normalized": "2.2.10.0-dev",
             "version": "9999999-dev",
             "package": "sly/notification-pusher"
-        },
-        {
-            "alias": "1.1.0",
-            "alias_normalized": "1.1.0.0",
-            "version": "dev-develop",
-            "package": "zendframework/zendservice-apple-apns"
         }
     ],
     "minimum-stability": "dev",
     "stability-flags": {
-        "sly/notification-pusher": 20,
-        "zendframework/zendservice-apple-apns": 20
+        "sly/notification-pusher": 20
     },
     "prefer-stable": false,
     "prefer-lowest": false,
