@@ -21,6 +21,7 @@ Changelog
 =================
 ###0.2.0###
 - If you install the [Cronjob Manager Plugin](http://github.com/boboldehampsink/cronjob) you can now schedule notifications in the future
+- Fixed a bug where deleting a notification was broken
 
 ###0.1.2###
 - Get max power when sending notifications
