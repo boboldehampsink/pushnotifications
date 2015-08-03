@@ -104,7 +104,7 @@ class PushNotifications_NotificationController extends BaseController
         $notification->title    = craft()->request->getPost('title', $notification->title);
         $notification->body     = craft()->request->getPost('body', $notification->body);
         $notification->command  = craft()->request->getPost('command', $notification->command);
-        $notification->schedule = craft()->request->getPost('schedule', $notification->schedule);
+        $notification->schedule = (($schedule = craft()->request->getPost('schedule')) ? DateTime::createFromString($schedule, craft()->timezone) : $notification->schedule);
 
         // Save the notification
         if (craft()->pushNotifications_notifications->saveNotification($notification)) {
