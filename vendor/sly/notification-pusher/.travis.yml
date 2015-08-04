@@ -21,6 +21,6 @@ script:
 notifications:
   email:
     recipients:
-      - cedric@dugat.me
+      - b.oldehampsink@itmundi.nl
     on_success: change
     on_failure: change

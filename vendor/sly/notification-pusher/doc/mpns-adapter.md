@@ -1,8 +1,8 @@
 # NotificationPusher - Documentation
 
-## GCM adapter
+## MPNS adapter
 
-[GCM](http://developer.android.com/google/gcm/gs.html) adapter is used to push notification to Google/Android devices.
+[MPNS](https://msdn.microsoft.com/en-us/library/windows/apps/ff402558(v=vs.105).aspx) adapter is used to push notification to Microsoft WP8 devices.
 
 ### Custom notification push example
 
@@ -12,7 +12,7 @@
 require_once '/path/to/vendor/autoload.php';
 
 use Sly\NotificationPusher\PushManager,
-    Sly\NotificationPusher\Adapter\Gcm as GcmAdapter,
+    Sly\NotificationPusher\Adapter\Mpns as MpnsAdapter,
     Sly\NotificationPusher\Collection\DeviceCollection,
     Sly\NotificationPusher\Model\Device,
     Sly\NotificationPusher\Model\Message,
@@ -28,7 +28,7 @@ use Sly\NotificationPusher\PushManager,
 $pushManager = new PushManager(PushManager::ENVIRONMENT_DEV);
 
 // Then declare an adapter.
-$gcmAdapter = new GcmAdapter(array(
+$mpnsAdapter = new MpnsAdapter(array(
     'apiKey' => 'YourApiKey',
 ));
 
@@ -43,7 +43,7 @@ $devices = new DeviceCollection(array(
 $message = new Message('This is an example.');
 
 // Finally, create and add the push to the manager, and push it!
-$push = new Push($gcmAdapter, $devices, $message);
+$push = new Push($mpnsAdapter, $devices, $message);
 $pushManager->add($push);
 $pushManager->push(); // Returns a collection of notified devices
 ```
@@ -53,7 +53,7 @@ $pushManager->push(); // Returns a collection of notified devices
 * [Installation](https://github.com/Ph3nol/NotificationPusher/blob/master/doc/installation.md)
 * [Getting started](https://github.com/Ph3nol/NotificationPusher/blob/master/doc/getting-started.md)
 * [APNS adapter](https://github.com/Ph3nol/NotificationPusher/blob/master/doc/apns-adapter.md)
-* GCM adapter
-* [MPNS adapter](https://github.com/Ph3nol/NotificationPusher/blob/master/doc/mpns-adapter.md)
+* [GCM adapter](https://github.com/Ph3nol/NotificationPusher/blob/master/doc/gcm-adapter.md)
+* MPNS adapter
 * [Create an adapter](https://github.com/Ph3nol/NotificationPusher/blob/master/doc/create-an-adapter.md)
 * [Push from CLI](https://github.com/Ph3nol/NotificationPusher/blob/master/doc/push-from-cli.md)

@@ -482,114 +482,6 @@
         ]
     },
     {
-        "name": "zendframework/zend-http",
-        "version": "dev-master",
-        "version_normalized": "9999999-dev",
-        "source": {
-            "type": "git",
-            "url": "https://github.com/zendframework/zend-http.git",
-            "reference": "14f26e25155a3db1006260bef643fa450f0bbf68"
-        },
-        "dist": {
-            "type": "zip",
-            "url": "https://api.github.com/repos/zendframework/zend-http/zipball/14f26e25155a3db1006260bef643fa450f0bbf68",
-            "reference": "14f26e25155a3db1006260bef643fa450f0bbf68",
-            "shasum": ""
-        },
-        "require": {
-            "php": ">=5.5",
-            "zendframework/zend-loader": "~2.5",
-            "zendframework/zend-stdlib": "~2.5",
-            "zendframework/zend-uri": "~2.5",
-            "zendframework/zend-validator": "~2.5"
-        },
-        "require-dev": {
-            "fabpot/php-cs-fixer": "1.7.*",
-            "phpunit/phpunit": "~4.0",
-            "zendframework/zend-config": "~2.5"
-        },
-        "time": "2015-06-05 09:17:36",
-        "type": "library",
-        "extra": {
-            "branch-alias": {
-                "dev-master": "2.5-dev",
-                "dev-develop": "2.6-dev"
-            }
-        },
-        "installation-source": "source",
-        "autoload": {
-            "psr-4": {
-                "Zend\\Http\\": "src/"
-            }
-        },
-        "notification-url": "https://packagist.org/downloads/",
-        "license": [
-            "BSD-3-Clause"
-        ],
-        "description": "provides an easy interface for performing Hyper-Text Transfer Protocol (HTTP) requests",
-        "homepage": "https://github.com/zendframework/zend-http",
-        "keywords": [
-            "http",
-            "zf2"
-        ]
-    },
-    {
-        "name": "zendframework/zend-json",
-        "version": "dev-develop",
-        "version_normalized": "dev-develop",
-        "source": {
-            "type": "git",
-            "url": "https://github.com/zendframework/zend-json.git",
-            "reference": "d345c0ee8777dc42cc916995c2aefc50bb4bf1e4"
-        },
-        "dist": {
-            "type": "zip",
-            "url": "https://api.github.com/repos/zendframework/zend-json/zipball/d345c0ee8777dc42cc916995c2aefc50bb4bf1e4",
-            "reference": "d345c0ee8777dc42cc916995c2aefc50bb4bf1e4",
-            "shasum": ""
-        },
-        "require": {
-            "php": ">=5.5",
-            "zendframework/zend-stdlib": "~2.5"
-        },
-        "require-dev": {
-            "fabpot/php-cs-fixer": "1.7.*",
-            "phpunit/phpunit": "~4.0",
-            "zendframework/zend-http": "~2.5",
-            "zendframework/zend-server": "~2.5",
-            "zendframework/zendxml": "~1.0"
-        },
-        "suggest": {
-            "zendframework/zend-http": "Zend\\Http component",
-            "zendframework/zend-server": "Zend\\Server component",
-            "zendframework/zendxml": "To support Zend\\Json\\Json::fromXml() usage"
-        },
-        "time": "2015-06-05 09:18:07",
-        "type": "library",
-        "extra": {
-            "branch-alias": {
-                "dev-master": "2.5-dev",
-                "dev-develop": "2.6-dev"
-            }
-        },
-        "installation-source": "source",
-        "autoload": {
-            "psr-4": {
-                "Zend\\Json\\": "src/"
-            }
-        },
-        "notification-url": "https://packagist.org/downloads/",
-        "license": [
-            "BSD-3-Clause"
-        ],
-        "description": "provides convenience methods for serializing native PHP to JSON and decoding JSON to native PHP",
-        "homepage": "https://github.com/zendframework/zend-json",
-        "keywords": [
-            "json",
-            "zf2"
-        ]
-    },
-    {
         "name": "zendframework/zend-stdlib",
         "version": "dev-develop",
         "version_normalized": "dev-develop",
@@ -694,65 +586,6 @@
         ]
     },
     {
-        "name": "symfony/console",
-        "version": "2.8.x-dev",
-        "version_normalized": "2.8.9999999.9999999-dev",
-        "source": {
-            "type": "git",
-            "url": "https://github.com/symfony/Console.git",
-            "reference": "eef94b47e4e21ab887ef03192d2fb65cc9929c76"
-        },
-        "dist": {
-            "type": "zip",
-            "url": "https://api.github.com/repos/symfony/Console/zipball/eef94b47e4e21ab887ef03192d2fb65cc9929c76",
-            "reference": "eef94b47e4e21ab887ef03192d2fb65cc9929c76",
-            "shasum": ""
-        },
-        "require": {
-            "php": ">=5.3.9"
-        },
-        "require-dev": {
-            "psr/log": "~1.0",
-            "symfony/event-dispatcher": "~2.1|~3.0.0",
-            "symfony/phpunit-bridge": "~2.7|~3.0.0",
-            "symfony/process": "~2.1|~3.0.0"
-        },
-        "suggest": {
-            "psr/log": "For using the console logger",
-            "symfony/event-dispatcher": "",
-            "symfony/process": ""
-        },
-        "time": "2015-07-29 07:12:56",
-        "type": "library",
-        "extra": {
-            "branch-alias": {
-                "dev-master": "2.8-dev"
-            }
-        },
-        "installation-source": "source",
-        "autoload": {
-            "psr-4": {
-                "Symfony\\Component\\Console\\": ""
-            }
-        },
-        "notification-url": "https://packagist.org/downloads/",
-        "license": [
-            "MIT"
-        ],
-        "authors": [
-            {
-                "name": "Fabien Potencier",
-                "email": "fabien@symfony.com"
-            },
-            {
-                "name": "Symfony Community",
-                "homepage": "https://symfony.com/contributors"
-            }
-        ],
-        "description": "Symfony Console Component",
-        "homepage": "https://symfony.com"
-    },
-    {
         "name": "zendframework/zendservice-apple-apns",
         "version": "1.1.0",
         "version_normalized": "1.1.0.0",
@@ -798,18 +631,174 @@
         ]
     },
     {
-        "name": "sly/notification-pusher",
+        "name": "zendframework/zend-http",
+        "version": "dev-develop",
+        "version_normalized": "dev-develop",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/zendframework/zend-http.git",
+            "reference": "6cba6905dcc6c3dafa2b54e788857be8d20a17c6"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/zendframework/zend-http/zipball/6cba6905dcc6c3dafa2b54e788857be8d20a17c6",
+            "reference": "6cba6905dcc6c3dafa2b54e788857be8d20a17c6",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.5",
+            "zendframework/zend-loader": "~2.5",
+            "zendframework/zend-stdlib": "~2.5",
+            "zendframework/zend-uri": "~2.5",
+            "zendframework/zend-validator": "~2.5"
+        },
+        "require-dev": {
+            "fabpot/php-cs-fixer": "1.7.*",
+            "phpunit/phpunit": "~4.0",
+            "zendframework/zend-config": "~2.5"
+        },
+        "time": "2015-06-05 09:18:04",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "2.5-dev",
+                "dev-develop": "2.6-dev"
+            }
+        },
+        "installation-source": "source",
+        "autoload": {
+            "psr-4": {
+                "Zend\\Http\\": "src/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "BSD-3-Clause"
+        ],
+        "description": "provides an easy interface for performing Hyper-Text Transfer Protocol (HTTP) requests",
+        "homepage": "https://github.com/zendframework/zend-http",
+        "keywords": [
+            "http",
+            "zf2"
+        ]
+    },
+    {
+        "name": "zendframework/zendservice-microsoft-mpns",
         "version": "dev-master",
         "version_normalized": "9999999-dev",
         "source": {
             "type": "git",
-            "url": "https://github.com/boboldehampsink/NotificationPusher.git",
-            "reference": "6de99d78306a18bc30a86230d54b40e781ad04e3"
+            "url": "https://github.com/boboldehampsink/ZendService_Microsoft_Mpns.git",
+            "reference": "4f2a07152691a024a5af1e34a55b7c6acc3bfade"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/boboldehampsink/NotificationPusher/zipball/6de99d78306a18bc30a86230d54b40e781ad04e3",
-            "reference": "6de99d78306a18bc30a86230d54b40e781ad04e3",
+            "url": "https://api.github.com/repos/boboldehampsink/ZendService_Microsoft_Mpns/zipball/4f2a07152691a024a5af1e34a55b7c6acc3bfade",
+            "reference": "4f2a07152691a024a5af1e34a55b7c6acc3bfade",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.3.3",
+            "zendframework/zend-http": "~2.0"
+        },
+        "require-dev": {
+            "phpunit/phpunit": "3.7.*"
+        },
+        "time": "2015-08-04 14:37:52",
+        "type": "library",
+        "installation-source": "source",
+        "autoload": {
+            "psr-0": {
+                "ZendService\\Microsoft\\Mpns\\": "library/",
+                "ZendService\\Microsoft\\Exception\\": "library/"
+            }
+        },
+        "license": [
+            "BSD-3-Clause"
+        ],
+        "description": "OOP Zend Framework 2 wrapper for Microsoft Push Notification Service",
+        "homepage": "http://packages.zendframework.com/",
+        "keywords": [
+            "microsoft",
+            "mpns",
+            "notification",
+            "push",
+            "zf2"
+        ],
+        "support": {
+            "source": "https://github.com/boboldehampsink/ZendService_Microsoft_Mpns/tree/master",
+            "issues": "https://github.com/boboldehampsink/ZendService_Microsoft_Mpns/issues"
+        }
+    },
+    {
+        "name": "zendframework/zend-json",
+        "version": "dev-master",
+        "version_normalized": "9999999-dev",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/zendframework/zend-json.git",
+            "reference": "a37f84ff05352831dfafb2f0ad91cc9ddb53661b"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/zendframework/zend-json/zipball/a37f84ff05352831dfafb2f0ad91cc9ddb53661b",
+            "reference": "a37f84ff05352831dfafb2f0ad91cc9ddb53661b",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.5",
+            "zendframework/zend-stdlib": "~2.5"
+        },
+        "require-dev": {
+            "fabpot/php-cs-fixer": "1.7.*",
+            "phpunit/phpunit": "~4.0",
+            "zendframework/zend-http": "~2.5",
+            "zendframework/zend-server": "~2.5",
+            "zendframework/zendxml": "~1.0"
+        },
+        "suggest": {
+            "zendframework/zend-http": "Zend\\Http component",
+            "zendframework/zend-server": "Zend\\Server component",
+            "zendframework/zendxml": "To support Zend\\Json\\Json::fromXml() usage"
+        },
+        "time": "2015-06-05 09:17:39",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "2.5-dev",
+                "dev-develop": "2.6-dev"
+            }
+        },
+        "installation-source": "source",
+        "autoload": {
+            "psr-4": {
+                "Zend\\Json\\": "src/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "BSD-3-Clause"
+        ],
+        "description": "provides convenience methods for serializing native PHP to JSON and decoding JSON to native PHP",
+        "homepage": "https://github.com/zendframework/zend-json",
+        "keywords": [
+            "json",
+            "zf2"
+        ]
+    },
+    {
+        "name": "sly/notification-pusher",
+        "version": "dev-mpns",
+        "version_normalized": "dev-mpns",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/boboldehampsink/NotificationPusher.git",
+            "reference": "18b4cddf38e72d69b8f39b4052908de3b6a8de3a"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/boboldehampsink/NotificationPusher/zipball/18b4cddf38e72d69b8f39b4052908de3b6a8de3a",
+            "reference": "18b4cddf38e72d69b8f39b4052908de3b6a8de3a",
             "shasum": ""
         },
         "require": {
@@ -819,12 +808,13 @@
             "symfony/options-resolver": "~2.3",
             "symfony/process": "~2.3",
             "zendframework/zendservice-apple-apns": "1.*",
-            "zendframework/zendservice-google-gcm": "1.*"
+            "zendframework/zendservice-google-gcm": "1.*",
+            "zendframework/zendservice-microsoft-mpns": "dev-master"
         },
         "require-dev": {
             "atoum/atoum": "dev-master"
         },
-        "time": "2015-07-29 17:32:01",
+        "time": "2015-08-04 14:39:16",
         "bin": [
             "np"
         ],
@@ -857,12 +847,74 @@
             "gcm",
             "iphone",
             "message",
+            "microsoft",
+            "mpns",
             "notification",
             "push",
-            "pusher"
+            "pusher",
+            "wp8"
         ],
         "support": {
-            "source": "https://github.com/boboldehampsink/NotificationPusher/tree/master"
+            "source": "https://github.com/boboldehampsink/NotificationPusher/tree/mpns"
         }
+    },
+    {
+        "name": "symfony/console",
+        "version": "2.8.x-dev",
+        "version_normalized": "2.8.9999999.9999999-dev",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/symfony/Console.git",
+            "reference": "a651989dc0ee7cb4fc850bfe4a8d981a348178aa"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/symfony/Console/zipball/a651989dc0ee7cb4fc850bfe4a8d981a348178aa",
+            "reference": "a651989dc0ee7cb4fc850bfe4a8d981a348178aa",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.3.9"
+        },
+        "require-dev": {
+            "psr/log": "~1.0",
+            "symfony/event-dispatcher": "~2.1|~3.0.0",
+            "symfony/phpunit-bridge": "~2.7|~3.0.0",
+            "symfony/process": "~2.1|~3.0.0"
+        },
+        "suggest": {
+            "psr/log": "For using the console logger",
+            "symfony/event-dispatcher": "",
+            "symfony/process": ""
+        },
+        "time": "2015-08-01 11:59:20",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "2.8-dev"
+            }
+        },
+        "installation-source": "source",
+        "autoload": {
+            "psr-4": {
+                "Symfony\\Component\\Console\\": ""
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Fabien Potencier",
+                "email": "fabien@symfony.com"
+            },
+            {
+                "name": "Symfony Community",
+                "homepage": "https://symfony.com/contributors"
+            }
+        ],
+        "description": "Symfony Console Component",
+        "homepage": "https://symfony.com"
     }
 ]

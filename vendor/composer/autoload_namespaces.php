@@ -6,6 +6,8 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
+    'ZendService\\Microsoft\\Mpns\\' => array($vendorDir . '/zendframework/zendservice-microsoft-mpns/library'),
+    'ZendService\\Microsoft\\Exception\\' => array($vendorDir . '/zendframework/zendservice-microsoft-mpns/library'),
     'ZendService\\Google\\Gcm\\' => array($vendorDir . '/zendframework/zendservice-google-gcm/library'),
     'ZendService\\Google\\Exception\\' => array($vendorDir . '/zendframework/zendservice-google-gcm/library'),
     'ZendService\\Apple\\Exception\\' => array($vendorDir . '/zendframework/zendservice-apple-apns/library'),
