@@ -40,6 +40,7 @@ return array(
     'Setting (i.e. certificate location for APNS or API key for GCM.)' => 'Instellingen (bijv. certificaat locatie voor APNS of API key voor GCM.)',
     'iOS' => 'iOS',
     'Android' => 'Android',
+    'Windows' => 'Windows',
     'Commands' => 'Commando\'s',
     'Predefine commands to send with a notification.' => 'Stel commando\'s in om met een notificatie te verzenden.',
     'Parameter' => 'Parameter',

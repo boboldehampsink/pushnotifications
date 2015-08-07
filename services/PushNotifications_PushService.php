@@ -145,6 +145,12 @@ class PushNotifications_PushService extends BaseApplicationComponent
                     'apiKey' => $setting,
                 ));
                 break;
+
+            case PushNotifications_AppModel::PLATFORM_WINDOWS:
+                return new WnsAdapter(array(
+
+                ));
+                break;
         }
     }
 }

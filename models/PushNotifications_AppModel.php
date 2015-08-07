@@ -19,6 +19,7 @@ class PushNotifications_AppModel extends BaseElementModel
      */
     const PLATFORM_IOS = 'ios';
     const PLATFORM_ANDROID = 'android';
+    const PLATFORM_WINDOWS = 'windows';
 
     /**
      * Use the translated app name as the string representation.
@@ -84,6 +85,7 @@ class PushNotifications_AppModel extends BaseElementModel
             'platforms'     => array(AttributeType::Mixed, 'default' => array(
                 self::PLATFORM_IOS      => array('enabled' => 0, 'setting' => ''),
                 self::PLATFORM_ANDROID  => array('enabled' => 0, 'setting' => ''),
+                self::PLATFORM_WINDOWS  => array('enabled' => 0, 'setting' => ''),
             )),
             'commands'      => AttributeType::Mixed,
         );

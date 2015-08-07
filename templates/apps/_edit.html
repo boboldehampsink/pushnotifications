@@ -64,6 +64,11 @@
 							<td><input type="checkbox" name="platforms[android][enabled]" value="1"{% if app.platforms.android.enabled %} checked{% endif %}></td>
 							<td class="textual"><textarea name="platforms[android][setting]" rows="1">{{ app.platforms.android.setting }}</textarea></td>
 						</tr>
+						<tr>
+							<td class="thin action" style="text-align: left;">{{ "Windows"|t }}</td>
+							<td><input type="checkbox" name="platforms[windows][enabled]" value="1"{% if app.platforms.windows.enabled %} checked{% endif %}></td>
+							<td class="textual"><textarea name="platforms[windows][setting]" rows="1">{{ app.platforms.windows.setting }}</textarea></td>
+						</tr>
 					</tbody>
 				</table>
 	        </div>

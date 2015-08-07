@@ -1,6 +1,6 @@
 {
     "name": "boboldehampsink/pushnotifications",
-    "description": "Push Notifications (iOS/Android) Plugin for Craft CMS",
+    "description": "Push Notifications (iOS/Android/Windows) Plugin for Craft CMS",
     "authors": [
         {
             "name": "Bob Olde Hampsink",
