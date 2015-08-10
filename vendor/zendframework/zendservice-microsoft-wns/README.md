@@ -25,7 +25,7 @@ If you're not familiar with Composer, please see <http://getcomposer.org/>.
         {
             ...
             "require": {
-                "zendframework/zendservice-microsoft-mpns": "1.*"
+                "zendframework/zendservice-microsoft-wns": "1.*"
             },
             ...
         }

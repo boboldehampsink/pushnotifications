@@ -174,12 +174,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/boboldehampsink/NotificationPusher.git",
-                "reference": "256ac6b3ffb8550695f825006a8c8e2caf0f7778"
+                "reference": "ae79f669edb3a47f4b9912456a05d6f1438469ce"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/boboldehampsink/NotificationPusher/zipball/256ac6b3ffb8550695f825006a8c8e2caf0f7778",
-                "reference": "256ac6b3ffb8550695f825006a8c8e2caf0f7778",
+                "url": "https://api.github.com/repos/boboldehampsink/NotificationPusher/zipball/ae79f669edb3a47f4b9912456a05d6f1438469ce",
+                "reference": "ae79f669edb3a47f4b9912456a05d6f1438469ce",
                 "shasum": ""
             },
             "require": {
@@ -236,7 +236,7 @@
             "support": {
                 "source": "https://github.com/boboldehampsink/NotificationPusher/tree/wns"
             },
-            "time": "2015-08-10 07:16:04"
+            "time": "2015-08-10 13:11:49"
         },
         {
             "name": "symfony/console",
@@ -494,16 +494,16 @@
         },
         {
             "name": "zendframework/zend-json",
-            "version": "dev-master",
+            "version": "dev-develop",
             "source": {
                 "type": "git",
                 "url": "https://github.com/zendframework/zend-json.git",
-                "reference": "ac34203e60c19e0b89f16673332a7ddbeb5e1ea7"
+                "reference": "b71f86f57fc476938cb1e53acecfb0f02be2dbc5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/zendframework/zend-json/zipball/ac34203e60c19e0b89f16673332a7ddbeb5e1ea7",
-                "reference": "ac34203e60c19e0b89f16673332a7ddbeb5e1ea7",
+                "url": "https://api.github.com/repos/zendframework/zend-json/zipball/b71f86f57fc476938cb1e53acecfb0f02be2dbc5",
+                "reference": "b71f86f57fc476938cb1e53acecfb0f02be2dbc5",
                 "shasum": ""
             },
             "require": {
@@ -544,7 +544,7 @@
                 "json",
                 "zf2"
             ],
-            "time": "2015-08-05 14:47:31"
+            "time": "2015-08-05 14:48:10"
         },
         {
             "name": "zendframework/zend-loader",
@@ -852,12 +852,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/boboldehampsink/ZendService_Microsoft_Wns.git",
-                "reference": "434edefd2777e76ab9d4b93ecc09b302db119a9f"
+                "reference": "250d7da1ea6f54363ff6e104b9bce15b25caf10c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/boboldehampsink/ZendService_Microsoft_Wns/zipball/434edefd2777e76ab9d4b93ecc09b302db119a9f",
-                "reference": "434edefd2777e76ab9d4b93ecc09b302db119a9f",
+                "url": "https://api.github.com/repos/boboldehampsink/ZendService_Microsoft_Wns/zipball/250d7da1ea6f54363ff6e104b9bce15b25caf10c",
+                "reference": "250d7da1ea6f54363ff6e104b9bce15b25caf10c",
                 "shasum": ""
             },
             "require": {
@@ -890,7 +890,7 @@
                 "source": "https://github.com/boboldehampsink/ZendService_Microsoft_Wns/tree/master",
                 "issues": "https://github.com/boboldehampsink/ZendService_Microsoft_Wns/issues"
             },
-            "time": "2015-08-10 06:53:17"
+            "time": "2015-08-10 13:09:51"
         }
     ],
     "packages-dev": [],

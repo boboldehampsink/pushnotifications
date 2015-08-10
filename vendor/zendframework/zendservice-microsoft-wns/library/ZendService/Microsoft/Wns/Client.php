@@ -84,7 +84,7 @@ class Client
 
         $response = $client->setHeaders($headers)
                            ->setMethod('POST')
-                           ->setRawBody($message->toXml())
+                           ->setRawBody($message->getPayloadXml())
                            ->setEncType('text/xml')
                            ->send();
 

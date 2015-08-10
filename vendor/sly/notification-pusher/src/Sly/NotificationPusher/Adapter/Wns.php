@@ -44,7 +44,7 @@ class Wns extends BaseAdapter
         $pushedDevices = new DeviceCollection();
 
         foreach ($push->getDevices() as $device) {
-            $message = $this->getServiceMessageFromOrigin($device, $push->getMessage());
+            $message = $this->getServiceMessageFromOrigin($device->getToken(), $push->getMessage());
 
             try {
                 $this->response = $client->send($message);
@@ -100,7 +100,7 @@ class Wns extends BaseAdapter
             $token,
             $message->getOption('title'),
             $message->getOption('body'),
-            $message->getOption('custom'),
+            http_build_query($message->getOption('custom')),
             $message->getOption('delay')
         );
         $serviceMessage->setId(sha1($token.$message->getText()));

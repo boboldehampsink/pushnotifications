@@ -120,7 +120,7 @@ abstract class Message
     public function getDelay()
     {
         if (!$this->delay) {
-            return self::DELAY_IMMEDIATE;
+            return static::DELAY_IMMEDIATE;
         }
 
         return $this->delay;
