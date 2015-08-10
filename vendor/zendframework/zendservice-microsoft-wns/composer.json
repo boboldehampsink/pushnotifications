@@ -1,0 +1,33 @@
+{
+    "name": "zendframework/zendservice-microsoft-wns",
+    "description": "OOP Zend Framework 2 wrapper for Windows Notification Service",
+    "type": "library",
+    "keywords": [
+        "zf2",
+        "wns",
+        "push",
+        "notification",
+        "microsoft"
+    ],
+    "homepage": "http://packages.zendframework.com/",
+    "license": "BSD-3-Clause",
+    "autoload": {
+        "psr-0": {
+            "ZendService\\Microsoft\\Wns\\": "library/",
+            "ZendService\\Microsoft\\Exception\\": "library/"
+        }
+    },
+    "repositories": [
+        {
+            "type": "composer",
+            "url": "http://packages.zendframework.com/"
+        }
+    ],
+    "require": {
+        "php": ">=5.3.3",
+        "zendframework/zend-http": "~2.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "3.7.*"
+	}
+}
