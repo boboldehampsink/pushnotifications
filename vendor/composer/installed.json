@@ -97,113 +97,6 @@
         ]
     },
     {
-        "name": "symfony/options-resolver",
-        "version": "2.8.x-dev",
-        "version_normalized": "2.8.9999999.9999999-dev",
-        "source": {
-            "type": "git",
-            "url": "https://github.com/symfony/OptionsResolver.git",
-            "reference": "7b4b8b8644069f105afa4bb48d7c113ed3d7a2f8"
-        },
-        "dist": {
-            "type": "zip",
-            "url": "https://api.github.com/repos/symfony/OptionsResolver/zipball/7b4b8b8644069f105afa4bb48d7c113ed3d7a2f8",
-            "reference": "7b4b8b8644069f105afa4bb48d7c113ed3d7a2f8",
-            "shasum": ""
-        },
-        "require": {
-            "php": ">=5.3.9"
-        },
-        "require-dev": {
-            "symfony/phpunit-bridge": "~2.7|~3.0.0"
-        },
-        "time": "2015-06-19 15:09:14",
-        "type": "library",
-        "extra": {
-            "branch-alias": {
-                "dev-master": "2.8-dev"
-            }
-        },
-        "installation-source": "source",
-        "autoload": {
-            "psr-4": {
-                "Symfony\\Component\\OptionsResolver\\": ""
-            }
-        },
-        "notification-url": "https://packagist.org/downloads/",
-        "license": [
-            "MIT"
-        ],
-        "authors": [
-            {
-                "name": "Fabien Potencier",
-                "email": "fabien@symfony.com"
-            },
-            {
-                "name": "Symfony Community",
-                "homepage": "https://symfony.com/contributors"
-            }
-        ],
-        "description": "Symfony OptionsResolver Component",
-        "homepage": "https://symfony.com",
-        "keywords": [
-            "config",
-            "configuration",
-            "options"
-        ]
-    },
-    {
-        "name": "symfony/process",
-        "version": "2.8.x-dev",
-        "version_normalized": "2.8.9999999.9999999-dev",
-        "source": {
-            "type": "git",
-            "url": "https://github.com/symfony/Process.git",
-            "reference": "25d74c90d79e66905013714d8d188e4ccb5ff466"
-        },
-        "dist": {
-            "type": "zip",
-            "url": "https://api.github.com/repos/symfony/Process/zipball/25d74c90d79e66905013714d8d188e4ccb5ff466",
-            "reference": "25d74c90d79e66905013714d8d188e4ccb5ff466",
-            "shasum": ""
-        },
-        "require": {
-            "php": ">=5.3.9"
-        },
-        "require-dev": {
-            "symfony/phpunit-bridge": "~2.7|~3.0.0"
-        },
-        "time": "2015-07-01 14:16:54",
-        "type": "library",
-        "extra": {
-            "branch-alias": {
-                "dev-master": "2.8-dev"
-            }
-        },
-        "installation-source": "source",
-        "autoload": {
-            "psr-4": {
-                "Symfony\\Component\\Process\\": ""
-            }
-        },
-        "notification-url": "https://packagist.org/downloads/",
-        "license": [
-            "MIT"
-        ],
-        "authors": [
-            {
-                "name": "Fabien Potencier",
-                "email": "fabien@symfony.com"
-            },
-            {
-                "name": "Symfony Community",
-                "homepage": "https://symfony.com/contributors"
-            }
-        ],
-        "description": "Symfony Process Component",
-        "homepage": "https://symfony.com"
-    },
-    {
         "name": "doctrine/inflector",
         "version": "dev-master",
         "version_normalized": "9999999-dev",
@@ -270,6 +163,64 @@
             "pluralize",
             "singularize",
             "string"
+        ]
+    },
+    {
+        "name": "zendframework/zend-stdlib",
+        "version": "dev-develop",
+        "version_normalized": "dev-develop",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/zendframework/zend-stdlib.git",
+            "reference": "297c69931ebc0d17a454656fd3b63e3fb0098f1d"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/zendframework/zend-stdlib/zipball/297c69931ebc0d17a454656fd3b63e3fb0098f1d",
+            "reference": "297c69931ebc0d17a454656fd3b63e3fb0098f1d",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.5"
+        },
+        "require-dev": {
+            "fabpot/php-cs-fixer": "1.7.*",
+            "phpunit/phpunit": "~4.0",
+            "zendframework/zend-config": "~2.5",
+            "zendframework/zend-eventmanager": "~2.5",
+            "zendframework/zend-filter": "~2.5",
+            "zendframework/zend-inputfilter": "~2.5",
+            "zendframework/zend-serializer": "~2.5",
+            "zendframework/zend-servicemanager": "~2.5"
+        },
+        "suggest": {
+            "zendframework/zend-eventmanager": "To support aggregate hydrator usage",
+            "zendframework/zend-filter": "To support naming strategy hydrator usage",
+            "zendframework/zend-serializer": "Zend\\Serializer component",
+            "zendframework/zend-servicemanager": "To support hydrator plugin manager usage"
+        },
+        "time": "2015-07-21 17:11:52",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "2.6-dev",
+                "dev-develop": "2.7-dev"
+            }
+        },
+        "installation-source": "source",
+        "autoload": {
+            "psr-4": {
+                "Zend\\Stdlib\\": "src/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "BSD-3-Clause"
+        ],
+        "homepage": "https://github.com/zendframework/zend-stdlib",
+        "keywords": [
+            "stdlib",
+            "zf2"
         ]
     },
     {
@@ -483,17 +434,17 @@
     },
     {
         "name": "zendframework/zend-http",
-        "version": "dev-master",
-        "version_normalized": "9999999-dev",
+        "version": "dev-develop",
+        "version_normalized": "dev-develop",
         "source": {
             "type": "git",
             "url": "https://github.com/zendframework/zend-http.git",
-            "reference": "14f26e25155a3db1006260bef643fa450f0bbf68"
+            "reference": "b5b2236547802678a25d019487f4950883fa93c8"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/zendframework/zend-http/zipball/14f26e25155a3db1006260bef643fa450f0bbf68",
-            "reference": "14f26e25155a3db1006260bef643fa450f0bbf68",
+            "url": "https://api.github.com/repos/zendframework/zend-http/zipball/b5b2236547802678a25d019487f4950883fa93c8",
+            "reference": "b5b2236547802678a25d019487f4950883fa93c8",
             "shasum": ""
         },
         "require": {
@@ -508,7 +459,7 @@
             "phpunit/phpunit": "~4.0",
             "zendframework/zend-config": "~2.5"
         },
-        "time": "2015-06-05 09:17:36",
+        "time": "2015-08-05 15:49:22",
         "type": "library",
         "extra": {
             "branch-alias": {
@@ -534,118 +485,52 @@
         ]
     },
     {
-        "name": "zendframework/zend-json",
-        "version": "dev-develop",
-        "version_normalized": "dev-develop",
+        "name": "zendframework/zendservice-microsoft-wns",
+        "version": "dev-master",
+        "version_normalized": "9999999-dev",
         "source": {
             "type": "git",
-            "url": "https://github.com/zendframework/zend-json.git",
-            "reference": "d345c0ee8777dc42cc916995c2aefc50bb4bf1e4"
+            "url": "https://github.com/boboldehampsink/ZendService_Microsoft_Wns.git",
+            "reference": "434edefd2777e76ab9d4b93ecc09b302db119a9f"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/zendframework/zend-json/zipball/d345c0ee8777dc42cc916995c2aefc50bb4bf1e4",
-            "reference": "d345c0ee8777dc42cc916995c2aefc50bb4bf1e4",
+            "url": "https://api.github.com/repos/boboldehampsink/ZendService_Microsoft_Wns/zipball/434edefd2777e76ab9d4b93ecc09b302db119a9f",
+            "reference": "434edefd2777e76ab9d4b93ecc09b302db119a9f",
             "shasum": ""
         },
         "require": {
-            "php": ">=5.5",
-            "zendframework/zend-stdlib": "~2.5"
+            "php": ">=5.3.3",
+            "zendframework/zend-http": "~2.0"
         },
         "require-dev": {
-            "fabpot/php-cs-fixer": "1.7.*",
-            "phpunit/phpunit": "~4.0",
-            "zendframework/zend-http": "~2.5",
-            "zendframework/zend-server": "~2.5",
-            "zendframework/zendxml": "~1.0"
+            "phpunit/phpunit": "3.7.*"
         },
-        "suggest": {
-            "zendframework/zend-http": "Zend\\Http component",
-            "zendframework/zend-server": "Zend\\Server component",
-            "zendframework/zendxml": "To support Zend\\Json\\Json::fromXml() usage"
-        },
-        "time": "2015-06-05 09:18:07",
+        "time": "2015-08-10 06:53:17",
         "type": "library",
-        "extra": {
-            "branch-alias": {
-                "dev-master": "2.5-dev",
-                "dev-develop": "2.6-dev"
-            }
-        },
         "installation-source": "source",
         "autoload": {
-            "psr-4": {
-                "Zend\\Json\\": "src/"
+            "psr-0": {
+                "ZendService\\Microsoft\\Wns\\": "library/",
+                "ZendService\\Microsoft\\Exception\\": "library/"
             }
         },
-        "notification-url": "https://packagist.org/downloads/",
         "license": [
             "BSD-3-Clause"
         ],
-        "description": "provides convenience methods for serializing native PHP to JSON and decoding JSON to native PHP",
-        "homepage": "https://github.com/zendframework/zend-json",
+        "description": "OOP Zend Framework 2 wrapper for Windows Notification Service",
+        "homepage": "http://packages.zendframework.com/",
         "keywords": [
-            "json",
+            "microsoft",
+            "notification",
+            "push",
+            "wns",
             "zf2"
-        ]
-    },
-    {
-        "name": "zendframework/zend-stdlib",
-        "version": "dev-develop",
-        "version_normalized": "dev-develop",
-        "source": {
-            "type": "git",
-            "url": "https://github.com/zendframework/zend-stdlib.git",
-            "reference": "297c69931ebc0d17a454656fd3b63e3fb0098f1d"
-        },
-        "dist": {
-            "type": "zip",
-            "url": "https://api.github.com/repos/zendframework/zend-stdlib/zipball/297c69931ebc0d17a454656fd3b63e3fb0098f1d",
-            "reference": "297c69931ebc0d17a454656fd3b63e3fb0098f1d",
-            "shasum": ""
-        },
-        "require": {
-            "php": ">=5.5"
-        },
-        "require-dev": {
-            "fabpot/php-cs-fixer": "1.7.*",
-            "phpunit/phpunit": "~4.0",
-            "zendframework/zend-config": "~2.5",
-            "zendframework/zend-eventmanager": "~2.5",
-            "zendframework/zend-filter": "~2.5",
-            "zendframework/zend-inputfilter": "~2.5",
-            "zendframework/zend-serializer": "~2.5",
-            "zendframework/zend-servicemanager": "~2.5"
-        },
-        "suggest": {
-            "zendframework/zend-eventmanager": "To support aggregate hydrator usage",
-            "zendframework/zend-filter": "To support naming strategy hydrator usage",
-            "zendframework/zend-serializer": "Zend\\Serializer component",
-            "zendframework/zend-servicemanager": "To support hydrator plugin manager usage"
-        },
-        "time": "2015-07-21 17:11:52",
-        "type": "library",
-        "extra": {
-            "branch-alias": {
-                "dev-master": "2.6-dev",
-                "dev-develop": "2.7-dev"
-            }
-        },
-        "installation-source": "source",
-        "autoload": {
-            "psr-4": {
-                "Zend\\Stdlib\\": "src/"
-            }
-        },
-        "notification-url": "https://packagist.org/downloads/",
-        "license": [
-            "BSD-3-Clause"
         ],
-        "homepage": "https://github.com/zendframework/zend-stdlib",
-        "keywords": [
-            "stdlib",
-            "zf2"
-        ]
+        "support": {
+            "source": "https://github.com/boboldehampsink/ZendService_Microsoft_Wns/tree/master",
+            "issues": "https://github.com/boboldehampsink/ZendService_Microsoft_Wns/issues"
+        }
     },
     {
         "name": "zendframework/zendservice-google-gcm",
@@ -694,18 +579,114 @@
         ]
     },
     {
+        "name": "zendframework/zendservice-apple-apns",
+        "version": "1.1.0",
+        "version_normalized": "1.1.0.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/zendframework/ZendService_Apple_Apns.git",
+            "reference": "24811f044847e2bce3a5c9d3ff9a884f13ce59ed"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/zendframework/ZendService_Apple_Apns/zipball/24811f044847e2bce3a5c9d3ff9a884f13ce59ed",
+            "reference": "24811f044847e2bce3a5c9d3ff9a884f13ce59ed",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.3.3",
+            "zendframework/zend-json": "~2.0"
+        },
+        "require-dev": {
+            "phpunit/phpunit": "3.7.*"
+        },
+        "time": "2015-07-29 13:30:57",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-0": {
+                "ZendService\\Apple\\Apns\\": "library/",
+                "ZendService\\Apple\\Exception\\": "library/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "BSD-3-Clause"
+        ],
+        "description": "OOP Zend Framework 2 wrapper for Apple Push Notification Service",
+        "homepage": "http://packages.zendframework.com/",
+        "keywords": [
+            "apns",
+            "apple",
+            "notification",
+            "push",
+            "zf2"
+        ]
+    },
+    {
+        "name": "symfony/process",
+        "version": "2.8.x-dev",
+        "version_normalized": "2.8.9999999.9999999-dev",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/symfony/Process.git",
+            "reference": "25d74c90d79e66905013714d8d188e4ccb5ff466"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/symfony/Process/zipball/25d74c90d79e66905013714d8d188e4ccb5ff466",
+            "reference": "25d74c90d79e66905013714d8d188e4ccb5ff466",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.3.9"
+        },
+        "require-dev": {
+            "symfony/phpunit-bridge": "~2.7|~3.0.0"
+        },
+        "time": "2015-07-01 14:16:54",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "2.8-dev"
+            }
+        },
+        "installation-source": "source",
+        "autoload": {
+            "psr-4": {
+                "Symfony\\Component\\Process\\": ""
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Fabien Potencier",
+                "email": "fabien@symfony.com"
+            },
+            {
+                "name": "Symfony Community",
+                "homepage": "https://symfony.com/contributors"
+            }
+        ],
+        "description": "Symfony Process Component",
+        "homepage": "https://symfony.com"
+    },
+    {
         "name": "symfony/console",
         "version": "2.8.x-dev",
         "version_normalized": "2.8.9999999.9999999-dev",
         "source": {
             "type": "git",
             "url": "https://github.com/symfony/Console.git",
-            "reference": "eef94b47e4e21ab887ef03192d2fb65cc9929c76"
+            "reference": "eb0fcf6f58054ac9d07539451e27aa4e17aebfe0"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/symfony/Console/zipball/eef94b47e4e21ab887ef03192d2fb65cc9929c76",
-            "reference": "eef94b47e4e21ab887ef03192d2fb65cc9929c76",
+            "url": "https://api.github.com/repos/symfony/Console/zipball/eb0fcf6f58054ac9d07539451e27aa4e17aebfe0",
+            "reference": "eb0fcf6f58054ac9d07539451e27aa4e17aebfe0",
             "shasum": ""
         },
         "require": {
@@ -722,7 +703,7 @@
             "symfony/event-dispatcher": "",
             "symfony/process": ""
         },
-        "time": "2015-07-29 07:12:56",
+        "time": "2015-08-04 15:59:05",
         "type": "library",
         "extra": {
             "branch-alias": {
@@ -753,63 +734,130 @@
         "homepage": "https://symfony.com"
     },
     {
-        "name": "zendframework/zendservice-apple-apns",
-        "version": "1.1.0",
-        "version_normalized": "1.1.0.0",
+        "name": "symfony/options-resolver",
+        "version": "2.8.x-dev",
+        "version_normalized": "2.8.9999999.9999999-dev",
         "source": {
             "type": "git",
-            "url": "https://github.com/zendframework/ZendService_Apple_Apns.git",
-            "reference": "24811f044847e2bce3a5c9d3ff9a884f13ce59ed"
+            "url": "https://github.com/symfony/OptionsResolver.git",
+            "reference": "7b4b8b8644069f105afa4bb48d7c113ed3d7a2f8"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/zendframework/ZendService_Apple_Apns/zipball/24811f044847e2bce3a5c9d3ff9a884f13ce59ed",
-            "reference": "24811f044847e2bce3a5c9d3ff9a884f13ce59ed",
+            "url": "https://api.github.com/repos/symfony/OptionsResolver/zipball/7b4b8b8644069f105afa4bb48d7c113ed3d7a2f8",
+            "reference": "7b4b8b8644069f105afa4bb48d7c113ed3d7a2f8",
             "shasum": ""
         },
         "require": {
-            "php": ">=5.3.3",
-            "zendframework/zend-json": "~2.0"
+            "php": ">=5.3.9"
         },
         "require-dev": {
-            "phpunit/phpunit": "3.7.*"
+            "symfony/phpunit-bridge": "~2.7|~3.0.0"
         },
-        "time": "2015-07-29 13:30:57",
+        "time": "2015-06-19 15:09:14",
         "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "2.8-dev"
+            }
+        },
         "installation-source": "source",
         "autoload": {
-            "psr-0": {
-                "ZendService\\Apple\\Apns\\": "library/",
-                "ZendService\\Apple\\Exception\\": "library/"
+            "psr-4": {
+                "Symfony\\Component\\OptionsResolver\\": ""
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Fabien Potencier",
+                "email": "fabien@symfony.com"
+            },
+            {
+                "name": "Symfony Community",
+                "homepage": "https://symfony.com/contributors"
+            }
+        ],
+        "description": "Symfony OptionsResolver Component",
+        "homepage": "https://symfony.com",
+        "keywords": [
+            "config",
+            "configuration",
+            "options"
+        ]
+    },
+    {
+        "name": "zendframework/zend-json",
+        "version": "dev-master",
+        "version_normalized": "9999999-dev",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/zendframework/zend-json.git",
+            "reference": "ac34203e60c19e0b89f16673332a7ddbeb5e1ea7"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/zendframework/zend-json/zipball/ac34203e60c19e0b89f16673332a7ddbeb5e1ea7",
+            "reference": "ac34203e60c19e0b89f16673332a7ddbeb5e1ea7",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.5",
+            "zendframework/zend-stdlib": "~2.5"
+        },
+        "require-dev": {
+            "fabpot/php-cs-fixer": "1.7.*",
+            "phpunit/phpunit": "~4.0",
+            "zendframework/zend-http": "~2.5",
+            "zendframework/zend-server": "~2.5",
+            "zendframework/zendxml": "~1.0"
+        },
+        "suggest": {
+            "zendframework/zend-http": "Zend\\Http component",
+            "zendframework/zend-server": "Zend\\Server component",
+            "zendframework/zendxml": "To support Zend\\Json\\Json::fromXml() usage"
+        },
+        "time": "2015-08-05 14:47:31",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "2.5-dev",
+                "dev-develop": "2.6-dev"
+            }
+        },
+        "installation-source": "source",
+        "autoload": {
+            "psr-4": {
+                "Zend\\Json\\": "src/"
             }
         },
         "notification-url": "https://packagist.org/downloads/",
         "license": [
             "BSD-3-Clause"
         ],
-        "description": "OOP Zend Framework 2 wrapper for Apple Push Notification Service",
-        "homepage": "http://packages.zendframework.com/",
+        "description": "provides convenience methods for serializing native PHP to JSON and decoding JSON to native PHP",
+        "homepage": "https://github.com/zendframework/zend-json",
         "keywords": [
-            "apns",
-            "apple",
-            "notification",
-            "push",
+            "json",
             "zf2"
         ]
     },
     {
         "name": "sly/notification-pusher",
-        "version": "dev-master",
-        "version_normalized": "9999999-dev",
+        "version": "dev-wns",
+        "version_normalized": "dev-wns",
         "source": {
             "type": "git",
             "url": "https://github.com/boboldehampsink/NotificationPusher.git",
-            "reference": "6de99d78306a18bc30a86230d54b40e781ad04e3"
+            "reference": "256ac6b3ffb8550695f825006a8c8e2caf0f7778"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/boboldehampsink/NotificationPusher/zipball/6de99d78306a18bc30a86230d54b40e781ad04e3",
-            "reference": "6de99d78306a18bc30a86230d54b40e781ad04e3",
+            "url": "https://api.github.com/repos/boboldehampsink/NotificationPusher/zipball/256ac6b3ffb8550695f825006a8c8e2caf0f7778",
+            "reference": "256ac6b3ffb8550695f825006a8c8e2caf0f7778",
             "shasum": ""
         },
         "require": {
@@ -819,12 +867,13 @@
             "symfony/options-resolver": "~2.3",
             "symfony/process": "~2.3",
             "zendframework/zendservice-apple-apns": "1.*",
-            "zendframework/zendservice-google-gcm": "1.*"
+            "zendframework/zendservice-google-gcm": "1.*",
+            "zendframework/zendservice-microsoft-wns": "dev-master"
         },
         "require-dev": {
             "atoum/atoum": "dev-master"
         },
-        "time": "2015-07-29 17:32:01",
+        "time": "2015-08-10 07:16:04",
         "bin": [
             "np"
         ],
@@ -857,12 +906,15 @@
             "gcm",
             "iphone",
             "message",
+            "microsoft",
             "notification",
             "push",
-            "pusher"
+            "pusher",
+            "windows",
+            "wns"
         ],
         "support": {
-            "source": "https://github.com/boboldehampsink/NotificationPusher/tree/master"
+            "source": "https://github.com/boboldehampsink/NotificationPusher/tree/wns"
         }
     }
 ]

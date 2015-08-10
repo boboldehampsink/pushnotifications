@@ -5,7 +5,7 @@
 First, we are going to discover this library entities:
 
 * Models (messages, pushes, devices)
-* Adapters (APNS, GCM etc.)
+* Adapters (APNS, GCM, WNS, etc.)
 * The Manager
 
 Here is the basic principle of a notification push:
@@ -83,5 +83,6 @@ $devices = new DeviceCollection(array(
 * Getting started
 * [APNS adapter](https://github.com/Ph3nol/NotificationPusher/blob/master/doc/apns-adapter.md)
 * [GCM adapter](https://github.com/Ph3nol/NotificationPusher/blob/master/doc/gcm-adapter.md)
+* [WNS adapter](https://github.com/Ph3nol/NotificationPusher/blob/master/doc/wns-adapter.md)
 * [Create an adapter](https://github.com/Ph3nol/NotificationPusher/blob/master/doc/create-an-adapter.md)
 * [Push from CLI](https://github.com/Ph3nol/NotificationPusher/blob/master/doc/push-from-cli.md)

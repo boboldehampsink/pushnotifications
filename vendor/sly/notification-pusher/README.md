@@ -4,7 +4,7 @@ Standalone PHP library for easy devices message notifications push.
 
 [![Latest Stable Version](https://poser.pugx.org/sly/notification-pusher/v/stable.png)](https://packagist.org/packages/sly/notification-pusher)
 [![Total Downloads](https://poser.pugx.org/sly/notification-pusher/downloads.png)](https://packagist.org/packages/sly/notification-pusher)
-[![Build Status](https://secure.travis-ci.org/Ph3nol/NotificationPusher.png)](http://travis-ci.org/Ph3nol/NotificationPusher)
+[![Build Status](https://secure.travis-ci.org/boboldehampsink/NotificationPusher.png)](http://travis-ci.org/boboldehampsink/NotificationPusher)
 
 [![SensioLabsInsight](https://insight.sensiolabs.com/projects/4f6f80c4-281a-4903-bf4c-1eb264995dbd/big.png)](https://insight.sensiolabs.com/projects/4f6f80c4-281a-4903-bf4c-1eb264995dbd)
 
@@ -20,6 +20,7 @@ Standalone PHP library for easy devices message notifications push.
 
 * APNS (Apple)
 * GCM (Android)
+* WNS (Microsoft)
 
 ## Documentation and examples
 
@@ -27,13 +28,14 @@ Standalone PHP library for easy devices message notifications push.
 * [Getting started](https://github.com/Ph3nol/NotificationPusher/blob/master/doc/getting-started.md)
 * [APNS adapter](https://github.com/Ph3nol/NotificationPusher/blob/master/doc/apns-adapter.md)
 * [GCM adapter](https://github.com/Ph3nol/NotificationPusher/blob/master/doc/gcm-adapter.md)
+* [WNS adapter](https://github.com/Ph3nol/NotificationPusher/blob/master/doc/wns-adapter.md)
 * [Create an adapter](https://github.com/Ph3nol/NotificationPusher/blob/master/doc/create-an-adapter.md)
 * [Push from CLI](https://github.com/Ph3nol/NotificationPusher/blob/master/doc/push-from-cli.md)
 
 ## Todo
 
-* Add new features (custom APNS payloads, GCM custom options, etc.)
-* Add new adapters (like Blackberry and Windows phones)
+* Add new features (custom APNS payloads, GCM custom options, custom WNS settings, etc.)
+* Add new adapters (like Blackberry and older Windows phones)
 * Write more documentation and examples
 
 ## 1.x users

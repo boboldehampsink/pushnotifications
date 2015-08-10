@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "71317464cb465c1f467ae6d32bed1e0f",
+    "hash": "f67bdc87fd7c63c24da912c119a1e5e0",
     "packages": [
         {
             "name": "composer/installers",
@@ -170,16 +170,16 @@
         },
         {
             "name": "sly/notification-pusher",
-            "version": "dev-master",
+            "version": "dev-wns",
             "source": {
                 "type": "git",
                 "url": "https://github.com/boboldehampsink/NotificationPusher.git",
-                "reference": "6de99d78306a18bc30a86230d54b40e781ad04e3"
+                "reference": "256ac6b3ffb8550695f825006a8c8e2caf0f7778"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/boboldehampsink/NotificationPusher/zipball/6de99d78306a18bc30a86230d54b40e781ad04e3",
-                "reference": "6de99d78306a18bc30a86230d54b40e781ad04e3",
+                "url": "https://api.github.com/repos/boboldehampsink/NotificationPusher/zipball/256ac6b3ffb8550695f825006a8c8e2caf0f7778",
+                "reference": "256ac6b3ffb8550695f825006a8c8e2caf0f7778",
                 "shasum": ""
             },
             "require": {
@@ -189,7 +189,8 @@
                 "symfony/options-resolver": "~2.3",
                 "symfony/process": "~2.3",
                 "zendframework/zendservice-apple-apns": "1.*",
-                "zendframework/zendservice-google-gcm": "1.*"
+                "zendframework/zendservice-google-gcm": "1.*",
+                "zendframework/zendservice-microsoft-wns": "dev-master"
             },
             "require-dev": {
                 "atoum/atoum": "dev-master"
@@ -225,14 +226,17 @@
                 "gcm",
                 "iphone",
                 "message",
+                "microsoft",
                 "notification",
                 "push",
-                "pusher"
+                "pusher",
+                "windows",
+                "wns"
             ],
             "support": {
-                "source": "https://github.com/boboldehampsink/NotificationPusher/tree/master"
+                "source": "https://github.com/boboldehampsink/NotificationPusher/tree/wns"
             },
-            "time": "2015-07-29 17:32:01"
+            "time": "2015-08-10 07:16:04"
         },
         {
             "name": "symfony/console",
@@ -240,12 +244,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/Console.git",
-                "reference": "eef94b47e4e21ab887ef03192d2fb65cc9929c76"
+                "reference": "eb0fcf6f58054ac9d07539451e27aa4e17aebfe0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/Console/zipball/eef94b47e4e21ab887ef03192d2fb65cc9929c76",
-                "reference": "eef94b47e4e21ab887ef03192d2fb65cc9929c76",
+                "url": "https://api.github.com/repos/symfony/Console/zipball/eb0fcf6f58054ac9d07539451e27aa4e17aebfe0",
+                "reference": "eb0fcf6f58054ac9d07539451e27aa4e17aebfe0",
                 "shasum": ""
             },
             "require": {
@@ -289,7 +293,7 @@
             ],
             "description": "Symfony Console Component",
             "homepage": "https://symfony.com",
-            "time": "2015-07-29 07:12:56"
+            "time": "2015-08-04 15:59:05"
         },
         {
             "name": "symfony/options-resolver",
@@ -440,16 +444,16 @@
         },
         {
             "name": "zendframework/zend-http",
-            "version": "dev-master",
+            "version": "dev-develop",
             "source": {
                 "type": "git",
                 "url": "https://github.com/zendframework/zend-http.git",
-                "reference": "14f26e25155a3db1006260bef643fa450f0bbf68"
+                "reference": "b5b2236547802678a25d019487f4950883fa93c8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/zendframework/zend-http/zipball/14f26e25155a3db1006260bef643fa450f0bbf68",
-                "reference": "14f26e25155a3db1006260bef643fa450f0bbf68",
+                "url": "https://api.github.com/repos/zendframework/zend-http/zipball/b5b2236547802678a25d019487f4950883fa93c8",
+                "reference": "b5b2236547802678a25d019487f4950883fa93c8",
                 "shasum": ""
             },
             "require": {
@@ -486,20 +490,20 @@
                 "http",
                 "zf2"
             ],
-            "time": "2015-06-05 09:17:36"
+            "time": "2015-08-05 15:49:22"
         },
         {
             "name": "zendframework/zend-json",
-            "version": "dev-develop",
+            "version": "dev-master",
             "source": {
                 "type": "git",
                 "url": "https://github.com/zendframework/zend-json.git",
-                "reference": "d345c0ee8777dc42cc916995c2aefc50bb4bf1e4"
+                "reference": "ac34203e60c19e0b89f16673332a7ddbeb5e1ea7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/zendframework/zend-json/zipball/d345c0ee8777dc42cc916995c2aefc50bb4bf1e4",
-                "reference": "d345c0ee8777dc42cc916995c2aefc50bb4bf1e4",
+                "url": "https://api.github.com/repos/zendframework/zend-json/zipball/ac34203e60c19e0b89f16673332a7ddbeb5e1ea7",
+                "reference": "ac34203e60c19e0b89f16673332a7ddbeb5e1ea7",
                 "shasum": ""
             },
             "require": {
@@ -540,7 +544,7 @@
                 "json",
                 "zf2"
             ],
-            "time": "2015-06-05 09:18:07"
+            "time": "2015-08-05 14:47:31"
         },
         {
             "name": "zendframework/zend-loader",
@@ -841,20 +845,67 @@
                 "zf2"
             ],
             "time": "2015-03-21 00:57:48"
+        },
+        {
+            "name": "zendframework/zendservice-microsoft-wns",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/boboldehampsink/ZendService_Microsoft_Wns.git",
+                "reference": "434edefd2777e76ab9d4b93ecc09b302db119a9f"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/boboldehampsink/ZendService_Microsoft_Wns/zipball/434edefd2777e76ab9d4b93ecc09b302db119a9f",
+                "reference": "434edefd2777e76ab9d4b93ecc09b302db119a9f",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.3",
+                "zendframework/zend-http": "~2.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "3.7.*"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "ZendService\\Microsoft\\Wns\\": "library/",
+                    "ZendService\\Microsoft\\Exception\\": "library/"
+                }
+            },
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "description": "OOP Zend Framework 2 wrapper for Windows Notification Service",
+            "homepage": "http://packages.zendframework.com/",
+            "keywords": [
+                "microsoft",
+                "notification",
+                "push",
+                "wns",
+                "zf2"
+            ],
+            "support": {
+                "source": "https://github.com/boboldehampsink/ZendService_Microsoft_Wns/tree/master",
+                "issues": "https://github.com/boboldehampsink/ZendService_Microsoft_Wns/issues"
+            },
+            "time": "2015-08-10 06:53:17"
         }
     ],
     "packages-dev": [],
     "aliases": [
         {
-            "alias": "2.2.10-dev",
-            "alias_normalized": "2.2.10.0-dev",
-            "version": "9999999-dev",
+            "alias": "2.3.0-dev",
+            "alias_normalized": "2.3.0.0-dev",
+            "version": "dev-wns",
             "package": "sly/notification-pusher"
         }
     ],
     "minimum-stability": "dev",
     "stability-flags": {
-        "sly/notification-pusher": 20
+        "sly/notification-pusher": 20,
+        "zendframework/zendservice-microsoft-wns": 20
     },
     "prefer-stable": false,
     "prefer-lowest": false,
