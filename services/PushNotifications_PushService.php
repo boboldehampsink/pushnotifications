@@ -11,6 +11,7 @@ use Sly\NotificationPusher\Model\Message;
 use Sly\NotificationPusher\Model\Push;
 use Sly\NotificationPusher\Adapter\Apns as ApnsAdapter;
 use Sly\NotificationPusher\Adapter\Gcm as GcmAdapter;
+use Sly\NotificationPusher\Adapter\Wns as WnsAdapter;
 
 /**
  * Push Notifications Push Service.
