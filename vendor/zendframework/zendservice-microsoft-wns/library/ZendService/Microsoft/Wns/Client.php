@@ -92,7 +92,7 @@ class Client
             case 200:
                 // check headers for response?  need to test how this actually works to correctly handle different states.
                 if ($response->getHeader('NotificationStatus') == 'QueueFull') {
-                    throw new Zend_Mobile_Push_Exception_DeviceQuotaExceeded('The devices push notification queue is full, use exponential backoff');
+                    throw new Exception\RuntimeException('The devices push notification queue is full, use exponential backoff');
                 }
                 break;
             case 400:

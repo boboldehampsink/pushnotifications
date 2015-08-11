@@ -494,16 +494,16 @@
         },
         {
             "name": "zendframework/zend-json",
-            "version": "dev-develop",
+            "version": "dev-master",
             "source": {
                 "type": "git",
                 "url": "https://github.com/zendframework/zend-json.git",
-                "reference": "b71f86f57fc476938cb1e53acecfb0f02be2dbc5"
+                "reference": "ac34203e60c19e0b89f16673332a7ddbeb5e1ea7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/zendframework/zend-json/zipball/b71f86f57fc476938cb1e53acecfb0f02be2dbc5",
-                "reference": "b71f86f57fc476938cb1e53acecfb0f02be2dbc5",
+                "url": "https://api.github.com/repos/zendframework/zend-json/zipball/ac34203e60c19e0b89f16673332a7ddbeb5e1ea7",
+                "reference": "ac34203e60c19e0b89f16673332a7ddbeb5e1ea7",
                 "shasum": ""
             },
             "require": {
@@ -544,7 +544,7 @@
                 "json",
                 "zf2"
             ],
-            "time": "2015-08-05 14:48:10"
+            "time": "2015-08-05 14:47:31"
         },
         {
             "name": "zendframework/zend-loader",
@@ -852,12 +852,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/boboldehampsink/ZendService_Microsoft_Wns.git",
-                "reference": "250d7da1ea6f54363ff6e104b9bce15b25caf10c"
+                "reference": "f4f92fed91387790d1eba51e02193b7ff0287e48"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/boboldehampsink/ZendService_Microsoft_Wns/zipball/250d7da1ea6f54363ff6e104b9bce15b25caf10c",
-                "reference": "250d7da1ea6f54363ff6e104b9bce15b25caf10c",
+                "url": "https://api.github.com/repos/boboldehampsink/ZendService_Microsoft_Wns/zipball/f4f92fed91387790d1eba51e02193b7ff0287e48",
+                "reference": "f4f92fed91387790d1eba51e02193b7ff0287e48",
                 "shasum": ""
             },
             "require": {
@@ -890,7 +890,7 @@
                 "source": "https://github.com/boboldehampsink/ZendService_Microsoft_Wns/tree/master",
                 "issues": "https://github.com/boboldehampsink/ZendService_Microsoft_Wns/issues"
             },
-            "time": "2015-08-10 13:09:51"
+            "time": "2015-08-11 07:24:10"
         }
     ],
     "packages-dev": [],
