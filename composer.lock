@@ -852,12 +852,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/boboldehampsink/ZendService_Microsoft_Wns.git",
-                "reference": "f4f92fed91387790d1eba51e02193b7ff0287e48"
+                "reference": "8c58f688590c0ccaa2921c637c1613d22a481d96"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/boboldehampsink/ZendService_Microsoft_Wns/zipball/f4f92fed91387790d1eba51e02193b7ff0287e48",
-                "reference": "f4f92fed91387790d1eba51e02193b7ff0287e48",
+                "url": "https://api.github.com/repos/boboldehampsink/ZendService_Microsoft_Wns/zipball/8c58f688590c0ccaa2921c637c1613d22a481d96",
+                "reference": "8c58f688590c0ccaa2921c637c1613d22a481d96",
                 "shasum": ""
             },
             "require": {
@@ -890,7 +890,7 @@
                 "source": "https://github.com/boboldehampsink/ZendService_Microsoft_Wns/tree/master",
                 "issues": "https://github.com/boboldehampsink/ZendService_Microsoft_Wns/issues"
             },
-            "time": "2015-08-11 07:24:10"
+            "time": "2015-08-11 14:20:19"
         }
     ],
     "packages-dev": [],

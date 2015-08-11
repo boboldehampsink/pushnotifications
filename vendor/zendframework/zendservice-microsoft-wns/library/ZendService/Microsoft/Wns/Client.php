@@ -96,7 +96,7 @@ class Client
                 }
                 break;
             case 400:
-                throw new Exception\RuntimeException('The message xml was invalid');
+                throw new Exception\RuntimeException('The authentication failed');
                 break;
             case 401:
                 throw new Exception\RuntimeException('The device token is not valid or there is a mismatch between certificates');
@@ -111,7 +111,7 @@ class Client
                 throw new Exception\RuntimeException('The unauthenticated web service has reached the per-day throttling limit');
                 break;
             case 412:
-                throw new Exception\RuntimeException('The device is in an inactive state.  You may retry once per hour');
+                throw new Exception\RuntimeException('The device is in an inactive state. You may retry once per hour');
                 break;
             case 503:
                 throw new Exception\RuntimeException('The server was unavailable.');

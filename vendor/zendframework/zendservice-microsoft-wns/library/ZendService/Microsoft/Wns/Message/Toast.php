@@ -178,16 +178,19 @@ class Toast extends Message
     public function getPayloadXml()
     {
         $params = $this->getParams();
-        $ret = '<?xml version="1.0" encoding="utf-8"?>'
-            .'<wp:Notification xmlns:wp="WPNotification">'
-            .'<wp:Toast>'
-            .'<wp:Text1>'.htmlspecialchars($this->getTitle()).'</wp:Text1>'
-            .'<wp:Text2>'.htmlspecialchars($this->getBody()).'</wp:Text2>';
+        $ret = '<?xml version="1.0" encoding="utf-8"?>';
         if (!empty($params)) {
-            $ret .= '<wp:Param>'.htmlspecialchars($this->getParams()).'</wp:Param>';
+            $ret .= '<toast launch="'.htmlspecialchars($this->getParams()).'">';
+        } else {
+            $ret .= '<toast>';
         }
-        $ret .= '</wp:Toast>'
-            .'</wp:Notification>';
+        $ret .= '<visual>'
+            .'<binding template="ToastText02">'
+            .'<text id="1">'.htmlspecialchars($this->getTitle()).'</text>'
+            .'<text id="2">'.htmlspecialchars($this->getBody()).'</text>'
+            .'</binding>'
+            .'</visual>'
+            .'</toast>';
 
         return $ret;
     }
