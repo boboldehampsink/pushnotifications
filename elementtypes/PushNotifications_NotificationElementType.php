@@ -148,7 +148,7 @@ class PushNotifications_NotificationElementType extends BaseElementType
     public function modifyElementsQuery(DbCommand $query, ElementCriteriaModel $criteria)
     {
         $query
-            ->addSelect('pushnotifications_notifications.appId, pushnotifications_notifications.title, pushnotifications_notifications.body, pushnotifications_notifications.command')
+            ->addSelect('pushnotifications_notifications.appId, pushnotifications_notifications.title, pushnotifications_notifications.body, pushnotifications_notifications.command, pushnotifications_notifications.schedule')
             ->join('pushnotifications_notifications pushnotifications_notifications', 'pushnotifications_notifications.id = elements.id');
 
         if ($criteria->appId) {
