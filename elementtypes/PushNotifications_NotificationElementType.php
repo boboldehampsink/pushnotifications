@@ -84,7 +84,7 @@ class PushNotifications_NotificationElementType extends BaseElementType
             'title'         => Craft::t('Title'),
             'body'          => Craft::t('Body'),
             'command'       => Craft::t('Command'),
-            'dateCreated'   => Craft::t('Sent'),
+            'schedule'      => Craft::t('Send Date'),
         );
     }
 

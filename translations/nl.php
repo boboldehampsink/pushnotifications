@@ -26,7 +26,7 @@ return array(
     'Title' => 'Titel',
     'Body' => 'Tekst',
     'Command' => 'Commando',
-    'Sent' => 'Verzonden',
+    'Send Date' => 'Verzenddatum',
     'No app exists with the ID “{id}”' => 'Er bestaat geen app met het ID “{id}”',
     'Save' => 'Bewaren',
     'Name' => 'Naam',
