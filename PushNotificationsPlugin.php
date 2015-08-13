@@ -31,7 +31,7 @@ class PushNotificationsPlugin extends BasePlugin
      */
     public function getVersion()
     {
-        return '0.2.0';
+        return '0.2.1';
     }
 
     /**

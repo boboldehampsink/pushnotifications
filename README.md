@@ -19,6 +19,11 @@ The plugin's folder should be named "pushnotifications"
 
 Changelog
 =================
+###0.2.1###
+- Use scheduled date in element index
+- Fixed schedule date not showing/saving
+- Added schedule as criteria attribute
+
 ###0.2.0###
 - If you install the [Cronjob Manager Plugin](http://github.com/boboldehampsink/cronjob) you can now schedule notifications in the future
 - Fixed a bug where deleting a notification was broken
