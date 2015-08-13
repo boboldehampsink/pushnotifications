@@ -31,7 +31,7 @@ class PushNotifications_NotificationRecord extends BaseRecord
             'title'     => array(AttributeType::Name, 'required' => true),
             'body'      => array(AttributeType::String, 'required' => true),
             'command'   => AttributeType::String,
-            'schedule'  => array(AttributeType::DateTime, 'default' => DateTimeHelper::currentTimeForDb()),
+            'schedule'  => array(AttributeType::DateTime, 'default' => DateTimeHelper::currentUTCDateTime()),
         );
     }
 

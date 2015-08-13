@@ -54,7 +54,7 @@ class PushNotifications_NotificationsService extends BaseApplicationComponent
         $notificationRecord->title     = $notification->title;
         $notificationRecord->body      = $notification->body;
         $notificationRecord->command   = $notification->command;
-        $notificationRecord->schedule  = $notification->schedule;
+        $notificationRecord->schedule  = $notification->schedule ? $notification->schedule : $notificationRecord->schedule;
 
         $notificationRecord->validate();
         $notification->addErrors($notificationRecord->getErrors());
