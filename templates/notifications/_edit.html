@@ -47,6 +47,7 @@
 				label: "Send Date"|t,
 				id: 'schedule',
 				name: 'schedule',
+				value: notification.id ? notification.schedule : null,
 				errors: notification.getErrors('schedule'),
 				minuteIncrement: 15,
 				instructions: "Omit if you want to send this notification immediately."|t
