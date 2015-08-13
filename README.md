@@ -19,6 +19,9 @@ The plugin's folder should be named "pushnotifications"
 
 Changelog
 =================
+###0.2.2###
+- Show scheduled value when editing
+
 ###0.2.1###
 - Use scheduled date in element index
 - Fixed schedule date not showing/saving
