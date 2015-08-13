@@ -27,6 +27,7 @@ return array(
     'Body' => 'Tekst',
     'Command' => 'Commando',
     'Send Date' => 'Verzenddatum',
+    'Omit if you want to send this notification immediately.' => 'Laat leeg als je deze notificatie direct wilt verzenden.',
     'No app exists with the ID “{id}”' => 'Er bestaat geen app met het ID “{id}”',
     'Save' => 'Bewaren',
     'Name' => 'Naam',
