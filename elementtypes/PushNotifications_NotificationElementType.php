@@ -133,6 +133,7 @@ class PushNotifications_NotificationElementType extends BaseElementType
             'title'     => AttributeType::Name,
             'body'      => AttributeType::String,
             'command'   => AttributeType::String,
+            'schedule'  => AttributeType::DateTime,
             'order'     => array(AttributeType::String, 'default' => 'pushnotifications_notifications.id desc'),
         );
     }
@@ -170,6 +171,10 @@ class PushNotifications_NotificationElementType extends BaseElementType
 
         if ($criteria->command) {
             $query->andWhere(DbHelper::parseParam('pushnotifications_notifications.command', $criteria->command, $query->params));
+        }
+
+        if ($criteria->schedule) {
+            $query->andWhere(DbHelper::parseDateParam('pushnotifications_notifications.schedule', $criteria->schedule, $query->params));
         }
     }
 
