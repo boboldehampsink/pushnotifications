@@ -19,6 +19,9 @@ The plugin's folder should be named "pushnotifications"
 
 Changelog
 =================
+###0.3.0###
+- Show sent/pending status in element index overview
+
 ###0.2.2###
 - Show scheduled value when editing
 
