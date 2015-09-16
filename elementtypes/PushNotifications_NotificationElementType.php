@@ -25,6 +25,29 @@ class PushNotifications_NotificationElementType extends BaseElementType
     }
 
     /**
+     * Return true so we have a status select menu.
+     *
+     * @return bool
+     */
+    public function hasStatuses()
+    {
+        return true;
+    }
+
+    /**
+     * Define statuses.
+     *
+     * @return array
+     */
+    public function getStatuses()
+    {
+        return array(
+            PushNotifications_NotificationModel::SENT    => Craft::t('Sent'),
+            PushNotifications_NotificationModel::PENDING => Craft::t('Pending'),
+        );
+    }
+
+    /**
      * Returns whether this element type has content.
      *
      * @return bool
@@ -134,8 +157,37 @@ class PushNotifications_NotificationElementType extends BaseElementType
             'body'      => AttributeType::String,
             'command'   => AttributeType::String,
             'schedule'  => AttributeType::DateTime,
+            'status'    => AttributeType::String,
             'order'     => array(AttributeType::String, 'default' => 'pushnotifications_notifications.id desc'),
         );
+    }
+
+    /**
+     * @inheritDoc IElementType::getElementQueryStatusCondition()
+     *
+     * @param DbCommand $query
+     * @param string    $status
+     *
+     * @return array|false|string|void
+     */
+    public function getElementQueryStatusCondition(DbCommand $query, $status)
+    {
+        $currentTimeDb = DateTimeHelper::currentTimeForDb();
+
+        switch ($status) {
+
+            case PushNotifications_NotificationModel::SENT:
+                return array(
+                    "or",
+                    "pushnotifications_notifications.schedule IS NULL",
+                    "pushnotifications_notifications.schedule <= '{$currentTimeDb}'"
+                );
+                break;
+
+            case PushNotifications_NotificationModel::PENDING:
+                return "pushnotifications_notifications.schedule > '{$currentTimeDb}'";
+                break;
+        }
     }
 
     /**

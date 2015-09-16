@@ -14,6 +14,16 @@ namespace Craft;
  */
 class PushNotifications_NotificationModel extends BaseElementModel
 {
+    /**
+     * Status constants
+     */
+    const SENT = 'live';
+    const PENDING = 'pending';
+
+    /**
+     * Element Type
+     * @var string
+     */
     protected $elementType = 'PushNotifications_Notification';
 
     /**
@@ -28,6 +38,16 @@ class PushNotifications_NotificationModel extends BaseElementModel
             'command'   => AttributeType::String,
             'schedule'  => array(AttributeType::DateTime, 'default' => DateTimeHelper::currentUTCDateTime()),
         ));
+    }
+
+    /**
+     * Return the model's status.
+     *
+     * @return string
+     */
+    public function getStatus()
+    {
+        return $this->schedule instanceof DateTime && $this->schedule->getTimestamp() > time() ? self::PENDING : self::SENT;
     }
 
     /**

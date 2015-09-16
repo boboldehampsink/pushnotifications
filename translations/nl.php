@@ -52,6 +52,7 @@ return array(
     'Are you sure you want to delete this device?' => 'Weet je zeker dat je dit apparaat wilt verwijderen?',
     'New Device' => 'Nieuw Apparaat',
     'Send' => 'Versturen',
+    'Sent' => 'Verzonden',
     'Are you sure you want to delete this notification?' => 'Weet je zeker dat je deze notificatie wilt verwijderen?',
     'New Notification' => 'Nieuwe Notificatie',
 );
