@@ -1,4 +1,4 @@
-Push Notifications (iOS/Android) plugin for Craft CMS
+Push Notifications (iOS/Android) plugin for Craft CMS [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/boboldehampsink/pushnotifications/badges/quality-score.png?b=develop)](https://scrutinizer-ci.com/g/boboldehampsink/pushnotifications/?branch=develop) [![Latest Stable Version](https://poser.pugx.org/boboldehampsink/pushnotifications/v/stable)](https://packagist.org/packages/boboldehampsink/pushnotifications) [![Total Downloads](https://poser.pugx.org/boboldehampsink/pushnotifications/downloads)](https://packagist.org/packages/boboldehampsink/pushnotifications) [![Latest Unstable Version](https://poser.pugx.org/boboldehampsink/pushnotifications/v/unstable)](https://packagist.org/packages/boboldehampsink/pushnotifications) [![License](https://poser.pugx.org/boboldehampsink/pushnotifications/license)](https://packagist.org/packages/boboldehampsink/pushnotifications)
 =================
 
 Plugin that allows you to register devices and send push notifications to them.
