@@ -35,7 +35,7 @@ class PushNotifications_DeviceModel extends BaseElementModel
      */
     public function getTitle()
     {
-        return $this->token;
+        return strlen($this->token) > 50 ? substr($this->token, 0, 50).'...' : $this->token;
     }
 
     /**
