@@ -81,10 +81,43 @@ class PushNotifications_DeviceElementType extends BaseElementType
     public function defineTableAttributes($source = null)
     {
         return array(
-            'platform'    => Craft::t('Platform'),
             'token'       => Craft::t('Token'),
+            'platform'    => Craft::t('Platform'),
             'dateCreated' => Craft::t('Added'),
         );
+    }
+
+    /**
+     * Returns the table view HTML for a given attribute.
+     *
+     * @param BaseElementModel $element
+     * @param string           $attribute
+     *
+     * @return string
+     */
+    public function getTableAttributeHtml(BaseElementModel $element, $attribute)
+    {
+        switch ($attribute) {
+
+            case 'platform':
+
+                switch ($element->$attribute) {
+
+                    case PushNotifications_AppModel::PLATFORM_IOS:
+                        return Craft::t('iOS');
+                        break;
+
+                    case PushNotifications_AppModel::PLATFORM_ANDROID:
+                        return Craft::t('Android');
+                        break;
+                }
+                break;
+
+            default:
+                return parent::getTableAttributeHtml($element, $attribute);
+                break;
+
+        }
     }
 
     /**
