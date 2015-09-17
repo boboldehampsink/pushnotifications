@@ -19,6 +19,10 @@ The plugin's folder should be named "pushnotifications"
 
 Changelog
 =================
+###0.3.1###
+- Show platform in devices element index
+- Show device title (token) truncated
+
 ###0.3.0###
 - Show sent/pending status in element index overview
 
