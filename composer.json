@@ -4,9 +4,12 @@
     "authors": [
         {
             "name": "Bob Olde Hampsink",
-            "email": "b.oldehampsink@itmundi.nl"
+            "email": "b.oldehampsink@itmundi.nl",
+            "homepage": "http://github.com/boboldehampsink",
+            "role": "Developer"
         }
     ],
+    "license": "MIT",
     "type": "craft-plugin",
     "minimum-stability": "dev",
     "repositories": [
