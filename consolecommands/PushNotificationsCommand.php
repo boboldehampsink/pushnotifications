@@ -54,15 +54,21 @@ class PushNotificationsCommand extends BaseCommand
         try {
 
             // Send notification
-            $devices = craft()->pushNotifications_push->sendNotification($notification);
+            $platforms = craft()->pushNotifications_push->sendNotification($notification);
         } catch (\Exception $e) {
             echo $e->getMessage()."\n";
 
             return;
         }
 
+        // Count devices
+        $devices = 0;
+        foreach ($platforms as $platform) {
+            $devices += count($platform);
+        }
+
         // Show result
-        echo Craft::t('Notification sent to {devices} device(s)', array('devices' => count($devices)))."\n";
+        echo Craft::t('Notification sent to {devices} device(s)', array('devices' => $devices))."\n";
 
         return;
     }
