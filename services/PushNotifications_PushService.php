@@ -87,6 +87,7 @@ class PushNotifications_PushService extends BaseApplicationComponent
 
             // Gather devices
             $devices = array();
+            $notified[$platform] = 0;
 
             // Get devices by platform
             $criteria = craft()->elements->getCriteria('PushNotifications_Device');
@@ -101,6 +102,7 @@ class PushNotifications_PushService extends BaseApplicationComponent
 
                     // Grab device instance
                     $devices[] = new Device($device->token);
+                    $notified[$platform]++;
                 }
 
                 // Parse device collection
@@ -115,7 +117,7 @@ class PushNotifications_PushService extends BaseApplicationComponent
                 // Finally, create and add the push to the manager, and push it!
                 $push = new Push($this->getAdapter($platform, $setting), $devices, $message);
                 $pushManager->add($push);
-                $notified[$platform] = $pushManager->push();
+                $pushManager->push();
             }
         }
 

@@ -64,7 +64,7 @@ class PushNotificationsCommand extends BaseCommand
         // Count devices
         $devices = 0;
         foreach ($platforms as $platform) {
-            $devices += count($platform);
+            $devices += $platform;
         }
 
         // Show result
