@@ -31,14 +31,15 @@ class PushNotificationsCommand extends BaseCommand
      */
     public function actionSend($args)
     {
+        // Log invocation
+        Craft::log($this->getCommandRunner()->getScriptName());
+
         // Get notification id
         $id = $args[0];
 
         // Validate id
         if (!is_numeric($id)) {
-            echo Craft::t('The argument must be a numeric id')."\n";
-
-            return;
+            $this->usageError(Craft::t('The argument must be a numeric id'));
         }
 
         // Get notification
@@ -46,9 +47,7 @@ class PushNotificationsCommand extends BaseCommand
 
         // Validate notification
         if (!$notification) {
-            echo Craft::t('No notification found with id "{id}"', array('id' => $id))."\n";
-
-            return;
+            $this->usageError(Craft::t('No notification found with id "{id}"', array('id' => $id)));
         }
 
         try {
@@ -56,9 +55,7 @@ class PushNotificationsCommand extends BaseCommand
             // Send notification
             $platforms = craft()->pushNotifications_push->sendNotification($notification);
         } catch (\Exception $e) {
-            echo $e->getMessage()."\n";
-
-            return;
+            $this->usageError($e->getMessage());
         }
 
         // Count devices
@@ -69,7 +66,6 @@ class PushNotificationsCommand extends BaseCommand
 
         // Show result
         echo Craft::t('Notification sent to {devices} device(s)', array('devices' => $devices))."\n";
-
-        return;
+        exit(0);
     }
 }
