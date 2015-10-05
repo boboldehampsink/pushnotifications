@@ -19,6 +19,12 @@ The plugin's folder should be named "pushnotifications"
 
 Changelog
 =================
+###0.3.2###
+- Improved device counter
+- Improved console tools
+- Updated dependencies
+- Fix use of dayOfWeek with cronjob
+
 ###0.3.1###
 - Show platform in devices element index
 - Show device title (token) truncated
