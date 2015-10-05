@@ -47,7 +47,6 @@ class PushNotifications_PushService extends BaseApplicationComponent
         $cronjob->hours             = $schedule->format('H');
         $cronjob->dayOfMonth        = $schedule->format('d');
         $cronjob->months            = $schedule->format('m');
-        $cronjob->dayOfWeek         = $schedule->format('w');
         $cronjob->taskCommandLine   = CRAFT_APP_PATH.'etc/console/yiic pushnotifications send '.$notification->id;
         $cronjob->comments          = $notification->id;
 
