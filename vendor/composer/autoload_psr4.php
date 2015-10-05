@@ -11,6 +11,7 @@ return array(
     'Zend\\Stdlib\\' => array($vendorDir . '/zendframework/zend-stdlib/src'),
     'Zend\\Loader\\' => array($vendorDir . '/zendframework/zend-loader/src'),
     'Zend\\Json\\' => array($vendorDir . '/zendframework/zend-json/src'),
+    'Zend\\Hydrator\\' => array($vendorDir . '/zendframework/zend-hydrator/src'),
     'Zend\\Http\\' => array($vendorDir . '/zendframework/zend-http/src'),
     'Zend\\Escaper\\' => array($vendorDir . '/zendframework/zend-escaper/src'),
     'Symfony\\Component\\Process\\' => array($vendorDir . '/symfony/process'),

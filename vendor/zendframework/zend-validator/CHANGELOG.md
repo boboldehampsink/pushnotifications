@@ -21,11 +21,31 @@ All notable changes to this project will be documented in this file, in reverse 
 
 - Nothing.
 
-## 2.5.3 - TBD
+## 2.5.4 - TBD
 
 ### Added
 
 - Nothing.
+
+### Deprecated
+
+- Nothing.
+
+### Removed
+
+- Nothing.
+
+### Fixed
+
+- Nothing.
+
+## 2.5.3 - 2015-09-03
+
+### Added
+
+- [#30](https://github.com/zendframework/zend-validator/pull/30) adds tooling to
+  ensure that the Hostname TLD list stays up-to-date as changes are pushed for
+  the repository.
 
 ### Deprecated
 
@@ -48,6 +68,13 @@ All notable changes to this project will be documented in this file, in reverse 
   validating. To correct this situation, `StaticValidator::execute()` now raises
   an `InvalidArgumentException` when an indexed array is detected for the
   `$options` argument.
+- [#35](https://github.com/zendframework/zend-validator/pull/35) modifies the
+  `NotEmpty` validator to no longer treat the float `0.0` as an empty value for
+  purposes of validation.
+- [#25](https://github.com/zendframework/zend-validator/pull/25) fixes the
+  `Date` validator to check against `DateTimeImmutable` and not
+  `DateTimeInterface` (as PHP has restrictions currently on how the latter can
+  be used).
 
 ## 2.5.2 - 2015-07-16
 

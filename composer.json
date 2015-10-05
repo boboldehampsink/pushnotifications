@@ -12,15 +12,8 @@
     "license": "MIT",
     "type": "craft-plugin",
     "minimum-stability": "dev",
-    "repositories": [
-        {
-            "type": "vcs",
-            "url": "https://github.com/boboldehampsink/NotificationPusher.git",
-            "reference": "master"
-        }
-    ],
     "require": {
         "composer/installers": "~1.0",
-        "sly/notification-pusher": "dev-master as 2.2.10-dev"
+        "sly/notification-pusher": "^2.2.12"
     }
 }

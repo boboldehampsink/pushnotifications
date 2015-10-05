@@ -167,6 +167,7 @@ class Apns extends BaseAdapter
 
         $sound = $message->getOption('sound', 'bingbong.aiff');
         $contentAvailable = $message->getOption('content-available');
+        $category = $message->getOption('category');
 
         $alert = new ServiceAlert(
             $message->getText(),
@@ -204,7 +205,9 @@ class Apns extends BaseAdapter
         $serviceMessage->setId(sha1($device->getToken().$message->getText()));
         $serviceMessage->setAlert($alert);
         $serviceMessage->setToken($device->getToken());
-        $serviceMessage->setBadge($badge);
+        if (0 !== $badge) {
+            $serviceMessage->setBadge($badge);
+        }
         $serviceMessage->setCustom($message->getOption('custom', array()));
 
         if (null !== $sound) {
@@ -213,6 +216,10 @@ class Apns extends BaseAdapter
 
         if (null !== $contentAvailable) {
             $serviceMessage->setContentAvailable($contentAvailable);
+        }
+
+        if (null !== $category) {
+            $serviceMessage->setCategory($category);
         }
 
         return $serviceMessage;
